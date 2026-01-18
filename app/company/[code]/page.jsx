@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import { companies } from '@/lib/companies';
 
@@ -170,8 +170,29 @@ export default function CompanyPage() {
   const params = useParams();
   const code = params.code;
   const [selectedPeriod, setSelectedPeriod] = useState('FY2026');
+  const [liveStockData, setLiveStockData] = useState(null);
+  const [stockLoading, setStockLoading] = useState(true);
   
   const company = companies?.find(c => c.code === code);
+  
+  // Fetch live stock data
+  useEffect(() => {
+    if (code) {
+      setStockLoading(true);
+      fetch(`/api/stock/${code}`)
+        .then(res => res.json())
+        .then(data => {
+          if (!data.error && data.ohlc?.length > 0) {
+            setLiveStockData(data);
+          }
+          setStockLoading(false);
+        })
+        .catch(err => {
+          console.error('Failed to fetch stock data:', err);
+          setStockLoading(false);
+        });
+    }
+  }, [code]);
   
   if (!company) {
     return (
@@ -195,22 +216,34 @@ export default function CompanyPage() {
   // Generate stock price data - 2 years of monthly OHLC data
   const stockPriceData = generateStockPriceData(company.price || 1000, company.performance?.month1 || 0);
 
-  // 2-Year Candlestick Chart Component
-  const CandlestickChart = ({ priceData, currentPrice, priceChange }) => {
-    // Generate 24 months of mock OHLC data based on current price
-    const generateCandleData = () => {
+  // 2-Year Candlestick Chart Component - uses live data when available
+  const CandlestickChart = ({ priceData, currentPrice, priceChange, liveData, isLoading }) => {
+    // Use live OHLC data if available, otherwise generate mock data
+    const getCandleData = () => {
+      if (liveData?.ohlc?.length > 0) {
+        // Use real data from Yahoo Finance
+        return liveData.ohlc.slice(-24).map(d => ({
+          month: d.month,
+          open: d.open,
+          high: d.high,
+          low: d.low,
+          close: d.close,
+          isUp: d.close >= d.open
+        }));
+      }
+      
+      // Fallback to mock data
       const months = [];
       const monthNames = ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan'];
       
-      // Work backwards from current price to estimate 2 years ago
-      const twoYearGrowth = (company.performance?.year1 || 20) * 1.5; // Estimate 2Y growth
+      const twoYearGrowth = (company.performance?.year1 || 20) * 1.5;
       const startPrice = currentPrice / (1 + twoYearGrowth / 100);
       
       for (let i = 0; i < 24; i++) {
         const progress = i / 23;
         const basePrice = startPrice + (currentPrice - startPrice) * progress;
-        const volatility = 0.05; // 5% monthly volatility
-        const isUp = Math.random() > 0.35; // 65% up months in a bull market
+        const volatility = 0.05;
+        const isUp = Math.random() > 0.35;
         
         const open = basePrice * (1 + (Math.random() - 0.5) * volatility * 0.5);
         const close = isUp ? open * (1 + Math.random() * volatility) : open * (1 - Math.random() * volatility);
@@ -226,13 +259,13 @@ export default function CompanyPage() {
           isUp: close > open
         });
       }
-      // Set last candle to current price
       months[23].close = currentPrice;
       months[23].isUp = priceChange >= 0;
       return months;
     };
     
-    const candles = generateCandleData();
+    const candles = getCandleData();
+    const numCandles = candles.length;
     const allPrices = candles.flatMap(c => [c.high, c.low]);
     const minPrice = Math.min(...allPrices) * 0.95;
     const maxPrice = Math.max(...allPrices) * 1.05;
@@ -243,60 +276,83 @@ export default function CompanyPage() {
     const chartWidth = width - padding.left - padding.right;
     const chartHeight = height - padding.top - padding.bottom;
     
-    const getX = (i) => padding.left + (i / 23) * chartWidth;
+    const getX = (i) => padding.left + (i / (numCandles - 1)) * chartWidth;
     const getY = (price) => padding.top + chartHeight - ((price - minPrice) / priceRange) * chartHeight;
     
-    const candleWidth = chartWidth / 24 * 0.6;
+    const candleWidth = chartWidth / numCandles * 0.6;
     
     // Y-axis price labels
     const yLabels = [0, 0.25, 0.5, 0.75, 1].map(pct => Math.round(maxPrice - pct * priceRange));
     
+    // Show loading indicator
+    if (isLoading) {
+      return (
+        <div className="w-full h-44 flex items-center justify-center text-gray-400 text-sm">
+          Loading chart data...
+        </div>
+      );
+    }
+    
     return (
-      <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-44">
-        {/* Grid lines */}
-        {[0, 0.25, 0.5, 0.75, 1].map((pct, i) => (
-          <line key={i} x1={padding.left} y1={padding.top + pct * chartHeight}
-            x2={width - padding.right} y2={padding.top + pct * chartHeight}
-            stroke="#e5e7eb" strokeWidth="1" />
-        ))}
-        
-        {/* Y-axis labels */}
-        {yLabels.map((price, i) => (
-          <text key={i} x={padding.left - 5} y={padding.top + (i * 0.25) * chartHeight + 4}
-            textAnchor="end" className="fill-gray-400" fontSize="9">
-            ¥{price.toLocaleString()}
-          </text>
-        ))}
-        
-        {/* Candlesticks */}
-        {candles.map((candle, i) => {
-          const x = getX(i);
-          const color = candle.isUp ? '#10b981' : '#ef4444';
-          return (
-            <g key={i}>
-              {/* Wick */}
-              <line x1={x} y1={getY(candle.high)} x2={x} y2={getY(candle.low)}
-                stroke={color} strokeWidth="1.5" />
-              {/* Body */}
-              <rect 
-                x={x - candleWidth/2} 
-                y={getY(Math.max(candle.open, candle.close))}
-                width={candleWidth}
-                height={Math.max(Math.abs(getY(candle.open) - getY(candle.close)), 2)}
-                fill={color}
-              />
-            </g>
-          );
-        })}
-        
-        {/* X-axis labels - show every 4th month */}
-        {candles.filter((_, i) => i % 4 === 0 || i === 23).map((candle, idx) => {
-          const actualIdx = idx * 4 > 23 ? 23 : idx * 4;
-          return (
-            <text key={actualIdx} x={getX(actualIdx)} y={height - 5}
-              textAnchor="middle" className="fill-gray-400" fontSize="8">
-              {candles[actualIdx].month}
+      <div className="relative">
+        {liveData && (
+          <div className="absolute top-0 right-0 text-xs text-green-500 flex items-center gap-1">
+            <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+            Live
+          </div>
+        )}
+        <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-44">
+          {/* Grid lines */}
+          {[0, 0.25, 0.5, 0.75, 1].map((pct, i) => (
+            <line key={i} x1={padding.left} y1={padding.top + pct * chartHeight}
+              x2={width - padding.right} y2={padding.top + pct * chartHeight}
+              stroke="#e5e7eb" strokeWidth="1" />
+          ))}
+          
+          {/* Y-axis labels */}
+          {yLabels.map((price, i) => (
+            <text key={i} x={padding.left - 5} y={padding.top + (i * 0.25) * chartHeight + 4}
+              textAnchor="end" className="fill-gray-400" fontSize="9">
+              ¥{price.toLocaleString()}
             </text>
+          ))}
+          
+          {/* Candlesticks */}
+          {candles.map((candle, i) => {
+            const x = getX(i);
+            const color = candle.isUp ? '#10b981' : '#ef4444';
+            return (
+              <g key={i}>
+                {/* Wick */}
+                <line x1={x} y1={getY(candle.high)} x2={x} y2={getY(candle.low)}
+                  stroke={color} strokeWidth="1.5" />
+                {/* Body */}
+                <rect 
+                  x={x - candleWidth/2} 
+                  y={getY(Math.max(candle.open, candle.close))}
+                  width={candleWidth}
+                  height={Math.max(Math.abs(getY(candle.open) - getY(candle.close)), 2)}
+                  fill={color}
+                />
+              </g>
+            );
+          })}
+          
+          {/* X-axis labels - show every 4th month */}
+          {candles.filter((_, i) => i % Math.ceil(numCandles / 6) === 0 || i === numCandles - 1).map((candle, idx) => {
+            const step = Math.ceil(numCandles / 6);
+            const actualIdx = Math.min(idx * step, numCandles - 1);
+            return (
+              <text key={actualIdx} x={getX(actualIdx)} y={height - 5}
+                textAnchor="middle" className="fill-gray-400" fontSize="8">
+                {candles[actualIdx].month}
+              </text>
+            );
+          })}
+        </svg>
+      </div>
+    );
+  };
           );
         })}
       </svg>
@@ -405,9 +461,12 @@ export default function CompanyPage() {
                 <div className="text-gray-400 text-sm mb-2">{company.nameJp}</div>
                 {/* Price below company name */}
                 <div className="flex items-baseline gap-2 mb-3">
-                  <div className="text-2xl font-semibold">¥{company.price?.toLocaleString()}</div>
-                  <div className={`text-base font-medium ${company.priceChange >= 0 ? 'text-emerald-500' : 'text-red-500'}`}>
-                    {company.priceChange >= 0 ? '+' : ''}{company.priceChange}%
+                  <div className="text-2xl font-semibold">
+                    ¥{(liveStockData?.currentPrice || company.price)?.toLocaleString()}
+                    {liveStockData && <span className="ml-2 text-xs text-green-500 font-normal">● Live</span>}
+                  </div>
+                  <div className={`text-base font-medium ${(liveStockData?.priceChange ?? company.priceChange) >= 0 ? 'text-emerald-500' : 'text-red-500'}`}>
+                    {(liveStockData?.priceChange ?? company.priceChange) >= 0 ? '+' : ''}{(liveStockData?.priceChange ?? company.priceChange)?.toFixed(2)}%
                   </div>
                 </div>
                 {/* Theme keywords */}
@@ -469,10 +528,16 @@ export default function CompanyPage() {
             <div className="flex-1 max-w-md">
               <div className="bg-gray-50 rounded-lg p-3">
                 <div className="text-xs text-gray-500 font-medium mb-2">Share Price (2 Years)</div>
-                <CandlestickChart priceData={stockPriceData} currentPrice={company.price} priceChange={company.priceChange} />
+                <CandlestickChart 
+                  priceData={stockPriceData} 
+                  currentPrice={liveStockData?.currentPrice || company.price} 
+                  priceChange={liveStockData?.priceChange || company.priceChange}
+                  liveData={liveStockData}
+                  isLoading={stockLoading}
+                />
                 <div className="flex justify-between items-center mt-1 pt-1 border-t border-gray-200">
                   <span className="text-xs text-gray-400">Source: Yahoo Finance</span>
-                  <span className="text-xs text-gray-400">Jan 13, 2026</span>
+                  <span className="text-xs text-gray-400">{liveStockData ? 'Live' : 'Jan 13, 2026'}</span>
                 </div>
               </div>
             </div>
