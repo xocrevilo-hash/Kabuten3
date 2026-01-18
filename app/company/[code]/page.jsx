@@ -353,11 +353,6 @@ export default function CompanyPage() {
       </div>
     );
   };
-          );
-        })}
-      </svg>
-    );
-  };
 
   const sentimentScore = company.sentiment?.overall || 50;
   const getSentimentColor = (score) => score >= 55 ? 'text-emerald-500' : score >= 45 ? 'text-yellow-500' : 'text-red-400';
