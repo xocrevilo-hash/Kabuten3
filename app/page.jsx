@@ -49,8 +49,11 @@ export default function KabutenHomepage() {
     { code: "3711.TW", name: "ASE Technology", nameJp: "日月光投控", type: "company", themes: ["AI & Semiconductors"] },
     { code: "2345.TW", name: "Accton Technology", nameJp: "智邦科技", type: "company", themes: ["AI & Semiconductors", "Data Center Infrastructure"] },
     { code: "2454.TW", name: "MediaTek", nameJp: "聯發科技", type: "company", themes: ["AI & Semiconductors", "Smartphones & Mobile"] },
-    // Korea - 1 new company
+    // Korea - 4 companies
     { code: "005930.KS", name: "Samsung Electronics", nameJp: "サムスン電子", type: "company", themes: ["AI & Semiconductors", "Electronics & Technology"] },
+    { code: "007660.KS", name: "Isu Petasys", nameJp: "イス・ペタシス", type: "company", themes: ["AI & Semiconductors", "Data Center Infrastructure"] },
+    { code: "012450.KS", name: "Hanwha Aerospace", nameJp: "ハンファエアロスペース", type: "company", themes: ["Defense & Aerospace", "Space & Satellites"] },
+    { code: "005380.KS", name: "Hyundai Motor", nameJp: "現代自動車", type: "company", themes: ["Automotive", "EV & Batteries"] },
     // Japan - 1 new company
     { code: "3350", name: "Metaplanet", nameJp: "メタプラネット", type: "company", themes: ["Cryptocurrency & Blockchain", "Investment Holdings"] },
   ];
