@@ -85,7 +85,8 @@ export async function GET(request, { params }) {
     // Get current price and metadata
     const meta = result.meta;
     const currentPrice = Math.round(meta.regularMarketPrice || ohlcData[ohlcData.length - 1]?.close || 0);
-    const previousClose = Math.round(meta.chartPreviousClose || meta.previousClose || currentPrice);
+    // Use regularMarketPreviousClose for daily change (not chartPreviousClose which is from chart start)
+    const previousClose = Math.round(meta.regularMarketPreviousClose || meta.previousClose || currentPrice);
     const priceChange = previousClose > 0 ? ((currentPrice - previousClose) / previousClose * 100).toFixed(2) : 0;
     
     return NextResponse.json({
