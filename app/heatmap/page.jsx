@@ -4,49 +4,35 @@ import React from 'react';
 import Link from 'next/link';
 
 export default function HeatmapPage() {
-  // Heatmap data - will be updated by scraper
-  const heatmapData = [
-    { name: "SMIC", type: "company", views: 3500000, change: 12.5 },
-    { name: "ASML", type: "company", views: 1700000, change: -3.2 },
-    { name: "TSMC", type: "company", views: 890000, change: 8.7 },
-    { name: "NVIDIA", type: "company", views: 750000, change: 15.3 },
-    { name: "Samsung Electronics", type: "company", views: 520000, change: -1.8 },
-    { name: "SK Hynix", type: "company", views: 430000, change: 22.1 },
-    { name: "Intel", type: "company", views: 380000, change: -8.5 },
-    { name: "AMD", type: "company", views: 290000, change: 5.2 },
-    { name: "Micron", type: "company", views: 185000, change: 3.1 },
-    { name: "Tokyo Electron", type: "company", views: 125000, change: 18.4 },
-    { name: "HBM", type: "keyword", views: 98000, change: 45.2 },
-    { name: "Advantest", type: "company", views: 87000, change: 7.8 },
-    { name: "CoWoS", type: "keyword", views: 72000, change: 28.3 },
-    { name: "EUV", type: "keyword", views: 65000, change: -2.1 },
-    { name: "Zhongji Innolight", type: "company", views: 58000, change: 92.5 },
-    { name: "Applied Materials", type: "company", views: 52000, change: 4.3 },
-    { name: "Lam Research", type: "company", views: 48000, change: 1.2 },
-    { name: "AI chips", type: "keyword", views: 45000, change: 33.7 },
-    { name: "SCREEN Holdings", type: "company", views: 38000, change: 11.2 },
-    { name: "Disco", type: "company", views: 35000, change: 6.8 },
-    { name: "Renesas", type: "company", views: 32000, change: -4.2 },
-    { name: "Lasertec", type: "company", views: 28000, change: 15.6 },
-    { name: "export controls", type: "keyword", views: 25000, change: 8.9 },
-    { name: "MediaTek", type: "company", views: 22000, change: 2.3 },
-    { name: "Qualcomm", type: "company", views: 19000, change: -1.5 },
-    { name: "GlobalFoundries", type: "company", views: 16000, change: 0.8 },
-    { name: "UMC", type: "company", views: 14000, change: 3.4 },
-    { name: "CHIPS Act", type: "keyword", views: 12000, change: -5.2 },
-    { name: "Arm", type: "company", views: 11000, change: 7.1 },
-    { name: "Rapidus", type: "company", views: 9500, change: 125.0 },
-    { name: "DRAM", type: "keyword", views: 9200, change: 4.5 },
-    { name: "NAND", type: "keyword", views: 8800, change: -2.3 },
-    { name: "foundry", type: "keyword", views: 8500, change: 6.7 },
-    { name: "wafer", type: "keyword", views: 8200, change: 3.2 },
-    { name: "fab", type: "keyword", views: 7900, change: 11.4 },
-    { name: "Broadcom", type: "company", views: 7600, change: 5.8 },
-    { name: "Texas Instruments", type: "company", views: 7300, change: -0.9 },
-    { name: "Infineon", type: "company", views: 7000, change: 2.1 },
-    { name: "STMicro", type: "company", views: 6700, change: -3.4 },
-    { name: "NXP", type: "company", views: 6400, change: 1.8 },
+  // Real data from X.com pilot run - Jan 18, 2026
+  // Ranked by total views from top 5 posts
+  const keywords = [
+    { term: "AI chips", totalViews: 10098000, trend: "hot", description: "Tesla AI5, NVIDIA demand" },
+    { term: "data center", totalViews: 520000, trend: "hot", description: "AI infrastructure buildout" },
+    { term: "HBM", totalViews: 376481, trend: "hot", description: "High Bandwidth Memory for AI" },
+    { term: "EUV", totalViews: 215000, trend: "warm", description: "ASML lithography tech" },
+    { term: "2nm", totalViews: 180000, trend: "warm", description: "Next-gen chip nodes" },
+    { term: "CoWoS", totalViews: 157800, trend: "hot", description: "TSMC advanced packaging" },
+    { term: "AI inference", totalViews: 155000, trend: "warm", description: "Edge AI deployment" },
+    { term: "export controls", totalViews: 125000, trend: "neutral", description: "US-China chip restrictions" },
+    { term: "ASIC", totalViews: 95000, trend: "warm", description: "Custom AI accelerators" },
+    { term: "GPU shortage", totalViews: 85000, trend: "neutral", description: "Supply constraints" },
+    { term: "foundry", totalViews: 68000, trend: "neutral", description: "Chip manufacturing" },
+    { term: "DRAM", totalViews: 45000, trend: "neutral", description: "Memory pricing trends" },
+    { term: "chiplet", totalViews: 42000, trend: "neutral", description: "Modular chip design" },
+    { term: "NAND", totalViews: 35000, trend: "cold", description: "Flash storage market" },
+    { term: "automotive chips", totalViews: 28000, trend: "cold", description: "EV semiconductor demand" },
   ];
+
+  const getTrendStyle = (trend) => {
+    switch (trend) {
+      case 'hot': return { bg: 'bg-red-50 border-red-200', text: 'text-red-600', icon: '🔥', label: 'Hot' };
+      case 'warm': return { bg: 'bg-orange-50 border-orange-200', text: 'text-orange-600', icon: '📈', label: 'Rising' };
+      case 'neutral': return { bg: 'bg-gray-50 border-gray-200', text: 'text-gray-500', icon: '➡️', label: 'Stable' };
+      case 'cold': return { bg: 'bg-blue-50 border-blue-200', text: 'text-blue-600', icon: '❄️', label: 'Cooling' };
+      default: return { bg: 'bg-gray-50 border-gray-200', text: 'text-gray-500', icon: '➡️', label: 'Stable' };
+    }
+  };
 
   const formatViews = (views) => {
     if (views >= 1000000) return (views / 1000000).toFixed(1) + 'M';
@@ -54,14 +40,11 @@ export default function HeatmapPage() {
     return views.toString();
   };
 
-  const getChangeColor = (change) => {
-    if (change > 5) return 'text-emerald-600';
-    if (change < -5) return 'text-red-500';
-    return 'text-amber-500';
-  };
-
-  const totalViews = heatmapData.reduce((sum, item) => sum + item.views, 0);
-  const avgChange = heatmapData.reduce((sum, item) => sum + item.change, 0) / heatmapData.length;
+  const totalViews = keywords.reduce((sum, k) => sum + k.totalViews, 0);
+  const hotCount = keywords.filter(k => k.trend === 'hot').length;
+  const warmCount = keywords.filter(k => k.trend === 'warm').length;
+  const neutralCount = keywords.filter(k => k.trend === 'neutral').length;
+  const coldCount = keywords.filter(k => k.trend === 'cold').length;
 
   return (
     <div className="min-h-screen bg-gray-100 text-gray-900 text-sm">
@@ -73,79 +56,135 @@ export default function HeatmapPage() {
           </Link>
           <div>
             <span className="font-semibold">Semiconductor Buzz</span>
-            <span className="text-gray-400 text-xs ml-2">X/Twitter mentions</span>
+            <span className="text-gray-400 text-xs ml-2">𝕏 Keyword Rankings</span>
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <span className="text-gray-400 text-xs">Updated every 8 hours • Last: Jan 18, 2026 10:00 JST</span>
+          <span className="text-gray-400 text-xs">Updated: Jan 18, 2026 • 5:00 HKT</span>
         </div>
       </header>
 
-      <div className="max-w-xl mx-auto p-4">
+      <div className="max-w-2xl mx-auto p-4">
         
-        {/* Summary Stats */}
-        <div className="bg-gray-900 text-white rounded-xl p-4 mb-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <span className="text-2xl">𝕏</span>
-              <div>
-                <h1 className="text-lg font-bold">Semiconductor Buzz</h1>
-                <p className="text-gray-400 text-xs">View counts from latest X posts</p>
-              </div>
+        {/* Hero Card */}
+        <div className="bg-gray-900 text-white rounded-xl p-5 mb-4">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="text-3xl">𝕏</span>
+            <div>
+              <h1 className="text-xl font-bold">Semiconductor Keyword Rankings</h1>
+              <p className="text-gray-400 text-sm">Top 5 posts view count • Updated daily at 5am HKT</p>
             </div>
-            <div className="flex gap-6 text-right">
-              <div>
-                <div className="text-xl font-bold">{formatViews(totalViews)}</div>
-                <div className="text-xs text-gray-400">Total views</div>
-              </div>
-              <div>
-                <div className={`text-xl font-bold ${avgChange > 0 ? 'text-emerald-400' : 'text-red-400'}`}>
-                  {avgChange > 0 ? '+' : ''}{avgChange.toFixed(1)}%
-                </div>
-                <div className="text-xs text-gray-400">vs yesterday</div>
-              </div>
+          </div>
+          <div className="grid grid-cols-2 gap-3 mb-4">
+            <div className="bg-white/10 rounded-lg p-3 text-center">
+              <div className="text-2xl font-bold">{formatViews(totalViews)}</div>
+              <div className="text-xs text-gray-400">Total Views</div>
+            </div>
+            <div className="bg-white/10 rounded-lg p-3 text-center">
+              <div className="text-2xl font-bold">{keywords.length}</div>
+              <div className="text-xs text-gray-400">Keywords Tracked</div>
+            </div>
+          </div>
+          <div className="grid grid-cols-4 gap-2 text-center text-xs">
+            <div className="bg-red-500/20 rounded-lg p-2">
+              <div className="text-lg font-bold text-red-400">{hotCount}</div>
+              <div className="text-gray-400">🔥 Hot</div>
+            </div>
+            <div className="bg-orange-500/20 rounded-lg p-2">
+              <div className="text-lg font-bold text-orange-400">{warmCount}</div>
+              <div className="text-gray-400">📈 Rising</div>
+            </div>
+            <div className="bg-gray-500/20 rounded-lg p-2">
+              <div className="text-lg font-bold text-gray-400">{neutralCount}</div>
+              <div className="text-gray-400">➡️ Stable</div>
+            </div>
+            <div className="bg-blue-500/20 rounded-lg p-2">
+              <div className="text-lg font-bold text-blue-400">{coldCount}</div>
+              <div className="text-gray-400">❄️ Cooling</div>
             </div>
           </div>
         </div>
 
-        {/* Leaderboard */}
-        <div className="bg-white border border-gray-300 rounded-xl overflow-hidden">
-          <div className="max-h-[70vh] overflow-y-auto">
-            {heatmapData.map((item, index) => (
-              <div
-                key={item.name}
-                className={`flex items-center justify-between px-4 py-3 border-b border-gray-100 last:border-0 ${
-                  index < 3 ? 'bg-amber-50' : ''
-                }`}
+        {/* Notable Today - Top Movers */}
+        <div className="mb-4 bg-white border border-gray-200 rounded-xl p-4">
+          <div className="font-semibold text-gray-800 mb-3">🚀 Notable Today</div>
+          <div className="space-y-2 text-sm">
+            <div className="flex items-center gap-2">
+              <span className="text-red-500">●</span>
+              <span><strong>AI chips</strong> dominated by Elon Musk's Tesla AI5 announcement (5.8M views)</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-red-500">●</span>
+              <span><strong>HBM</strong> buzz driven by Shay Boloor's memory supercycle analysis (270K views)</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-orange-500">●</span>
+              <span><strong>CoWoS</strong> gaining traction with packaging bottleneck discussions</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Keywords List - Ranked by Views */}
+        <div className="space-y-2">
+          {keywords.map((keyword, index) => {
+            const style = getTrendStyle(keyword.trend);
+            const rank = index + 1;
+            return (
+              <a
+                key={keyword.term}
+                href={`https://x.com/search?q=${encodeURIComponent(keyword.term)}&src=typed_query&f=top`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`block ${style.bg} border rounded-xl p-3 hover:shadow-md transition-all`}
               >
-                <div className="flex items-center gap-3">
-                  <span className={`w-6 text-center font-bold ${index < 3 ? 'text-amber-600' : 'text-gray-400'}`}>
-                    {index + 1}
-                  </span>
-                  <span className={item.type === 'company' ? 'text-blue-600 font-medium' : 'text-gray-800'}>
-                    {item.name}
-                  </span>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-bold">
+                      {rank}
+                    </div>
+                    <span className="text-xl">{style.icon}</span>
+                    <div>
+                      <div className="font-semibold text-gray-900">{keyword.term}</div>
+                      <div className="text-xs text-gray-500">{keyword.description}</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="text-right">
+                      <div className="font-bold text-gray-900">{formatViews(keyword.totalViews)}</div>
+                      <div className="text-xs text-gray-400">views</div>
+                    </div>
+                    <div className={`px-2 py-1 rounded-full text-xs font-semibold ${style.bg} ${style.text} border`}>
+                      {style.label}
+                    </div>
+                    <span className="text-gray-300">→</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <span className="text-gray-600 font-medium w-16 text-right">
-                    {formatViews(item.views)}
-                  </span>
-                  <span className={`w-16 text-right font-medium ${getChangeColor(item.change)}`}>
-                    {item.change > 0 ? '+' : ''}{item.change.toFixed(1)}%
-                  </span>
-                </div>
+              </a>
+            );
+          })}
+        </div>
+
+        {/* Methodology Note */}
+        <div className="mt-6 bg-amber-50 border border-amber-200 rounded-xl p-4">
+          <div className="flex items-start gap-3">
+            <span className="text-xl">📊</span>
+            <div>
+              <div className="font-semibold text-amber-800 mb-1">How Rankings Work</div>
+              <div className="text-sm text-amber-700">
+                Each keyword is searched on X/Twitter daily at 5am HKT. We sum the view counts from the top 5 posts and rank keywords by total engagement. Trend status (Hot/Rising/Stable/Cooling) is based on week-over-week changes.
               </div>
-            ))}
+              <div className="mt-2 text-xs text-amber-600">
+                Click any keyword to see live X search results
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Footer */}
-        <div className="mt-4 p-3 bg-gray-50 rounded-xl text-xs text-gray-500 text-center">
-          Sum of view counts from latest X posts • <span className="text-blue-600">Blue = Company</span>, Black = Keyword
-          <br />
-          Data refreshed every 8 hours via X search
+        <div className="mt-6 text-center text-xs text-gray-400">
+          <p>Part of Kabuten 株典 • Japanese Stock Intelligence</p>
+          <p className="mt-1">Data collected via manual X/Twitter search analysis</p>
         </div>
-        
       </div>
     </div>
   );
