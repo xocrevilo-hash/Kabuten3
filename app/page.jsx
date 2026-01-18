@@ -400,114 +400,10 @@ export default function KabutenHomepage() {
       </div>
 
       {/* Main Grid - 2 columns for mobile-friendly layout */}
-      <div className="max-w-5xl mx-auto px-4 pb-8">
+      <div className="max-w-4xl mx-auto px-4 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
           
-          {/* Prediction of the Day */}
-          <div className="bg-white border border-gray-300 rounded-xl p-4 hover:shadow-lg transition-shadow">
-            <h3 className="text-sm font-semibold text-gray-800 mb-3">🎯 Prediction of the Day</h3>
-            <div className="flex flex-col items-center justify-center py-4">
-              <div className="text-3xl mb-2">📊</div>
-              <p className="text-gray-500 text-sm text-center">Will Nikkei close above 40,000 today?</p>
-              <div className="flex gap-3 mt-3">
-                <button className="px-4 py-2 bg-emerald-100 text-emerald-700 rounded-lg text-sm font-medium hover:bg-emerald-200">Yes ↑</button>
-                <button className="px-4 py-2 bg-red-100 text-red-700 rounded-lg text-sm font-medium hover:bg-red-200">No ↓</button>
-              </div>
-              <p className="text-xs text-gray-400 mt-2">247 votes so far • 68% say Yes</p>
-            </div>
-          </div>
-
-          {/* Popular Themes */}
-          <div className="bg-white border border-gray-300 rounded-xl p-4 hover:shadow-lg transition-shadow">
-            <h3 className="text-sm font-semibold text-gray-800 mb-3">🏷️ Popular Themes</h3>
-            <ul className="space-y-2">
-              {mostViewedThemes.map((item, i) => (
-                <li key={i}>
-                  <a href="/themes" className="flex items-center justify-between text-sm py-1 hover:bg-blue-50 px-2 rounded cursor-pointer group">
-                    <span className="text-blue-600 group-hover:underline">{item.name}</span>
-                    <span className="text-gray-400 text-xs">{item.count}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-3 pt-3 border-t border-gray-100">
-              <a href="/themes" className="text-xs text-blue-600 hover:underline">View all themes →</a>
-            </div>
-          </div>
-
-          {/* Most Viewed Companies */}
-          <div className="bg-white border border-gray-300 rounded-xl p-4 hover:shadow-lg transition-shadow">
-            <h3 className="text-sm font-semibold text-gray-800 mb-3">🔥 Most Viewed Companies</h3>
-            <ul className="space-y-2">
-              {mostViewedCompanies.map((item, i) => (
-                <li key={i}>
-                  <a href={`/company/${item.code}`} className="flex items-center justify-between text-sm py-1 hover:bg-gray-50 px-2 rounded cursor-pointer">
-                    <span className="text-gray-600">
-                      <span className="text-gray-400 text-xs mr-2">{i + 1}.</span>
-                      {item.name}
-                    </span>
-                    <span className="text-gray-400 text-xs">{item.views} views</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Sentiment Rankings: High */}
-          <div className="bg-white border border-gray-300 rounded-xl p-4 hover:shadow-lg transition-shadow">
-            <h3 className="text-sm font-semibold text-gray-800 mb-3">💬 Sentiment Rankings: High</h3>
-            <ul className="space-y-2">
-              {sentimentRankingsHigh.map((item, i) => (
-                <li key={i}>
-                  <a href={`/company/${item.code}`} className="flex items-center justify-between text-sm py-1 hover:bg-gray-50 px-2 rounded cursor-pointer">
-                    <span className="text-gray-600">
-                      <span className="text-gray-400 text-xs mr-2">{i + 1}.</span>
-                      {item.name}
-                    </span>
-                    <span className="text-emerald-500 font-medium">{item.score}%</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Sentiment Rankings: Low */}
-          <div className="bg-white border border-gray-300 rounded-xl p-4 hover:shadow-lg transition-shadow">
-            <h3 className="text-sm font-semibold text-gray-800 mb-3">💬 Sentiment Rankings: Low</h3>
-            <ul className="space-y-2">
-              {sentimentRankingsLow.map((item, i) => (
-                <li key={i}>
-                  <a href={`/company/${item.code}`} className="flex items-center justify-between text-sm py-1 hover:bg-gray-50 px-2 rounded cursor-pointer">
-                    <span className="text-gray-600">
-                      <span className="text-gray-400 text-xs mr-2">{i + 1}.</span>
-                      {item.name}
-                    </span>
-                    <span className="text-red-500 font-medium">{item.score}%</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Best Performers */}
-          <div className="bg-white border border-gray-300 rounded-xl p-4 hover:shadow-lg transition-shadow">
-            <h3 className="text-sm font-semibold text-gray-800 mb-3">📈 Best Performers (1W)</h3>
-            <ul className="space-y-2">
-              {bestPerformers.map((item, i) => (
-                <li key={i}>
-                  <a href={`/company/${item.code}`} className="flex items-center justify-between text-sm py-1 hover:bg-gray-50 px-2 rounded cursor-pointer">
-                    <span className="text-gray-600">
-                      <span className="text-gray-400 text-xs mr-2">{item.code}</span>
-                      {item.name}
-                    </span>
-                    <span className="text-emerald-500 font-medium">{item.change}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Sentiment Rankings: Rising */}
+          {/* 1. Sentiment Rankings: Rising */}
           <div className="bg-white border border-gray-300 rounded-xl p-4 hover:shadow-lg transition-shadow">
             <h3 className="text-sm font-semibold text-gray-800 mb-3">🔥 Sentiment Rankings: Rising</h3>
             <ul className="space-y-2">
@@ -528,7 +424,7 @@ export default function KabutenHomepage() {
             </ul>
           </div>
 
-          {/* Sentiment Rankings: Falling */}
+          {/* 2. Sentiment Rankings: Falling */}
           <div className="bg-white border border-gray-300 rounded-xl p-4 hover:shadow-lg transition-shadow">
             <h3 className="text-sm font-semibold text-gray-800 mb-3">📉 Sentiment Rankings: Falling</h3>
             <ul className="space-y-2">
@@ -547,6 +443,110 @@ export default function KabutenHomepage() {
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* 3. Sentiment Rankings: High */}
+          <div className="bg-white border border-gray-300 rounded-xl p-4 hover:shadow-lg transition-shadow">
+            <h3 className="text-sm font-semibold text-gray-800 mb-3">💬 Sentiment Rankings: High</h3>
+            <ul className="space-y-2">
+              {sentimentRankingsHigh.map((item, i) => (
+                <li key={i}>
+                  <a href={`/company/${item.code}`} className="flex items-center justify-between text-sm py-1 hover:bg-gray-50 px-2 rounded cursor-pointer">
+                    <span className="text-gray-600">
+                      <span className="text-gray-400 text-xs mr-2">{i + 1}.</span>
+                      {item.name}
+                    </span>
+                    <span className="text-emerald-500 font-medium">{item.score}%</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* 4. Sentiment Rankings: Low */}
+          <div className="bg-white border border-gray-300 rounded-xl p-4 hover:shadow-lg transition-shadow">
+            <h3 className="text-sm font-semibold text-gray-800 mb-3">💬 Sentiment Rankings: Low</h3>
+            <ul className="space-y-2">
+              {sentimentRankingsLow.map((item, i) => (
+                <li key={i}>
+                  <a href={`/company/${item.code}`} className="flex items-center justify-between text-sm py-1 hover:bg-gray-50 px-2 rounded cursor-pointer">
+                    <span className="text-gray-600">
+                      <span className="text-gray-400 text-xs mr-2">{i + 1}.</span>
+                      {item.name}
+                    </span>
+                    <span className="text-red-500 font-medium">{item.score}%</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* 5. Best Performers */}
+          <div className="bg-white border border-gray-300 rounded-xl p-4 hover:shadow-lg transition-shadow">
+            <h3 className="text-sm font-semibold text-gray-800 mb-3">📈 Best Performers (1W)</h3>
+            <ul className="space-y-2">
+              {bestPerformers.map((item, i) => (
+                <li key={i}>
+                  <a href={`/company/${item.code}`} className="flex items-center justify-between text-sm py-1 hover:bg-gray-50 px-2 rounded cursor-pointer">
+                    <span className="text-gray-600">
+                      <span className="text-gray-400 text-xs mr-2">{item.code}</span>
+                      {item.name}
+                    </span>
+                    <span className="text-emerald-500 font-medium">{item.change}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* 6. Most Viewed Companies */}
+          <div className="bg-white border border-gray-300 rounded-xl p-4 hover:shadow-lg transition-shadow">
+            <h3 className="text-sm font-semibold text-gray-800 mb-3">🔥 Most Viewed Companies</h3>
+            <ul className="space-y-2">
+              {mostViewedCompanies.map((item, i) => (
+                <li key={i}>
+                  <a href={`/company/${item.code}`} className="flex items-center justify-between text-sm py-1 hover:bg-gray-50 px-2 rounded cursor-pointer">
+                    <span className="text-gray-600">
+                      <span className="text-gray-400 text-xs mr-2">{i + 1}.</span>
+                      {item.name}
+                    </span>
+                    <span className="text-gray-400 text-xs">{item.views} views</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* 7. Popular Themes */}
+          <div className="bg-white border border-gray-300 rounded-xl p-4 hover:shadow-lg transition-shadow">
+            <h3 className="text-sm font-semibold text-gray-800 mb-3">🏷️ Popular Themes</h3>
+            <ul className="space-y-2">
+              {mostViewedThemes.map((item, i) => (
+                <li key={i}>
+                  <a href="/themes" className="flex items-center justify-between text-sm py-1 hover:bg-blue-50 px-2 rounded cursor-pointer group">
+                    <span className="text-blue-600 group-hover:underline">{item.name}</span>
+                    <span className="text-gray-400 text-xs">{item.count}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-3 pt-3 border-t border-gray-100">
+              <a href="/themes" className="text-xs text-blue-600 hover:underline">View all themes →</a>
+            </div>
+          </div>
+
+          {/* 8. Prediction of the Day */}
+          <div className="bg-white border border-gray-300 rounded-xl p-4 hover:shadow-lg transition-shadow">
+            <h3 className="text-sm font-semibold text-gray-800 mb-3">🎯 Prediction of the Day</h3>
+            <div className="flex flex-col items-center justify-center py-4">
+              <div className="text-3xl mb-2">📊</div>
+              <p className="text-gray-500 text-sm text-center">Will Nikkei close above 40,000 today?</p>
+              <div className="flex gap-3 mt-3">
+                <button className="px-4 py-2 bg-emerald-100 text-emerald-700 rounded-lg text-sm font-medium hover:bg-emerald-200">Yes ↑</button>
+                <button className="px-4 py-2 bg-red-100 text-red-700 rounded-lg text-sm font-medium hover:bg-red-200">No ↓</button>
+              </div>
+              <p className="text-xs text-gray-400 mt-2">247 votes so far • 68% say Yes</p>
+            </div>
           </div>
 
         </div>
