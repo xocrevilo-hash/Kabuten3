@@ -242,8 +242,9 @@ export default function AdminDashboard() {
                               : 'bg-blue-600 text-white hover:bg-blue-700'
                           }`}
                         >
-                        {isUpdating[key] ? '⏳ Running...' : 'Run'}
-                      </button>
+                          {isUpdating[key] ? '⏳ Running...' : 'Run'}
+                        </button>
+                      )}
                     </div>
                   </div>
                 ))}
