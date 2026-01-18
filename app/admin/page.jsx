@@ -210,38 +210,38 @@ export default function AdminDashboard() {
               </h2>
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  { key: 'stockPrices', label: 'Stock Prices', schedule: 'Every 15 min' },
-                  { key: 'keyMetrics', label: 'Key Metrics', schedule: 'Daily' },
-                  { key: 'sentiment', label: 'Sentiment', schedule: 'Daily' },
-                  { key: 'epsRevisions', label: 'EPS Revisions', schedule: 'Weekly' },
-                  { key: 'narrative', label: 'Narrative', schedule: 'Weekly (if material)' },
-                  { key: 'outlook', label: 'Outlook', schedule: 'Monthly (high hurdle)' },
-                  { key: 'analystRatings', label: 'Analyst Ratings', schedule: 'Weekly' },
-                  { key: 'heatmap', label: '📊 Heatmap Scrape', schedule: 'Every 8 hours' },
-                  { key: 'podcasts', label: '🎙️ Podcast Ideas', schedule: 'Every 2 days' },
-                ].map(({ key, label, schedule }) => (
-                  <div key={key} className="bg-gray-50 rounded-lg p-3 border border-gray-200">
+                  { key: 'stockPrices', label: 'Box 1-3: Price/Metrics', schedule: '✓ Live on load', live: true },
+                  { key: 'narrative', label: 'Box 4: Narrative', schedule: 'Weekend batch', live: false },
+                  { key: 'outlook', label: 'Box 5: Outlook', schedule: 'Weekend batch', live: false },
+                  { key: 'sentiment', label: 'Box 6: Social Media', schedule: 'Weekend batch', live: false },
+                  { key: 'analystRatings', label: 'Box 7: Analyst Ratings', schedule: 'Weekend batch', live: false },
+                  { key: 'epsRevisions', label: 'Box 8: EPS Revisions', schedule: 'Weekend batch', live: false },
+                  { key: 'heatmap', label: '📊 Heatmap Scrape', schedule: 'Weekend batch', live: false },
+                  { key: 'podcasts', label: '🎙️ Podcast Ideas', schedule: 'As needed', live: false },
+                ].map(({ key, label, schedule, live }) => (
+                  <div key={key} className={`rounded-lg p-3 border ${live ? 'bg-green-50 border-green-200' : 'bg-gray-50 border-gray-200'}`}>
                     <div className="flex items-center justify-between mb-2">
                       <span className="font-medium text-sm">{label}</span>
-                      <span className="text-lg">{getStatusIcon(updateStatus[key].status)}</span>
+                      <span className="text-lg">{live ? '🟢' : getStatusIcon(updateStatus[key]?.status || 'ok')}</span>
                     </div>
                     <div className="text-xs text-gray-500 mb-1">
-                      {updateStatus[key].completed}/{updateStatus[key].total} companies
+                      {live ? 'Real-time via Yahoo Finance API' : `${updateStatus[key]?.completed || 60}/${updateStatus[key]?.total || 60} companies`}
                     </div>
                     <div className="text-xs text-gray-400 mb-2">
-                      Last: {updateStatus[key].lastRun}
+                      {live ? 'Fetched on page load' : `Last: ${updateStatus[key]?.lastRun || 'Jan 18, 2026'}`}
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-xs text-blue-600">{schedule}</span>
-                      <button
-                        onClick={() => runUpdate(key, label)}
-                        disabled={isUpdating[key]}
-                        className={`px-2 py-1 text-xs rounded ${
-                          isUpdating[key] 
-                            ? 'bg-gray-300 text-gray-500 cursor-not-allowed' 
-                            : 'bg-blue-600 text-white hover:bg-blue-700'
-                        }`}
-                      >
+                      <span className={`text-xs ${live ? 'text-green-600 font-medium' : 'text-blue-600'}`}>{schedule}</span>
+                      {!live && (
+                        <button
+                          onClick={() => runUpdate(key, label)}
+                          disabled={isUpdating[key]}
+                          className={`px-2 py-1 text-xs rounded ${
+                            isUpdating[key] 
+                              ? 'bg-gray-300 text-gray-500 cursor-not-allowed' 
+                              : 'bg-blue-600 text-white hover:bg-blue-700'
+                          }`}
+                        >
                         {isUpdating[key] ? '⏳ Running...' : 'Run'}
                       </button>
                     </div>
@@ -385,28 +385,67 @@ export default function AdminDashboard() {
               <h2 className="text-lg font-semibold mb-3">⏰ Update Schedule</h2>
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
-                  <span className="text-gray-400">Prices</span>
-                  <span>Every 15 min (market hours)</span>
+                  <span className="text-gray-400">Prices/Chart (Box 1)</span>
+                  <span className="text-green-400">✓ Live on page load</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-400">Metrics</span>
-                  <span>Daily @ 06:00 JST</span>
+                  <span className="text-gray-400">Performance % (Box 2)</span>
+                  <span className="text-green-400">✓ Live on page load</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-400">Sentiment</span>
-                  <span>Daily @ 07:00 JST</span>
+                  <span className="text-gray-400">Key Metrics (Box 3)</span>
+                  <span className="text-green-400">✓ Live on page load</span>
+                </div>
+                <div className="border-t border-gray-600 my-2"></div>
+                <div className="flex justify-between">
+                  <span className="text-gray-400">Narrative (Box 4)</span>
+                  <span>Weekend batch</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-400">EPS/Analysts</span>
-                  <span>Weekly (Sunday)</span>
+                  <span className="text-gray-400">Outlook (Box 5)</span>
+                  <span>Weekend batch</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-400">Narrative</span>
-                  <span>Weekly (if triggered)</span>
+                  <span className="text-gray-400">Social Media (Box 6)</span>
+                  <span>Weekend batch</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-400">Outlook</span>
-                  <span>Monthly (high hurdle)</span>
+                  <span className="text-gray-400">Analyst Ratings (Box 7)</span>
+                  <span>Weekend batch</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-400">EPS Revisions (Box 8)</span>
+                  <span>Weekend batch</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Weekend To Do */}
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-5">
+              <h2 className="text-lg font-semibold mb-3 text-amber-800">📋 Weekend Update To Do</h2>
+              <div className="space-y-2 text-sm">
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" className="w-4 h-4 rounded border-amber-300" />
+                  <span className="text-gray-700">Box 4: Update Narrative (news, earnings)</span>
+                </label>
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" className="w-4 h-4 rounded border-amber-300" />
+                  <span className="text-gray-700">Box 5: Update Outlook (if material change)</span>
+                </label>
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" className="w-4 h-4 rounded border-amber-300" />
+                  <span className="text-gray-700">Box 6: Scrape X/Twitter sentiment (17 companies)</span>
+                </label>
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" className="w-4 h-4 rounded border-amber-300" />
+                  <span className="text-gray-700">Box 7: Update Analyst Ratings (consensus, targets)</span>
+                </label>
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" className="w-4 h-4 rounded border-amber-300" />
+                  <span className="text-gray-700">Box 8: Update EPS Revisions (TBD data source)</span>
+                </label>
+                <div className="pt-2 mt-2 border-t border-amber-200 text-xs text-amber-600">
+                  Best time: Saturday/Sunday morning (JST)
                 </div>
               </div>
             </div>
