@@ -560,75 +560,6 @@ export default function CompanyPage() {
           </div>
         </div>
 
-        {/* EPS Revisions */}
-        <div className="bg-white border border-gray-300 rounded-xl p-4">
-          <div className="flex items-center justify-between mb-3">
-            <div className="flex items-center gap-2">
-              <h2 className="text-base font-semibold">Analyst EPS Revisions</h2>
-              <span className="text-xs text-gray-400 bg-gray-100 px-2 py-0.5 rounded">AI-Estimated</span>
-            </div>
-            <div className="flex gap-1.5">
-              {['FY2025', 'FY2026', 'FY2027'].map(period => (
-                <button key={period} onClick={() => setSelectedPeriod(period)}
-                  className={`px-3 py-1.5 rounded-lg text-sm font-semibold transition-all ${
-                    selectedPeriod === period ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                  }`}>
-                  {period}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {hasEpsData ? (
-            <>
-              <div className={`p-3 rounded-lg mb-3 ${getTrendLabel(epsInfo.trend).bg}`}>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="text-xs text-gray-500 mb-0.5">Consensus Average (4 sources)</div>
-                    <div className="text-xl font-bold text-gray-900">{formatEps(epsInfo.avg)}</div>
-                  </div>
-                  <div className="text-right">
-                    <div className={`text-base font-bold ${getTrendLabel(epsInfo.trend).color}`}>
-                      {epsInfo.trend > 0 ? '+' : ''}{epsInfo.trend.toFixed(1)}%
-                    </div>
-                    <div className="text-xs text-gray-500">vs 3 months ago</div>
-                  </div>
-                  <span className={`px-2.5 py-1 rounded-full text-xs font-semibold ${getTrendLabel(epsInfo.trend).bg} ${getTrendLabel(epsInfo.trend).color}`}>
-                    {epsInfo.trend < -5 ? '↓' : epsInfo.trend > 5 ? '↑' : '→'} {getTrendLabel(epsInfo.trend).text}
-                  </span>
-                </div>
-              </div>
-
-              <div className="bg-gray-50 rounded-lg p-3 mb-3">
-                <div className="text-xs text-gray-500 mb-1 font-medium">{selectedPeriod} - EPS Estimate Trend (3M)</div>
-                <MultiLineChart sources={sources} />
-                <div className="flex flex-wrap gap-3 mt-2 pt-2 border-t border-gray-200">
-                  {Object.values(sources).map((source, i) => (
-                    <div key={i} className="flex items-center gap-1">
-                      <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: source.color }} />
-                      <span className="text-xs text-gray-600">{source.name}</span>
-                    </div>
-                  ))}
-                  <div className="flex items-center gap-1">
-                    <div className="w-4 border-t-2 border-dashed border-gray-900" />
-                    <span className="text-xs text-gray-800 font-medium">Consensus</span>
-                  </div>
-                </div>
-              </div>
-            </>
-          ) : (
-            <div className="bg-gray-50 rounded-lg p-6 text-center">
-              <div className="text-gray-400 text-sm mb-2">📊 Detailed EPS revision data coming soon</div>
-              <div className="text-xs text-gray-400">Check back for multi-source analyst estimates</div>
-            </div>
-          )}
-
-          <div className="flex items-center justify-between text-xs text-gray-400 pt-2 mt-2 border-t border-gray-100">
-            <span>Sources: MarketScreener, Stockopedia, Investing.com, Yahoo Finance</span>
-            <span>Updated: January 11, 2026</span>
-          </div>
-        </div>
-
         {/* Narrative */}
         <div className="bg-white border border-gray-300 rounded-xl p-4">
           <div className="flex items-center justify-between mb-3">
@@ -801,6 +732,75 @@ export default function CompanyPage() {
           </div>
           <div className="mt-2 text-xs text-gray-400 italic text-center">
             Source: {company.analystRatings?.source || 'Bloomberg, Refinitiv'}
+          </div>
+        </div>
+
+        {/* EPS Revisions - Moved to bottom */}
+        <div className="bg-white border border-gray-300 rounded-xl p-4">
+          <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center gap-2">
+              <h2 className="text-base font-semibold">Analyst EPS Revisions</h2>
+              <span className="text-xs text-gray-400 bg-gray-100 px-2 py-0.5 rounded">AI-Estimated</span>
+            </div>
+            <div className="flex gap-1.5">
+              {['FY2025', 'FY2026', 'FY2027'].map(period => (
+                <button key={period} onClick={() => setSelectedPeriod(period)}
+                  className={`px-3 py-1.5 rounded-lg text-sm font-semibold transition-all ${
+                    selectedPeriod === period ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                  }`}>
+                  {period}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {hasEpsData ? (
+            <>
+              <div className={`p-3 rounded-lg mb-3 ${getTrendLabel(epsInfo.trend).bg}`}>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="text-xs text-gray-500 mb-0.5">Consensus Average (4 sources)</div>
+                    <div className="text-xl font-bold text-gray-900">{formatEps(epsInfo.avg)}</div>
+                  </div>
+                  <div className="text-right">
+                    <div className={`text-base font-bold ${getTrendLabel(epsInfo.trend).color}`}>
+                      {epsInfo.trend > 0 ? '+' : ''}{epsInfo.trend.toFixed(1)}%
+                    </div>
+                    <div className="text-xs text-gray-500">vs 3 months ago</div>
+                  </div>
+                  <span className={`px-2.5 py-1 rounded-full text-xs font-semibold ${getTrendLabel(epsInfo.trend).bg} ${getTrendLabel(epsInfo.trend).color}`}>
+                    {epsInfo.trend < -5 ? '↓' : epsInfo.trend > 5 ? '↑' : '→'} {getTrendLabel(epsInfo.trend).text}
+                  </span>
+                </div>
+              </div>
+
+              <div className="bg-gray-50 rounded-lg p-3 mb-3">
+                <div className="text-xs text-gray-500 mb-1 font-medium">{selectedPeriod} - EPS Estimate Trend (3M)</div>
+                <MultiLineChart sources={sources} />
+                <div className="flex flex-wrap gap-3 mt-2 pt-2 border-t border-gray-200">
+                  {Object.values(sources).map((source, i) => (
+                    <div key={i} className="flex items-center gap-1">
+                      <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: source.color }} />
+                      <span className="text-xs text-gray-600">{source.name}</span>
+                    </div>
+                  ))}
+                  <div className="flex items-center gap-1">
+                    <div className="w-4 border-t-2 border-dashed border-gray-900" />
+                    <span className="text-xs text-gray-800 font-medium">Consensus</span>
+                  </div>
+                </div>
+              </div>
+            </>
+          ) : (
+            <div className="bg-gray-50 rounded-lg p-6 text-center">
+              <div className="text-gray-400 text-sm mb-2">📊 Detailed EPS revision data coming soon</div>
+              <div className="text-xs text-gray-400">Check back for multi-source analyst estimates</div>
+            </div>
+          )}
+
+          <div className="flex items-center justify-between text-xs text-gray-400 pt-2 mt-2 border-t border-gray-100">
+            <span>Sources: MarketScreener, Stockopedia, Investing.com, Yahoo Finance</span>
+            <span>Updated: January 11, 2026</span>
           </div>
         </div>
       </div>
