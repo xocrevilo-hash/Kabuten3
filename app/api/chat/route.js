@@ -4,6 +4,12 @@ export async function POST(request) {
   try {
     const { messages } = await request.json();
 
+    // Check if API key exists
+    if (!process.env.ANTHROPIC_API_KEY) {
+      console.error('ANTHROPIC_API_KEY is not set');
+      return NextResponse.json({ error: 'API key not configured' }, { status: 500 });
+    }
+
     const systemPrompt = `You are Kabuten (株典), an AI assistant specializing in Japanese stock market research and analysis.
 
 Your expertise includes:
@@ -57,9 +63,12 @@ You can help users:
     });
 
     if (!response.ok) {
-      const error = await response.text();
-      console.error('Anthropic API error:', error);
-      return NextResponse.json({ error: 'Failed to get response from AI' }, { status: 500 });
+      const errorText = await response.text();
+      console.error('Anthropic API error:', response.status, errorText);
+      return NextResponse.json({ 
+        error: `API error: ${response.status}`,
+        details: errorText 
+      }, { status: 500 });
     }
 
     const data = await response.json();
@@ -67,7 +76,7 @@ You can help users:
 
     return NextResponse.json({ content });
   } catch (error) {
-    console.error('Chat API error:', error);
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+    console.error('Chat API error:', error.message);
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
