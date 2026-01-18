@@ -56,6 +56,13 @@ export default function KabutenHomepage() {
     { code: "005380.KS", name: "Hyundai Motor", nameJp: "現代自動車", type: "company", themes: ["Automotive", "EV & Batteries"] },
     // Japan - 1 new company
     { code: "3350", name: "Metaplanet", nameJp: "メタプラネット", type: "company", themes: ["Cryptocurrency & Blockchain", "Investment Holdings"] },
+    // China - 6 new companies (expanded)
+    { code: "002594.SZ", name: "BYD Company", nameJp: "比亜迪", type: "company", themes: ["EV & Batteries", "Automotive"] },
+    { code: "601012.SS", name: "LONGi Green Energy", nameJp: "隆基緑能", type: "company", themes: ["Renewable Energy", "Clean Tech"] },
+    { code: "002475.SZ", name: "Luxshare Precision", nameJp: "立訊精密", type: "company", themes: ["Electronics & Technology", "Consumer Electronics"] },
+    { code: "603501.SS", name: "Will Semiconductor", nameJp: "韋爾股份", type: "company", themes: ["AI & Semiconductors", "Electronics & Technology"] },
+    { code: "002371.SZ", name: "NAURA Technology", nameJp: "北方華創", type: "company", themes: ["AI & Semiconductors", "Electronics & Technology"] },
+    { code: "300274.SZ", name: "Sungrow Power", nameJp: "陽光電源", type: "company", themes: ["Renewable Energy", "Clean Tech"] },
   ];
 
   const allThemes = [
