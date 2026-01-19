@@ -105,9 +105,9 @@ export default function HeatmapPage() {
           </div>
         </div>
 
-        {/* Notable Today - Top Movers */}
+        {/* Standout Topics Today */}
         <div className="mb-4 bg-white border border-gray-200 rounded-xl p-4">
-          <div className="font-semibold text-gray-800 mb-3">🚀 Notable Today</div>
+          <div className="text-xs uppercase tracking-wide text-gray-500 font-medium mb-3">Standout Topics Today</div>
           <div className="space-y-2 text-sm">
             <div className="flex items-center gap-2">
               <span className="text-red-500">●</span>
