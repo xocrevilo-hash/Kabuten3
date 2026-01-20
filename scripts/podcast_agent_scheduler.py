@@ -37,7 +37,7 @@ logger = logging.getLogger(__name__)
 SCRIPT_DIR = Path(__file__).parent
 AGENT_SCRIPT = SCRIPT_DIR / "podcast_agent.py"
 LOG_FILE = SCRIPT_DIR / "podcast_agent.log"
-RUN_HOUR = 10  # 10:00 AM JST
+RUN_HOUR = 6  # 6:00 AM JST (= 5:00 AM HKT)
 PODCASTS_TO_TRACK = [
     "20VC",
     "All-In",

@@ -1,6 +1,123 @@
 {
-  "lastUpdated": "2026-01-20T10:00:00+09:00",
+  "lastUpdated": "2026-01-20T19:31:17.916664",
   "runs": [
+    {
+      "timestamp": "2026-01-20T19:31:17.916649",
+      "podcast": "Dwarkesh Podcast",
+      "episode": "Episode Date: December 30, 2025",
+      "episodeNum": 0,
+      "ideasGenerated": 4,
+      "status": "success",
+      "duration": "65s"
+    },
+    {
+      "timestamp": "2026-01-20T19:21:58.727279",
+      "podcast": "The a16z Podcast",
+      "episode": "Marc Andreessen's 2026 Outlook: AI Timelines, US vs. China, and The Price of AI",
+      "episodeNum": 0,
+      "ideasGenerated": 4,
+      "status": "success",
+      "duration": "31s"
+    },
+    {
+      "timestamp": "2026-01-20T19:21:27.073334",
+      "podcast": "BG2 Pod",
+      "episode": "AI Enterprise - Databricks & Glean | BG2 Guest Interview",
+      "episodeNum": 0,
+      "ideasGenerated": 1,
+      "status": "success",
+      "duration": "28s"
+    },
+    {
+      "timestamp": "2026-01-20T19:20:58.453705",
+      "podcast": "No Priors",
+      "episode": "No Priors: Artificial Intelligence | Technology | Startups",
+      "episodeNum": 0,
+      "ideasGenerated": 4,
+      "status": "success",
+      "duration": "31s"
+    },
+    {
+      "timestamp": "2026-01-20T19:20:26.506548",
+      "podcast": "Hard Fork",
+      "episode": "Jonathan Haidt Strikes Again + What You Vibecoded + An Update on the Forkiverse",
+      "episodeNum": 0,
+      "ideasGenerated": 4,
+      "status": "success",
+      "duration": "32s"
+    },
+    {
+      "timestamp": "2026-01-20T19:19:25.112513",
+      "podcast": "ChinaTalk",
+      "episode": "Party Time! Jon Czin on US-China in 2025 and 2026",
+      "episodeNum": 0,
+      "ideasGenerated": 1,
+      "status": "success",
+      "duration": "27s"
+    },
+    {
+      "timestamp": "2026-01-20T19:18:57.704835",
+      "podcast": "All-In Podcast",
+      "episode": "Iran's Breaking Point, Trump's Greenland Acquisition, and Solving Energy Costs",
+      "episodeNum": 0,
+      "ideasGenerated": 4,
+      "status": "success",
+      "duration": "34s"
+    },
+    {
+      "timestamp": "2026-01-20T19:18:23.066095",
+      "podcast": "20VC",
+      "episode": "The Twenty Minute VC (20VC): Venture Capital | Startup Funding | The Pitch",
+      "episodeNum": 0,
+      "ideasGenerated": 4,
+      "status": "success",
+      "duration": "39s"
+    },
+    {
+      "timestamp": "2026-01-20T19:14:35.372920",
+      "podcast": "All-In Podcast",
+      "episode": "Iran's Breaking Point, Trump's Greenland Acquisition, and Solving Energy Costs",
+      "episodeNum": 0,
+      "ideasGenerated": 4,
+      "status": "success",
+      "duration": "34s"
+    },
+    {
+      "timestamp": "2026-01-20T19:14:00.434432",
+      "podcast": "20VC",
+      "episode": "20VC: How Model Performance is Plateauing | Two Key Rules for Effective Deal-Making | Company Building Lessons from Keith Rabois, Brian Halligan and Pat Grady | Why Enterprise AI Adoption is Years Off with Harvey CEO Winston Weinberg",
+      "episodeNum": 0,
+      "ideasGenerated": 4,
+      "status": "success",
+      "duration": "45s"
+    },
+    {
+      "timestamp": "2026-01-20T19:05:22.069433",
+      "podcast": "20VC",
+      "episode": "20VC: How Model Performance is Plateauing | Two Key Rules for Effective Deal-Making | Company Building Lessons from Keith Rabois, Brian Halligan and Pat Grady | Why Enterprise AI Adoption is Years Off with Harvey CEO Winston Weinberg",
+      "episodeNum": 0,
+      "ideasGenerated": 4,
+      "status": "success",
+      "duration": "43s"
+    },
+    {
+      "timestamp": "2026-01-20T19:00:20.544864",
+      "podcast": "20VC",
+      "episode": "The Twenty Minute VC (20VC): Venture Capital | Startup Funding | The Pitch",
+      "episodeNum": 0,
+      "ideasGenerated": 1,
+      "status": "success",
+      "duration": "74s"
+    },
+    {
+      "timestamp": "2026-01-20T18:58:40.621536",
+      "podcast": "20VC",
+      "episode": "The Twenty Minute VC (20VC): Venture Capital | Startup Funding | The Pitch",
+      "episodeNum": 0,
+      "ideasGenerated": 4,
+      "status": "success",
+      "duration": "74s"
+    },
     {
       "timestamp": "2026-01-17T10:15:32+09:00",
       "podcast": "20VC",

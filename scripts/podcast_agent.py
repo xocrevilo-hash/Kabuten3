@@ -116,9 +116,11 @@ PODCAST_CONFIGS = {
     ),
     "Dwarkesh": PodcastConfig(
         name="Dwarkesh Podcast",
-        series_id="2169846",
+        series_id="",
         color="from-orange-500 to-orange-400",
         emoji="🎤",
+        url="https://podscripts.co/podcasts/dwarkesh-podcast/",
+        source="podscripts",
         keywords=[
             "AI", "semiconductor", "chip", "TSMC", "ASML", "EUV",
             "manufacturing", "compute", "scaling", "model", "training",
@@ -238,8 +240,19 @@ class PodscribeBrowserAgent:
             raise ImportError("Playwright required. Install: pip install playwright && playwright install")
 
         self.playwright = sync_playwright().start()
-        self.browser = self.playwright.chromium.launch(headless=self.headless)
-        self.page = self.browser.new_page()
+        self.browser = self.playwright.chromium.launch(
+            headless=self.headless,
+            args=[
+                '--disable-blink-features=AutomationControlled',
+                '--no-sandbox',
+            ]
+        )
+        # Create a context that looks like a real browser
+        context = self.browser.new_context(
+            viewport={'width': 1920, 'height': 1080},
+            user_agent='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+        )
+        self.page = context.new_page()
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
@@ -270,20 +283,40 @@ class PodscribeBrowserAgent:
 
     def _get_latest_episode_podscribe(self, config: PodcastConfig) -> Optional[EpisodeInfo]:
         """Get latest episode from Podscribe."""
-        # Click Episodes tab if needed
-        episodes_tab = self.page.locator("text=Episodes")
-        if episodes_tab.is_visible():
-            episodes_tab.click()
-            self.page.wait_for_timeout(1000)
+        # Try using a full browser with JavaScript enabled
+        # Wait longer for the dynamic content to load
+        self.page.wait_for_timeout(5000)
 
-        # Get the first (latest) episode from the list
-        episode_rows = self.page.locator("table tbody tr, [class*='episode']").first
+        # Try to find the episode list by waiting for links
+        for attempt in range(3):
+            episode_links = self.page.locator("a[href*='/episode/']")
+            episode_count = episode_links.count()
+            logger.info(f"Attempt {attempt + 1}: Found {episode_count} episode links")
 
-        if not episode_rows:
-            logger.warning("No episodes found")
-            return None
+            if episode_count > 0:
+                break
 
-        # Extract episode info from the page
+            # Scroll and wait
+            self.page.evaluate("window.scrollBy(0, 1000)")
+            self.page.wait_for_timeout(2000)
+
+        if episode_count > 0:
+            # Click the first episode link
+            episode_links.first.click()
+            self.page.wait_for_timeout(3000)
+
+            # Store the episode URL for later
+            self._current_episode_url = self.page.url
+            logger.info(f"Navigated to episode: {self._current_episode_url}")
+
+            # Now we're on the episode page, extract info
+            page_text = self.page.evaluate("document.body.innerText")
+
+            return self._parse_episode_info(page_text, config)
+
+        # Alternative: Try using the RSS feed or API to get episode list
+        # Fallback: Get info from list page
+        logger.warning("No episode links found, using series page")
         page_text = self.page.evaluate("document.body.innerText")
         return self._parse_episode_info(page_text, config)
 
@@ -339,7 +372,7 @@ class PodscribeBrowserAgent:
         """Parse episode information from page text."""
         lines = page_text.split('\n')
 
-        # Look for episode title pattern (usually starts with "20VC:" or podcast name)
+        # Look for episode title
         title = None
         date = None
         duration = None
@@ -348,24 +381,55 @@ class PodscribeBrowserAgent:
         for i, line in enumerate(lines):
             line = line.strip()
 
-            # Find title (usually contains podcast prefix)
-            if config.name in line and ':' in line and len(line) > 20:
-                title = line
+            # Skip very short lines and navigation elements
+            if len(line) < 20 or line in ('Discover Shows', 'Publishers', 'Search', 'Log In', 'Sign Up'):
+                continue
 
-                # Try to extract episode number
-                num_match = re.search(r'E(\d+)', line) or re.search(r'#(\d+)', line)
+            # Find title - try multiple patterns
+            if not title:
+                # Pattern 1: Contains podcast name prefix (e.g., "20VC: ...")
+                if config.name in line and ':' in line:
+                    title = line
+                # Pattern 2: Look for "Published:" marker - title is often just before
+                elif 'Published:' in page_text:
+                    # Get lines before "Published:"
+                    pub_idx = page_text.find('Published:')
+                    pre_text = page_text[:pub_idx]
+                    pre_lines = [l.strip() for l in pre_text.split('\n') if len(l.strip()) > 30]
+                    if pre_lines:
+                        # Title is usually one of the last substantial lines before Published
+                        for candidate in reversed(pre_lines[-5:]):
+                            if len(candidate) > 30 and not candidate.startswith(('Discover', 'Search', 'Log')):
+                                title = candidate
+                                break
+
+            # Try to extract episode number from title or nearby
+            if title and not episode_num:
+                num_match = re.search(r'[Ee](\d+)|#(\d+)|Episode\s+(\d+)', title)
                 if num_match:
-                    episode_num = int(num_match.group(1))
+                    episode_num = int(num_match.group(1) or num_match.group(2) or num_match.group(3))
 
-            # Find date (format: 1/19 or Jan 19, 2026)
-            date_match = re.search(r'(\d{1,2}/\d{1,2}(?:/\d{2,4})?)', line)
+            # Find date (format: 1/19 or Jan 19, 2026 or Published: 1/19/2026)
+            date_match = re.search(r'Published:\s*(\d{1,2}/\d{1,2}/\d{2,4})', line)
             if date_match and not date:
                 date = date_match.group(1)
+            elif not date:
+                date_match = re.search(r'(\d{1,2}/\d{1,2}(?:/\d{2,4})?)', line)
+                if date_match:
+                    date = date_match.group(1)
 
             # Find duration (format: 1h 14m or 46m)
             duration_match = re.search(r'(\d+h\s*\d+m|\d+m)', line)
             if duration_match and not duration:
                 duration = duration_match.group(1)
+
+        if not title:
+            # Last resort: use page title or first long line
+            for line in lines:
+                line = line.strip()
+                if len(line) > 40 and not line.startswith(('Discover', 'Search', 'Publishers', 'Log')):
+                    title = line
+                    break
 
         if not title:
             return None
@@ -400,23 +464,34 @@ class PodscribeBrowserAgent:
         logger.info(f"Extracting transcript from {episode_url}...")
 
         try:
-            self.page.goto(episode_url, wait_until="networkidle", timeout=30000)
-            self.page.wait_for_timeout(3000)
+            # Check if we're already on an episode page
+            if '/episode/' not in self.page.url:
+                self.page.goto(episode_url, wait_until="networkidle", timeout=30000)
+                self.page.wait_for_timeout(3000)
 
-            # Click TRANSCRIPT tab
-            transcript_tab = self.page.locator("text=TRANSCRIPT")
-            if transcript_tab.is_visible():
-                transcript_tab.click()
+            # Click TRANSCRIPT tab (use role-based selector for precision)
+            transcript_tab = self.page.locator("[role='tab']:has-text('Transcript')")
+            if transcript_tab.count() > 0 and transcript_tab.first.is_visible():
+                transcript_tab.first.click()
                 self.page.wait_for_timeout(2000)
 
-            # Clear any search filters
-            search_input = self.page.locator("input[type='search']")
-            if search_input.is_visible():
-                search_input.fill("")
+            # Scroll down to load more transcript content
+            for _ in range(5):
+                self.page.evaluate("window.scrollBy(0, 1000)")
                 self.page.wait_for_timeout(500)
 
-            # Extract transcript text
-            transcript = self.page.evaluate("document.body.innerText")
+            # Scroll back to top
+            self.page.evaluate("window.scrollTo(0, 0)")
+            self.page.wait_for_timeout(500)
+
+            # Extract transcript text from the main content area
+            transcript = self.page.evaluate("""
+                () => {
+                    // Try to find transcript-specific content
+                    const mainContent = document.querySelector('main') || document.body;
+                    return mainContent.innerText;
+                }
+            """)
 
             logger.info(f"Extracted transcript: {len(transcript)} characters")
             return transcript
@@ -615,14 +690,15 @@ class KabutenPageUpdater:
         content = self.page_path.read_text()
 
         # Generate the new podcast entry JSX
-        ideas_jsx = ",\n        ".join([
-            f'''{{
+        ideas_list = []
+        for idea in summary.ideas:
+            escaped_detail = idea.detail.replace('"', '\\"')
+            ideas_list.append(f'''{{
           summary: "{idea.summary}",
-          detail: "{idea.detail.replace('"', '\\"')}",
+          detail: "{escaped_detail}",
           timestamp: "{idea.timestamp}"
-        }}'''
-            for idea in summary.ideas
-        ])
+        }}''')
+        ideas_jsx = ",\n        ".join(ideas_list)
 
         new_entry = f'''{{
       name: "{summary.name}",
@@ -799,20 +875,22 @@ export default function PodcastsPage() {{
 
     def _summary_to_jsx(self, summary: PodcastSummary) -> str:
         """Convert a PodcastSummary to JSX object notation."""
-        ideas_jsx = ",\n        ".join([
-            f'''{{
+        ideas_list = []
+        for idea in summary.ideas:
+            escaped_detail = idea.detail.replace('"', '\\"').replace('\n', ' ')
+            ideas_list.append(f'''{{
           summary: "{idea.summary}",
-          detail: "{idea.detail.replace('"', '\\"').replace('\n', ' ')}",
+          detail: "{escaped_detail}",
           timestamp: "{idea.timestamp}"
-        }}'''
-            for idea in summary.ideas
-        ])
+        }}''')
+        ideas_jsx = ",\n        ".join(ideas_list)
 
+        escaped_episode = summary.episode.replace('"', '\\"')
         return f'''{{
       name: "{summary.name}",
       color: "{summary.color}",
       emoji: "{summary.emoji}",
-      episode: "{summary.episode.replace('"', '\\"')}",
+      episode: "{escaped_episode}",
       episodeNum: {summary.episode_num or 0},
       date: "{summary.date}",
       url: "{summary.url}",
@@ -942,8 +1020,10 @@ class PodcastIntelligenceAgent:
                     logger.info(f"Found episode: {episode.title}")
 
                     # Step 2: Get episode transcript
-                    # First navigate to the episode page
-                    episode_url = browser.find_episode_url(config, episode.title)
+                    # Use the stored URL if we already navigated there, otherwise find it
+                    episode_url = getattr(browser, '_current_episode_url', None)
+                    if not episode_url:
+                        episode_url = browser.find_episode_url(config, episode.title)
                     if not episode_url:
                         episode_url = config.url
 

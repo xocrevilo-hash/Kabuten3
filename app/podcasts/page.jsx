@@ -4,31 +4,67 @@ import React from 'react';
 import Link from 'next/link';
 
 export default function PodcastsPage() {
-  // Podcast data - will be updated by scraper
+  // Podcast data - updated by podcast_agent.py
   const podcasts = [
     {
-      name: "Hard Fork",
-      color: "from-pink-600 to-pink-500",
-      emoji: "🍴",
-      episode: "AI Agents Are Here. Now What?",
-      episodeNum: 158,
-      date: "Jan 16, 2026",
-      url: "https://podscripts.co/podcasts/hard-fork",
+      name: "Dwarkesh Podcast",
+      color: "from-orange-500 to-orange-400",
+      emoji: "🎤",
+      episode: "Adam Marblestone – AI is missing something fundamental about the brain",
+      episodeNum: 0,
+      date: "Dec 30, 2025",
+      url: "https://podscripts.co/podcasts/dwarkesh-podcast/adam-marblestone-ai-is-missing-something-fundamental-about-the-brain",
       ideas: [
         {
-          summary: "AI agent infrastructure demands",
-          detail: "Kevin Roose argued that AI agents performing tasks autonomously will require \"10x more inference compute than chatbots\" because agents make multiple API calls per task. This is bullish for inference-optimized chips and edge AI hardware.",
-          timestamp: "18:40"
+          summary: "AI Scaling Era Transitioning to Research Focus",
+          detail: "According to Ilya Sutskever's episode, the AI industry is moving from the age of scaling to the age of research, suggesting that simply increasing model size and compute may no longer be the primary path forward. This shift implies that breakthroughs will increasingly come from algorithmic improvements and novel research approaches rather than brute-force scaling.",
+          timestamp: "N/A"
         },
         {
-          summary: "Microsoft Copilot agent rollout",
-          detail: "Microsoft is deploying Copilot agents across enterprise customers, with early data showing 40% of compute now going to agent workloads vs 60% for chat. Casey Newton noted this shift could reshape datacenter GPU allocation.",
-          timestamp: "25:15"
+          summary: "Microsoft Reveals New Fairwater 2 Data Infrastructure",
+          detail: "Microsoft's Satya Nadella provided an exclusive first-look at their brand-new Fairwater 2 data center infrastructure as part of their AGI preparation strategy. This suggests Microsoft is making significant hardware investments to support advanced AI workloads and maintain competitive positioning in the AGI race.",
+          timestamp: "N/A"
         },
         {
-          summary: "Anthropic's computer use capability",
-          detail: "Discussion of how Claude's computer use feature enables agent behaviors that were previously impossible. The hosts debated whether this creates a moat for Anthropic or if OpenAI and Google will quickly match the capability.",
-          timestamp: "42:30"
+          summary: "Autonomous Robotics Breakthrough Timeline Accelerating",
+          detail: "Sergey Levine from Physical Intelligence believes fully autonomous robots are much closer than expected, potentially indicating a 'self-improvement flywheel' in robotics development. This suggests significant investment opportunities in robotics companies and supply chains as physical AI applications approach commercial viability.",
+          timestamp: "N/A"
+        },
+        {
+          summary: "AI Energy Demands Creating Massive Infrastructure Needs",
+          detail: "Casey Handmer's episode highlights the challenge of feeding hundreds of gigawatts of extra energy demand that AI will create over the coming decade. This massive energy requirement will likely drive significant investments in power generation, grid infrastructure, and energy-efficient computing solutions.",
+          timestamp: "N/A"
+        }
+      ]
+    },
+    {
+      name: "20VC",
+      color: "from-purple-600 to-purple-500",
+      emoji: "🎙️",
+      episode: "20VC: How Model Performance is Plateauing | Two Key Rules for Effective Deal-Making | Company Building Lessons from Keith Rabois, Brian Halligan and Pat Grady | Why Enterprise AI Adoption is Years Off with Harvey CEO Winston Weinberg",
+      episodeNum: 0,
+      date: "Jan 19, 2026",
+      url: "https://app.podscribe.com/episode/148512142?transcriptVersionReqId=704c7fa2-f889-4a23-862c-f46c42bca3bf",
+      ideas: [
+        {
+          summary: "Legal AI Market Experiencing Explosive Growth",
+          detail: "Harvey CEO discusses the rapid expansion of the legal AI space, with the company reaching $190M ARR. The CEO emphasizes that the entire AI market is exploding, not just legal AI, indicating massive opportunities across sectors.",
+          timestamp: "10:49"
+        },
+        {
+          summary: "Shadow AI Creates Enterprise Security Risks",
+          detail: "Companies face significant compliance and security blind spots as employees use public AI tools like ChatGPT and Gemini with sensitive company data. This creates a critical need for AI governance platforms that provide visibility and control over enterprise AI usage.",
+          timestamp: "02:05"
+        },
+        {
+          summary: "Enterprise AI Adoption Still Years Away",
+          detail: "Despite rapid growth in AI capabilities, the podcast title suggests that widespread enterprise AI adoption remains years off. This indicates a significant gap between AI development and practical enterprise implementation.",
+          timestamp: "00:32"
+        },
+        {
+          summary: "AI Model Performance Showing Signs of Plateauing",
+          detail: "The podcast title highlights concerns about model performance plateauing, suggesting that the rapid improvements in AI capabilities may be slowing. This has major implications for AI investment strategies and expectations for future breakthroughs.",
+          timestamp: "00:00"
         }
       ]
     },
@@ -36,25 +72,77 @@ export default function PodcastsPage() {
       name: "All-In Podcast",
       color: "from-yellow-500 to-yellow-400",
       emoji: "🎯",
-      episode: "All-In's 2026 Predictions",
-      episodeNum: 257,
-      date: "Jan 10, 2026",
+      episode: "Iran's Breaking Point, Trump's Greenland Acquisition, and Solving Energy Costs",
+      episodeNum: 0,
+      date: "Jan 17, 2026",
       url: "https://podscripts.co/podcasts/all-in-with-chamath-jason-sacks-friedberg",
       ideas: [
         {
-          summary: "NVIDIA margin compression prediction",
-          detail: "Jason Calacanis predicted NVIDIA's gross margins will compress from 75% to 55% by end of 2026 as AMD and custom silicon (Google TPU, Amazon Trainium) gain meaningful share in inference workloads. Chamath disagreed, citing CUDA moat.",
-          timestamp: "31:18"
+          summary: "Harvey AI Shows Legal AI Rapid Growth",
+          detail: "Harvey, a legal AI company, has emerged as a front-runner in the legal AI space with impressive growth trajectory, reaching $190M ARR. This demonstrates the significant market opportunity for vertical-specific AI applications in professional services sectors.",
+          timestamp: "00:32"
         },
         {
-          summary: "Cerebras IPO and inference silicon renaissance",
-          detail: "Friedberg highlighted the OpenAI-Cerebras partnership as validation that \"decode silicon\" optimized for inference is becoming critical. Predicted 3-4 inference chip companies will go public in 2026.",
-          timestamp: "38:45"
+          summary: "Shadow AI Creates Enterprise Security Risks",
+          detail: "Employees are feeding sensitive company data into public AI tools like ChatGPT and Gemini, creating massive security and compliance blind spots. This presents both risks for enterprises and investment opportunities in AI governance solutions like Nexos AI.",
+          timestamp: "02:05"
         },
         {
-          summary: "China semiconductor self-sufficiency timeline",
-          detail: "Sacks argued China will achieve 28nm self-sufficiency by 2027 and 7nm by 2030 despite export controls. \"The restrictions accelerated their timeline, not delayed it.\" Cited SMIC's progress with DUV multi-patterning.",
-          timestamp: "52:20"
+          summary: "AI Security Platforms Enable Safe Enterprise Adoption",
+          detail: "Companies need unified platforms that provide visibility and control over AI usage while implementing guardrails to protect sensitive data. This represents a growing market for AI governance and security solutions as enterprises seek to enable productivity without blocking innovation.",
+          timestamp: "02:05"
+        },
+        {
+          summary: "Product-Market Fit Cycles in AI Companies",
+          detail: "AI companies experience recurring cycles of product-market fit as they evolve from initial PMF to company-market fit and back to reinventing PMF. This suggests AI startups must continuously adapt their product strategy as the technology and market mature, creating ongoing investment evaluation challenges.",
+          timestamp: "10:13"
+        }
+      ]
+    },
+    {
+      name: "Hard Fork",
+      color: "from-pink-600 to-pink-500",
+      emoji: "🍴",
+      episode: "Jonathan Haidt Strikes Again + What You Vibecoded + An Update on the Forkiverse",
+      episodeNum: 0,
+      date: "Jan 16, 2026",
+      url: "https://app.podscribe.com/episode/148429306?transcriptVersionReqId=9aeea88b-c216-44be-b3eb-f2f64a4574f5",
+      ideas: [
+        {
+          summary: "Grok AI Restricts Image Generation for Free Users",
+          detail: "Grok has rolled back its image generation feature, now requiring paid subscriptions for AI-powered image creation capabilities. This represents a broader trend of AI companies monetizing advanced features and moving away from freemium models as compute costs remain high.",
+          timestamp: "02:58"
+        },
+        {
+          summary: "Meta's Internal Research Reveals Platform Harm Evidence",
+          detail: "Leaked Meta internal studies through attorney general lawsuits show extensive evidence of social media platforms causing harm to users, particularly teens. This creates significant legal and regulatory risks for major tech platforms and could impact their valuations and operational costs.",
+          timestamp: "07:11"
+        },
+        {
+          summary: "Government Action Against Big Tech Platforms Accelerating",
+          detail: "High-level government officials like French President Macron are taking direct action on tech regulation after reviewing platform harm data. This suggests increased regulatory pressure and potential policy changes that could significantly impact major tech companies' business models and growth prospects.",
+          timestamp: "16:18"
+        },
+        {
+          summary: "Legal Liability Wave Targeting Social Media Companies",
+          detail: "Plaintiff's lawyers are actively building cases against social media platforms using internal research and harm evidence. This creates substantial financial risk for tech giants through potential class-action settlements and damages, which could materially impact their market valuations.",
+          timestamp: "16:54"
+        }
+      ]
+    },
+    {
+      name: "ChinaTalk",
+      color: "from-red-600 to-red-500",
+      emoji: "🇨🇳",
+      episode: "Party Time! Jon Czin on US-China in 2025 and 2026",
+      episodeNum: 0,
+      date: "Jan 19, 2026",
+      url: "https://app.podscribe.com/episode/148544099",
+      ideas: [
+        {
+          summary: "Transcript Content Not Available",
+          detail: "The podcast transcript for 'Party Time! Jon Czin on US-China in 2025 and 2026' is behind a paywall and requires payment to access. Without the actual transcript content, no specific insights about AI, semiconductors, technology, or investing can be extracted.",
+          timestamp: "00:00"
         }
       ]
     },
@@ -62,75 +150,80 @@ export default function PodcastsPage() {
       name: "No Priors",
       color: "from-emerald-600 to-emerald-500",
       emoji: "🧠",
-      episode: "Ilya Sutskever on What Comes After LLMs",
-      episodeNum: 102,
-      date: "Jan 9, 2026",
-      url: "https://podscripts.co/podcasts/no-priors",
+      episode: "No Priors: Artificial Intelligence | Technology | Startups",
+      episodeNum: 0,
+      date: "Jan 15, 2026",
+      url: "https://app.podscribe.com/episode/148396655",
       ideas: [
         {
-          summary: "Scaling laws plateau confirmed",
-          detail: "Ilya Sutskever confirmed that pure parameter scaling is hitting diminishing returns. \"The next 10x in capability won't come from 10x more compute. It will come from architectural innovations and synthetic data.\"",
-          timestamp: "15:22"
+          summary: "Transcript Not Available for Analysis",
+          detail: "The provided podcast transcript is not accessible as it shows a paywall message requiring $5 to generate the transcript. Without access to the actual conversation content, no specific insights about AI, semiconductors, technology, or investing can be extracted from this episode.",
+          timestamp: "N/A"
         },
         {
-          summary: "HBM4 as the new bottleneck",
-          detail: "Discussion revealed HBM4 supply constraints are now the primary limiter for frontier AI training, not GPU availability. SK Hynix is \"essentially sold out through 2027\" with TSMC's CoWoS packaging also at capacity.",
-          timestamp: "28:45"
+          summary: "Military AI Applications Topic Indicated",
+          detail: "The episode title suggests discussion of AI's role in future warfare scenarios with a high-ranking defense official. This would likely cover topics such as autonomous weapons systems, AI-powered defense technologies, and the intersection of national security with commercial AI development.",
+          timestamp: "N/A"
         },
         {
-          summary: "Test-time compute as the new scaling law",
-          detail: "Sarah Guo and Sutskever discussed how test-time compute (thinking longer at inference) is becoming the new scaling frontier. This favors different chip architectures than training - more memory bandwidth, less raw FLOPS.",
-          timestamp: "45:10"
+          summary: "Defense Sector Investment Implications Likely",
+          detail: "Given the guest's position as Under Secretary of War, the conversation would presumably touch on defense spending priorities, military procurement of AI technologies, and potential investment opportunities in defense tech companies.",
+          timestamp: "N/A"
+        },
+        {
+          summary: "No Extractable Technical Insights Available",
+          detail: "Without access to the transcript content, no specific insights about semiconductor developments, AI model performance, enterprise adoption trends, or detailed technology predictions can be provided.",
+          timestamp: "N/A"
         }
       ]
     },
     {
-      name: "Big Technology Podcast",
+      name: "BG2 Pod",
       color: "from-blue-600 to-blue-500",
-      emoji: "📱",
-      episode: "Inside Microsoft's $80B AI Bet",
-      episodeNum: 192,
-      date: "Jan 7, 2026",
-      url: "https://podscripts.co/podcasts/big-technology-podcast",
+      emoji: "💼",
+      episode: "AI Enterprise - Databricks & Glean | BG2 Guest Interview",
+      episodeNum: 0,
+      date: "Dec 23, 2025",
+      url: "https://app.podscribe.com/episode/147927460",
       ideas: [
         {
-          summary: "Microsoft AI infrastructure spend breakdown",
-          detail: "Alex Kantrowitz revealed Microsoft is spending $80B annually on AI infrastructure in 2026, up from $50B in 2025. Breakdown: 55% NVIDIA GPUs, 25% AMD MI300X, 20% internal Maia chips. \"The Maia percentage will double by 2027.\"",
-          timestamp: "12:30"
-        },
-        {
-          summary: "OpenAI custom chip ambitions",
-          detail: "Sources told Kantrowitz that OpenAI is in advanced talks with TSMC for dedicated 3nm capacity, potentially spending $8-10B on custom AI chips by 2027. \"They want to reduce NVIDIA dependency below 50%.\"",
-          timestamp: "24:15"
+          summary: "Transcript Content Not Available for Analysis",
+          detail: "The provided transcript excerpt indicates the content is not yet available and requires payment to generate. Without access to the actual discussion content, no insights about AI enterprise adoption, semiconductor developments, or investment implications can be extracted from this source.",
+          timestamp: "N/A"
         }
       ]
     },
     {
-      name: "Dwarkesh Podcast",
-      color: "from-orange-500 to-orange-400",
-      emoji: "🎤",
-      episode: "Former TSMC Exec on the Chip Wars",
-      episodeNum: 78,
-      date: "Jan 3, 2026",
-      url: "https://podscripts.co/podcasts/dwarkesh-podcast",
+      name: "The a16z Podcast",
+      color: "from-gray-700 to-gray-600",
+      emoji: "🅰️",
+      episode: "Marc Andreessen's 2026 Outlook: AI Timelines, US vs. China, and The Price of AI",
+      episodeNum: 0,
+      date: "Jan 20, 2026",
+      url: "https://app.podscribe.com/episode/148109647",
       ideas: [
         {
-          summary: "TSMC Arizona reality check",
-          detail: "Former TSMC VP explained why the Arizona fab will never match Taiwan efficiency: \"The ecosystem density in Hsinchu took 40 years to build. When a tool breaks at 2am, there are 50 vendors within 30 minutes. In Arizona, you wait for a flight from Taiwan.\"",
-          timestamp: "34:22"
+          summary: "Transcript Not Available for Analysis",
+          detail: "The provided transcript excerpt shows that the actual content is not accessible and requires payment to generate. Without access to Marc Andreessen's actual statements and insights, no meaningful analysis of AI, semiconductor, or investment topics can be performed.",
+          timestamp: "N/A"
         },
         {
-          summary: "ASML's true competitive moat",
-          detail: "Fascinating detail that ASML's moat isn't the machines themselves but the 5,000+ field engineers who install and maintain them. \"You can't just buy an EUV machine. You need an ASML team living at your fab for years.\"",
-          timestamp: "51:45"
+          summary: "Premium Content Access Model",
+          detail: "The podcast transcript is behind a paywall requiring $6.80 to generate, indicating a monetization strategy for premium AI and technology content. This suggests high-value insights that warrant paid access in the current media landscape.",
+          timestamp: "N/A"
         },
         {
-          summary: "China's 7nm ceiling explained",
-          detail: "Deep technical dive into why SMIC is stuck at 7nm without EUV: \"They can do it with DUV multi-patterning, but yields are 30% vs TSMC's 90%, and costs are 3x. It's a strategic capability, not commercial viability.\"",
-          timestamp: "1:08:30"
+          summary: "High-Profile AI Discussion Format",
+          detail: "The 1 hour 21 minute podcast format covering AI timelines, US-China competition, and AI pricing indicates comprehensive coverage of critical technology topics. The length suggests in-depth analysis rather than surface-level commentary.",
+          timestamp: "N/A"
+        },
+        {
+          summary: "Unable to Extract Technical Insights",
+          detail: "No specific information about AI developments, semiconductor trends, NVIDIA/AMD/TSMC insights, or investment implications can be extracted from the provided material. The actual transcript content would be required to provide meaningful analysis of Andreessen's 2026 technology outlook.",
+          timestamp: "N/A"
         }
       ]
-    }
+    },
   ];
 
   const totalIdeas = podcasts.reduce((sum, p) => sum + p.ideas.length, 0);
@@ -149,22 +242,22 @@ export default function PodcastsPage() {
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <span className="text-gray-400 text-xs">Updated every 2 days • Last: Jan 18, 2026 10:00 JST</span>
+          <span className="text-gray-400 text-xs">Updated daily at 05:00 HKT • Last: Jan 20, 2026 19:31 JST</span>
         </div>
       </header>
 
       <div className="max-w-3xl mx-auto p-4">
-        
+
         {/* Summary Stats */}
         <div className="bg-white border border-gray-300 rounded-xl p-4 mb-4">
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-lg font-semibold">🎙️ AI & Semiconductor Podcast Intelligence</h1>
-              <p className="text-gray-500 text-xs mt-1">Key insights extracted from 5 tech podcasts • Transcripts via PodScripts.co</p>
+              <p className="text-gray-500 text-xs mt-1">Key insights extracted from {podcasts.length} tech podcasts • Transcripts via Podscribe</p>
             </div>
             <div className="flex gap-6 text-center">
               <div>
-                <div className="text-2xl font-bold text-gray-800">5</div>
+                <div className="text-2xl font-bold text-gray-800">{podcasts.length}</div>
                 <div className="text-xs text-gray-400">Podcasts</div>
               </div>
               <div>
@@ -185,24 +278,24 @@ export default function PodcastsPage() {
                   <span className="text-2xl">{podcast.emoji}</span>
                   <div>
                     <span className="text-white font-semibold">{podcast.name}</span>
-                    <span className="text-white/70 text-xs ml-2">E{podcast.episodeNum} • {podcast.date}</span>
+                    <span className="text-white/70 text-xs ml-2">{podcast.date}</span>
                   </div>
                 </div>
-                <a 
-                  href={podcast.url} 
-                  target="_blank" 
+                <a
+                  href={podcast.url}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-white text-xs bg-white/20 px-2 py-1 rounded hover:bg-white/30"
                 >
                   View Transcript →
                 </a>
               </div>
-              
+
               {/* Episode Title */}
               <div className="px-4 py-3 border-b border-gray-100 bg-gray-50">
                 <span className="text-gray-700 font-medium">"{podcast.episode}"</span>
               </div>
-              
+
               {/* Ideas */}
               <div className="p-4 space-y-4">
                 {podcast.ideas.map((idea, index) => (
@@ -223,11 +316,11 @@ export default function PodcastsPage() {
 
         {/* Methodology Footer */}
         <div className="mt-4 p-3 bg-gray-50 rounded-xl text-xs text-gray-500">
-          <strong>Methodology:</strong> Transcripts sourced from PodScripts.co. Filtered for AI, semiconductor, chip, GPU, NVIDIA, TSMC, and related keywords. Updated every 2 days.
+          <strong>Methodology:</strong> Transcripts sourced from Podscribe. Filtered for AI, semiconductor, chip, GPU, NVIDIA, TSMC, and related keywords. Updated daily.
           <br />
-          <strong>Podcasts:</strong> All-In, Big Technology, No Priors, Dwarkesh Podcast, Hard Fork
+          <strong>Podcasts:</strong> 20VC, All-In, Hard Fork, ChinaTalk, No Priors, BG2 Pod, a16z, Dwarkesh
         </div>
-        
+
       </div>
     </div>
   );
