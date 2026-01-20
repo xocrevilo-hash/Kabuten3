@@ -1,0 +1,50 @@
+{
+  "lastUpdated": "2026-01-20T10:00:00+09:00",
+  "runs": [
+    {
+      "timestamp": "2026-01-17T10:15:32+09:00",
+      "podcast": "20VC",
+      "episode": "How Model Performance is Plateauing | Harvey CEO Winston Weinberg",
+      "episodeNum": 158,
+      "ideasGenerated": 4,
+      "status": "success",
+      "duration": "45s"
+    },
+    {
+      "timestamp": "2026-01-17T10:14:12+09:00",
+      "podcast": "Hard Fork",
+      "episode": "AI Agents Are Here. Now What?",
+      "episodeNum": 158,
+      "ideasGenerated": 3,
+      "status": "success",
+      "duration": "38s"
+    },
+    {
+      "timestamp": "2026-01-15T10:22:45+09:00",
+      "podcast": "All-In Podcast",
+      "episode": "All-In's 2026 Predictions",
+      "episodeNum": 257,
+      "ideasGenerated": 3,
+      "status": "success",
+      "duration": "52s"
+    },
+    {
+      "timestamp": "2026-01-14T10:08:19+09:00",
+      "podcast": "No Priors",
+      "episode": "Ilya Sutskever on What Comes After LLMs",
+      "episodeNum": 102,
+      "ideasGenerated": 3,
+      "status": "success",
+      "duration": "41s"
+    },
+    {
+      "timestamp": "2026-01-12T10:33:55+09:00",
+      "podcast": "Dwarkesh Podcast",
+      "episode": "Former TSMC Exec on the Chip Wars",
+      "episodeNum": 78,
+      "ideasGenerated": 3,
+      "status": "success",
+      "duration": "67s"
+    }
+  ]
+}

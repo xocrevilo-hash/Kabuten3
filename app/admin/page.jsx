@@ -8,6 +8,7 @@ export default function AdminDashboard() {
   const [error, setError] = useState('');
   const [updateLog, setUpdateLog] = useState([]);
   const [isUpdating, setIsUpdating] = useState({});
+  const [podcastAgentLog, setPodcastAgentLog] = useState([]);
 
   // Simple password check (in production, use proper auth)
   const ADMIN_PASSWORD = 'kabuten2026';
@@ -62,6 +63,22 @@ export default function AdminDashboard() {
       { time: '06:00', message: 'Key metrics batch complete: 60/60 companies', type: 'metrics' },
       { time: 'Jan 12', message: 'EPS revisions updated for 60 companies', type: 'eps' },
     ]);
+  }, []);
+
+  // Fetch podcast agent log
+  useEffect(() => {
+    const fetchPodcastLog = async () => {
+      try {
+        const response = await fetch('/data/podcast_agent_log.json');
+        if (response.ok) {
+          const data = await response.json();
+          setPodcastAgentLog(data.runs || []);
+        }
+      } catch (error) {
+        console.error('Failed to fetch podcast agent log:', error);
+      }
+    };
+    fetchPodcastLog();
   }, []);
 
   const handleLogin = (e) => {
@@ -448,6 +465,58 @@ export default function AdminDashboard() {
                 <div className="pt-2 mt-2 border-t border-amber-200 text-xs text-amber-600">
                   Best time: Saturday/Sunday morning (JST)
                 </div>
+              </div>
+            </div>
+
+            {/* Podcast Agent Log */}
+            <div className="bg-purple-50 border border-purple-200 rounded-xl p-5">
+              <h2 className="text-lg font-semibold mb-3 text-purple-800 flex items-center gap-2">
+                🎙️ Podcast Agent Log
+                <span className="text-xs bg-purple-200 text-purple-700 px-2 py-0.5 rounded-full font-normal">
+                  Last 5 runs
+                </span>
+              </h2>
+              <div className="space-y-3">
+                {podcastAgentLog.length === 0 ? (
+                  <div className="text-center py-4 text-gray-400 text-sm">
+                    No agent runs yet
+                  </div>
+                ) : (
+                  podcastAgentLog.slice(0, 5).map((run, index) => (
+                    <div key={index} className="bg-white rounded-lg p-3 border border-purple-100">
+                      <div className="flex items-start justify-between mb-1">
+                        <div className="flex items-center gap-2">
+                          <span className={`w-2 h-2 rounded-full ${run.status === 'success' ? 'bg-green-500' : 'bg-red-500'}`}></span>
+                          <span className="font-medium text-sm text-gray-800">{run.podcast}</span>
+                        </div>
+                        <span className="text-xs text-gray-400">
+                          {new Date(run.timestamp).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                        </span>
+                      </div>
+                      <p className="text-xs text-gray-600 mb-1 line-clamp-1" title={run.episode}>
+                        {run.episode}
+                      </p>
+                      <div className="flex items-center gap-3 text-xs text-gray-400">
+                        <span>E{run.episodeNum}</span>
+                        <span>•</span>
+                        <span>{run.ideasGenerated} ideas</span>
+                        <span>•</span>
+                        <span>{run.duration}</span>
+                      </div>
+                    </div>
+                  ))
+                )}
+              </div>
+              <div className="mt-3 pt-3 border-t border-purple-200 flex items-center justify-between">
+                <span className="text-xs text-purple-600">
+                  8 podcasts tracked • Daily at 10:00 JST
+                </span>
+                <a
+                  href="/podcasts"
+                  className="text-xs text-purple-700 hover:text-purple-900 font-medium"
+                >
+                  View Ideas →
+                </a>
               </div>
             </div>
           </div>
