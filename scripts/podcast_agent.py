@@ -30,6 +30,7 @@ import re
 import json
 import argparse
 import logging
+import subprocess
 from datetime import datetime, timedelta
 from dataclasses import dataclass, asdict
 from pathlib import Path
@@ -955,6 +956,67 @@ def update_agent_log(
         logger.error(f"Failed to update agent log: {e}")
 
 
+def git_commit_and_push() -> bool:
+    """
+    Commit and push changes to GitHub after updating the podcasts page.
+    Returns True if successful, False otherwise.
+    """
+    try:
+        # Get the repo root directory
+        repo_root = Path(__file__).parent.parent
+
+        # Check if there are changes to commit
+        status_result = subprocess.run(
+            ["git", "status", "--porcelain"],
+            cwd=repo_root,
+            capture_output=True,
+            text=True
+        )
+
+        if not status_result.stdout.strip():
+            logger.info("No changes to commit")
+            return True
+
+        # Add changes
+        subprocess.run(
+            ["git", "add", "app/podcasts/page.jsx", "public/data/podcast_agent_log.json"],
+            cwd=repo_root,
+            check=True
+        )
+
+        # Create commit message with timestamp
+        timestamp = datetime.now().strftime("%b %d, %Y %H:%M")
+        commit_msg = f"Podcast agent: auto-update {timestamp}"
+
+        subprocess.run(
+            ["git", "commit", "-m", commit_msg],
+            cwd=repo_root,
+            check=True
+        )
+
+        # Push to origin
+        push_result = subprocess.run(
+            ["git", "push", "origin", "HEAD"],
+            cwd=repo_root,
+            capture_output=True,
+            text=True
+        )
+
+        if push_result.returncode == 0:
+            logger.info("Successfully pushed changes to GitHub")
+            return True
+        else:
+            logger.error(f"Git push failed: {push_result.stderr}")
+            return False
+
+    except subprocess.CalledProcessError as e:
+        logger.error(f"Git operation failed: {e}")
+        return False
+    except Exception as e:
+        logger.error(f"Failed to commit and push: {e}")
+        return False
+
+
 class PodcastIntelligenceAgent:
     """
     Main agent that orchestrates the entire workflow.
@@ -1103,6 +1165,11 @@ class PodcastIntelligenceAgent:
                     logger.info(f"Updated {summary.name}")
                 else:
                     logger.error(f"Failed to update {summary.name}")
+
+            # Step 5: Commit and push to GitHub
+            if not self.dry_run:
+                logger.info("\n--- Pushing updates to GitHub ---")
+                git_commit_and_push()
 
         logger.info("\n" + "=" * 60)
         logger.info("Agent workflow complete")
