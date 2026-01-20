@@ -214,16 +214,33 @@ export default function PodcastsPage() {
       name: "The a16z Podcast",
       color: "from-gray-700 to-gray-600",
       emoji: "🅰️",
-      episode: "Marc Andreessen's 2026 Outlook: AI Timelines, US vs. China, and The Price of AI",
+      episode: "How Foundation Models Evolved: A PhD Journey Through AI's Breakthrough Era",
       episodeNum: 0,
-      date: "Jan 20, 2026",
-      url: "https://app.podscribe.com/episode/148109647",
+      date: "January 16, 2026",
+      url: "https://podscripts.co/podcasts/a16z-podcast/how-foundation-models-evolved-a-phd-journey-through-ais-breakthrough-era",
       ideas: [
         {
-          summary: "Transcript Not Available for Analysis",
-          detail: "The provided transcript excerpt shows that the actual content is not accessible and requires payment to generate. Without access to Marc Andreessen's actual statements and insights, no meaningful analysis of AI, semiconductor, or investment topics can be performed.",
-          timestamp: "N/A"
+          summary: "AI Scaling Paradigm Shift to Systems Approach",
+          detail: "The industry has moved away from the belief that simply scaling model parameters and pre-training data is sufficient for AI advancement. Instead, there's a focus on carefully constructed post-training pipelines, retrieval systems, and tool integration, indicating a more engineering-focused approach to AI development.",
+          timestamp: "00:51"
         },
+        {
+          summary: "Need for New AI Programming Abstraction Layer",
+          detail: "Natural language is too ambiguous and code too rigid for AI systems, requiring a new abstraction layer similar to the jump from assembly to C programming. This represents a critical infrastructure need that could determine whether AI becomes a programmable tool or remains an unpredictable oracle.",
+          timestamp: "02:15"
+        },
+        {
+          summary: "Intelligence as Foundation Technology Like Semiconductors",
+          detail: "AI intelligence is compared to chip manufacturing improvements and increasing transistor counts - it's a foundational capability that enables applications rather than replacing software development. This suggests continued investment opportunities in AI infrastructure and tooling rather than viewing AI as a replacement for human programming.",
+          timestamp: "14:07"
+        },
+        {
+          summary: "Artificial Programmable Intelligence Over AGI",
+          detail: "The focus should shift from pursuing Artificial General Intelligence (AGI) to developing Artificial Programmable Intelligence (API) that can reliably execute specific tasks as directed. This represents a more practical and commercially viable approach to AI development with clearer investment and product development pathways.",
+          timestamp: "09:34"
+        }
+      ]
+    },
         {
           summary: "Premium Content Access Model",
           detail: "The podcast transcript is behind a paywall requiring $6.80 to generate, indicating a monetization strategy for premium AI and technology content. This suggests high-value insights that warrant paid access in the current media landscape.",
@@ -259,7 +276,7 @@ export default function PodcastsPage() {
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <span className="text-gray-400 text-xs">Updated daily at 05:00 HKT • Last: Jan 20, 2026 19:56 JST</span>
+          <span className="text-gray-400 text-xs">Updated daily at 05:00 HKT • Last: Jan 20, 2026 19:57 JST</span>
         </div>
       </header>
 

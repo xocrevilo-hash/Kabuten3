@@ -1,6 +1,15 @@
 {
-  "lastUpdated": "2026-01-20T19:56:39.378469",
+  "lastUpdated": "2026-01-20T19:57:24.746532",
   "runs": [
+    {
+      "timestamp": "2026-01-20T19:57:24.746525",
+      "podcast": "The a16z Podcast",
+      "episode": "How Foundation Models Evolved: A PhD Journey Through AI's Breakthrough Era",
+      "episodeNum": 0,
+      "ideasGenerated": 4,
+      "status": "success",
+      "duration": "37s"
+    },
     {
       "timestamp": "2026-01-20T19:56:39.378453",
       "podcast": "No Priors",
