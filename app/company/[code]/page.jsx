@@ -4,6 +4,75 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import { companies } from '@/lib/companies';
 
+// Valuation and Earnings data for companies
+const companyValuationData = {
+  "8035": { // Tokyo Electron
+    forwardPE: {
+      current: 28.5,
+      fiveYearAvg: 26.8,
+      history: [
+        { date: "Jan 20", value: 22.8 },
+        { date: "Jul 20", value: 28.0 },
+        { date: "Jan 21", value: 33.5 },
+        { date: "Jul 21", value: 32.0 },
+        { date: "Jan 22", value: 20.5 },
+        { date: "Jul 22", value: 24.0 },
+        { date: "Jan 23", value: 33.0 },
+        { date: "Jul 23", value: 30.0 },
+        { date: "Jan 24", value: 28.0 },
+        { date: "Jul 24", value: 29.5 },
+        { date: "Jan 25", value: 28.5 }
+      ]
+    },
+    priceToBook: {
+      current: 6.2,
+      fiveYearAvg: 5.4,
+      history: [
+        { date: "Jan 20", value: 4.8 },
+        { date: "Jul 20", value: 5.5 },
+        { date: "Jan 21", value: 6.5 },
+        { date: "Jul 21", value: 6.2 },
+        { date: "Jan 22", value: 4.5 },
+        { date: "Jul 22", value: 5.0 },
+        { date: "Jan 23", value: 6.8 },
+        { date: "Jul 23", value: 6.0 },
+        { date: "Jan 24", value: 5.8 },
+        { date: "Jul 24", value: 6.4 },
+        { date: "Jan 25", value: 6.2 }
+      ]
+    },
+    earningsModel: [
+      { period: "FY23", revenue: 2090, revenueYoY: 28, opProfit: 582, opMargin: 27.8, eps: 2145, epsYoY: 32 },
+      { period: "FY24E", revenue: 2280, revenueYoY: 9, opProfit: 638, opMargin: 28.0, eps: 2380, epsYoY: 11 },
+      { period: "FY25E", revenue: 2520, revenueYoY: 11, opProfit: 731, opMargin: 29.0, eps: 2720, epsYoY: 14 },
+      { period: "FY26E", revenue: 2750, revenueYoY: 9, opProfit: 811, opMargin: 29.5, eps: 3010, epsYoY: 11 }
+    ],
+    scenarios: {
+      bull: [
+        "Leading beneficiary of AI semiconductor capex boom",
+        "Advanced packaging (CoWoS) demand accelerating",
+        "Japan subsidies support domestic fab expansion",
+        "Strong backlog visibility through FY26",
+        "Memory recovery adds to logic-driven growth"
+      ],
+      base: [
+        "Steady 10-12% revenue CAGR through FY27",
+        "Operating margins stable at 28-29% range",
+        "China business flat but not declining further",
+        "Valuation remains at slight premium to peers",
+        "Dividend payout ratio maintained at ~35%"
+      ],
+      bear: [
+        "China export restrictions limit TAM upside",
+        "Valuation premium vs. historical average",
+        "Cyclical risk if AI capex slows in 2026",
+        "Competition from Applied Materials, Lam",
+        "Yen appreciation risk to earnings translation"
+      ]
+    }
+  }
+};
+
 // EPS Data for 10 key companies - company code -> FY data
 const companyEpsData = {
   "4755": { // Rakuten - loss-making, improving
@@ -367,6 +436,103 @@ export default function CompanyPage() {
 
   const formatEps = (val) => `¥${val.toFixed(2)}`;
 
+  // Valuation line chart component (for P/E and P/B)
+  const ValuationChart = ({ data, average, color, suffix = '' }) => {
+    const values = data.map(d => d.value);
+    const minVal = Math.min(...values) * 0.85;
+    const maxVal = Math.max(...values) * 1.1;
+    const range = maxVal - minVal || 1;
+
+    const width = 320, height = 140;
+    const padding = { top: 15, right: 10, bottom: 25, left: 45 };
+    const chartWidth = width - padding.left - padding.right;
+    const chartHeight = height - padding.top - padding.bottom;
+
+    const getX = (i) => padding.left + (i / (data.length - 1)) * chartWidth;
+    const getY = (val) => padding.top + chartHeight - ((val - minVal) / range) * chartHeight;
+
+    // Generate smooth curve path
+    const generatePath = () => {
+      if (data.length < 2) return '';
+
+      let path = `M ${getX(0)} ${getY(data[0].value)}`;
+
+      for (let i = 0; i < data.length - 1; i++) {
+        const x0 = getX(i);
+        const y0 = getY(data[i].value);
+        const x1 = getX(i + 1);
+        const y1 = getY(data[i + 1].value);
+
+        const cpx1 = x0 + (x1 - x0) / 3;
+        const cpx2 = x0 + 2 * (x1 - x0) / 3;
+
+        path += ` C ${cpx1} ${y0}, ${cpx2} ${y1}, ${x1} ${y1}`;
+      }
+
+      return path;
+    };
+
+    // Y-axis labels (5 levels)
+    const yLabels = [0, 0.25, 0.5, 0.75, 1].map(pct => {
+      const val = maxVal - pct * range;
+      return { pct, val };
+    });
+
+    // X-axis labels - show selected dates
+    const xLabels = data.filter((_, i) => i === 0 || i === Math.floor(data.length / 2) || i === data.length - 1);
+
+    return (
+      <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-36">
+        {/* Grid lines */}
+        {yLabels.map((label, i) => (
+          <line key={i} x1={padding.left} y1={padding.top + label.pct * chartHeight}
+            x2={width - padding.right} y2={padding.top + label.pct * chartHeight}
+            stroke="#f3f4f6" strokeWidth="1" />
+        ))}
+
+        {/* Average line (dashed) */}
+        <line
+          x1={padding.left}
+          y1={getY(average)}
+          x2={width - padding.right}
+          y2={getY(average)}
+          stroke="#9ca3af"
+          strokeWidth="1.5"
+          strokeDasharray="4,4"
+        />
+
+        {/* Y-axis labels */}
+        {yLabels.map((label, i) => (
+          <text key={i} x={padding.left - 5} y={padding.top + label.pct * chartHeight + 4}
+            textAnchor="end" className="fill-gray-400" fontSize="9">
+            {label.val.toFixed(1)}{suffix}
+          </text>
+        ))}
+
+        {/* Smooth line */}
+        <path
+          d={generatePath()}
+          fill="none"
+          stroke={color}
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+
+        {/* X-axis labels */}
+        {xLabels.map((item) => {
+          const idx = data.findIndex(d => d.date === item.date);
+          return (
+            <text key={item.date} x={getX(idx)} y={height - 5}
+              textAnchor="middle" className="fill-gray-400" fontSize="8">
+              {item.date}
+            </text>
+          );
+        })}
+      </svg>
+    );
+  };
+
   // Multi-line chart component
   const MultiLineChart = ({ sources }) => {
     const sourceArr = Object.values(sources);
@@ -559,6 +725,135 @@ export default function CompanyPage() {
             ))}
           </div>
         </div>
+
+        {/* Valuation Metrics - P/E and P/B Charts */}
+        {companyValuationData[code] && (
+          <div className="grid grid-cols-2 gap-3">
+            {/* Forward P/E Chart */}
+            <div className="bg-white border border-gray-300 rounded-xl p-4">
+              <h3 className="text-base font-semibold mb-1">1-Year Forward P/E Ratio</h3>
+              <div className="flex gap-4 mb-3">
+                <span className="text-sm text-gray-600">Current: <span className="font-bold text-gray-900">{companyValuationData[code].forwardPE.current}x</span></span>
+                <span className="text-sm text-gray-600">5yr Avg: <span className="font-bold text-gray-900">{companyValuationData[code].forwardPE.fiveYearAvg}x</span></span>
+              </div>
+              <ValuationChart
+                data={companyValuationData[code].forwardPE.history}
+                average={companyValuationData[code].forwardPE.fiveYearAvg}
+                color="#3b82f6"
+                suffix="x"
+              />
+            </div>
+
+            {/* Price-to-Book Chart */}
+            <div className="bg-white border border-gray-300 rounded-xl p-4">
+              <h3 className="text-base font-semibold mb-1">Price-to-Book Ratio</h3>
+              <div className="flex gap-4 mb-3">
+                <span className="text-sm text-gray-600">Current: <span className="font-bold text-gray-900">{companyValuationData[code].priceToBook.current}x</span></span>
+                <span className="text-sm text-gray-600">5yr Avg: <span className="font-bold text-gray-900">{companyValuationData[code].priceToBook.fiveYearAvg}x</span></span>
+              </div>
+              <ValuationChart
+                data={companyValuationData[code].priceToBook.history}
+                average={companyValuationData[code].priceToBook.fiveYearAvg}
+                color="#10b981"
+                suffix="x"
+              />
+            </div>
+          </div>
+        )}
+
+        {/* Earnings Model Table */}
+        {companyValuationData[code]?.earningsModel && (
+          <div className="bg-white border border-gray-300 rounded-xl p-4">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-2">
+                <span className="text-lg">📁</span>
+                <h2 className="text-base font-semibold">Earnings Model</h2>
+              </div>
+              <span className="text-xs text-gray-400 bg-gray-100 px-2 py-1 rounded">¥ Billions</span>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="text-gray-500 border-b border-gray-200">
+                    <th className="text-left py-2 font-medium">Period</th>
+                    <th className="text-right py-2 font-medium">Revenue</th>
+                    <th className="text-right py-2 font-medium">YoY</th>
+                    <th className="text-right py-2 font-medium">Op. Profit</th>
+                    <th className="text-right py-2 font-medium">OP Margin</th>
+                    <th className="text-right py-2 font-medium">EPS (¥)</th>
+                    <th className="text-right py-2 font-medium">EPS YoY</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {companyValuationData[code].earningsModel.map((row, i) => (
+                    <tr key={i} className="border-b border-gray-100 last:border-0">
+                      <td className="py-3 font-semibold text-gray-900">{row.period}</td>
+                      <td className="py-3 text-right text-gray-700">{row.revenue.toLocaleString()}</td>
+                      <td className="py-3 text-right text-emerald-500 font-medium">+{row.revenueYoY}%</td>
+                      <td className="py-3 text-right text-gray-700">{row.opProfit}</td>
+                      <td className="py-3 text-right text-gray-700">{row.opMargin}%</td>
+                      <td className="py-3 text-right font-bold text-gray-900">{row.eps.toLocaleString()}</td>
+                      <td className="py-3 text-right text-emerald-500 font-medium">+{row.epsYoY}%</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+
+        {/* Scenarios - Bull/Base/Bear */}
+        {companyValuationData[code]?.scenarios && (
+          <div className="bg-white border border-gray-300 rounded-xl p-4">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-2">
+                <span className="text-lg">🎯</span>
+                <h2 className="text-base font-semibold">Scenarios</h2>
+              </div>
+              <span className="text-xs text-gray-400 bg-gray-100 px-2 py-1 rounded">AI-Estimated</span>
+            </div>
+            <div className="grid grid-cols-3 gap-3">
+              {/* Bull Case */}
+              <div className="bg-emerald-50 border-l-4 border-emerald-400 rounded-r-lg p-4">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-lg">🐂</span>
+                  <h3 className="font-bold text-emerald-600">Bull Case</h3>
+                </div>
+                <ul className="space-y-2">
+                  {companyValuationData[code].scenarios.bull.map((item, i) => (
+                    <li key={i} className="text-sm text-gray-700 leading-relaxed">{item}</li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Base Case */}
+              <div className="bg-gray-50 border-l-4 border-gray-400 rounded-r-lg p-4">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-lg">📈</span>
+                  <h3 className="font-bold text-gray-700">Base Case</h3>
+                </div>
+                <ul className="space-y-2">
+                  {companyValuationData[code].scenarios.base.map((item, i) => (
+                    <li key={i} className="text-sm text-gray-700 leading-relaxed">{item}</li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Bear Case */}
+              <div className="bg-red-50 border-l-4 border-red-400 rounded-r-lg p-4">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-lg">🐻</span>
+                  <h3 className="font-bold text-red-600">Bear Case</h3>
+                </div>
+                <ul className="space-y-2">
+                  {companyValuationData[code].scenarios.bear.map((item, i) => (
+                    <li key={i} className="text-sm text-gray-700 leading-relaxed">{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Narrative */}
         <div className="bg-white border border-gray-300 rounded-xl p-4">
