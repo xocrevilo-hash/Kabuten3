@@ -152,14 +152,31 @@ export default function PodcastsPage() {
       emoji: "🧠",
       episode: "No Priors: Artificial Intelligence | Technology | Startups",
       episodeNum: 0,
-      date: "Jan 15, 2026",
-      url: "https://app.podscribe.com/episode/148396655",
+      date: "January 15, 2026",
+      url: "https://podscripts.co/podcasts/no-priors-artificial-intelligence-technology-startups/",
       ideas: [
         {
-          summary: "Transcript Not Available for Analysis",
-          detail: "The provided podcast transcript is not accessible as it shows a paywall message requiring $5 to generate the transcript. Without access to the actual conversation content, no specific insights about AI, semiconductors, technology, or investing can be extracted from this episode.",
+          summary: "AI Adoption Accelerating in Conservative Industries",
+          detail: "Despite bubble concerns, traditionally slow-adopting sectors like medicine and law are embracing AI at unprecedented rates. This suggests AI's value proposition has crossed a critical threshold for risk-averse industries, indicating sustainable demand beyond hype cycles.",
           timestamp: "N/A"
         },
+        {
+          summary: "NVIDIA Positioned Beyond Moore's Law Transition",
+          detail: "Jensen Huang discusses NVIDIA's strategic positioning as Moore's Law ends, emphasizing reasoning models and robotics expansion. The company's dominance extends beyond AI training to inference and emerging applications, suggesting continued market leadership.",
+          timestamp: "N/A"
+        },
+        {
+          summary: "Enterprise AI Agents Transforming Business Operations",
+          detail: "Companies like Decagon and Harvey are deploying AI agents to replace traditional human-intensive operations like call centers and legal work. This shift from AI tools to autonomous agents represents a fundamental change in how businesses structure operations and labor.",
+          timestamp: "N/A"
+        },
+        {
+          summary: "AI Infrastructure Driving Energy Grid Transformation",
+          detail: "Explosive AI energy demand is forcing fundamental changes to electrical grid architecture and energy production. Companies like Base Power are emerging to address this infrastructure gap, creating new investment opportunities in the AI-energy nexus.",
+          timestamp: "N/A"
+        }
+      ]
+    },
         {
           summary: "Military AI Applications Topic Indicated",
           detail: "The episode title suggests discussion of AI's role in future warfare scenarios with a high-ranking defense official. This would likely cover topics such as autonomous weapons systems, AI-powered defense technologies, and the intersection of national security with commercial AI development.",
@@ -242,7 +259,7 @@ export default function PodcastsPage() {
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <span className="text-gray-400 text-xs">Updated daily at 05:00 HKT • Last: Jan 20, 2026 19:31 JST</span>
+          <span className="text-gray-400 text-xs">Updated daily at 05:00 HKT • Last: Jan 20, 2026 19:56 JST</span>
         </div>
       </header>
 

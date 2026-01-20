@@ -1,6 +1,15 @@
 {
-  "lastUpdated": "2026-01-20T19:31:17.916664",
+  "lastUpdated": "2026-01-20T19:56:39.378469",
   "runs": [
+    {
+      "timestamp": "2026-01-20T19:56:39.378453",
+      "podcast": "No Priors",
+      "episode": "No Priors: Artificial Intelligence | Technology | Startups",
+      "episodeNum": 0,
+      "ideasGenerated": 4,
+      "status": "success",
+      "duration": "38s"
+    },
     {
       "timestamp": "2026-01-20T19:31:17.916649",
       "podcast": "Dwarkesh Podcast",
