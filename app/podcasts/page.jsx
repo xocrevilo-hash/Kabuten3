@@ -5,38 +5,8 @@ import Link from 'next/link';
 
 export default function PodcastsPage() {
   // Podcast data - updated by podcast_agent.py
+  // Ordered chronologically (most recent first)
   const podcasts = [
-    {
-      name: "Dwarkesh Podcast",
-      color: "from-orange-500 to-orange-400",
-      emoji: "🎤",
-      episode: "Adam Marblestone – AI is missing something fundamental about the brain",
-      episodeNum: 0,
-      date: "Dec 30, 2025",
-      url: "https://podscripts.co/podcasts/dwarkesh-podcast/adam-marblestone-ai-is-missing-something-fundamental-about-the-brain",
-      ideas: [
-        {
-          summary: "AI Scaling Era Transitioning to Research Focus",
-          detail: "According to Ilya Sutskever's episode, the AI industry is moving from the age of scaling to the age of research, suggesting that simply increasing model size and compute may no longer be the primary path forward. This shift implies that breakthroughs will increasingly come from algorithmic improvements and novel research approaches rather than brute-force scaling.",
-          timestamp: "N/A"
-        },
-        {
-          summary: "Microsoft Reveals New Fairwater 2 Data Infrastructure",
-          detail: "Microsoft's Satya Nadella provided an exclusive first-look at their brand-new Fairwater 2 data center infrastructure as part of their AGI preparation strategy. This suggests Microsoft is making significant hardware investments to support advanced AI workloads and maintain competitive positioning in the AGI race.",
-          timestamp: "N/A"
-        },
-        {
-          summary: "Autonomous Robotics Breakthrough Timeline Accelerating",
-          detail: "Sergey Levine from Physical Intelligence believes fully autonomous robots are much closer than expected, potentially indicating a 'self-improvement flywheel' in robotics development. This suggests significant investment opportunities in robotics companies and supply chains as physical AI applications approach commercial viability.",
-          timestamp: "N/A"
-        },
-        {
-          summary: "AI Energy Demands Creating Massive Infrastructure Needs",
-          detail: "Casey Handmer's episode highlights the challenge of feeding hundreds of gigawatts of extra energy demand that AI will create over the coming decade. This massive energy requirement will likely drive significant investments in power generation, grid infrastructure, and energy-efficient computing solutions.",
-          timestamp: "N/A"
-        }
-      ]
-    },
     {
       name: "20VC",
       color: "from-purple-600 to-purple-500",
@@ -64,6 +34,22 @@ export default function PodcastsPage() {
         {
           summary: "AI Model Performance Showing Signs of Plateauing",
           detail: "The podcast title highlights concerns about model performance plateauing, suggesting that the rapid improvements in AI capabilities may be slowing. This has major implications for AI investment strategies and expectations for future breakthroughs.",
+          timestamp: "00:00"
+        }
+      ]
+    },
+    {
+      name: "ChinaTalk",
+      color: "from-red-600 to-red-500",
+      emoji: "🇨🇳",
+      episode: "Party Time! Jon Czin on US-China in 2025 and 2026",
+      episodeNum: 0,
+      date: "Jan 19, 2026",
+      url: "https://app.podscribe.com/episode/148544099",
+      ideas: [
+        {
+          summary: "Transcript Content Not Available",
+          detail: "The podcast transcript for 'Party Time! Jon Czin on US-China in 2025 and 2026' is behind a paywall and requires payment to access. Without the actual transcript content, no specific insights about AI, semiconductors, technology, or investing can be extracted.",
           timestamp: "00:00"
         }
       ]
@@ -131,92 +117,12 @@ export default function PodcastsPage() {
       ]
     },
     {
-      name: "ChinaTalk",
-      color: "from-red-600 to-red-500",
-      emoji: "🇨🇳",
-      episode: "Party Time! Jon Czin on US-China in 2025 and 2026",
-      episodeNum: 0,
-      date: "Jan 19, 2026",
-      url: "https://app.podscribe.com/episode/148544099",
-      ideas: [
-        {
-          summary: "Transcript Content Not Available",
-          detail: "The podcast transcript for 'Party Time! Jon Czin on US-China in 2025 and 2026' is behind a paywall and requires payment to access. Without the actual transcript content, no specific insights about AI, semiconductors, technology, or investing can be extracted.",
-          timestamp: "00:00"
-        }
-      ]
-    },
-    {
-      name: "No Priors",
-      color: "from-emerald-600 to-emerald-500",
-      emoji: "🧠",
-      episode: "No Priors: Artificial Intelligence | Technology | Startups",
-      episodeNum: 0,
-      date: "January 15, 2026",
-      url: "https://podscripts.co/podcasts/no-priors-artificial-intelligence-technology-startups/",
-      ideas: [
-        {
-          summary: "AI Adoption Accelerating in Conservative Industries",
-          detail: "Despite bubble concerns, traditionally slow-adopting sectors like medicine and law are embracing AI at unprecedented rates. This suggests AI's value proposition has crossed a critical threshold for risk-averse industries, indicating sustainable demand beyond hype cycles.",
-          timestamp: "N/A"
-        },
-        {
-          summary: "NVIDIA Positioned Beyond Moore's Law Transition",
-          detail: "Jensen Huang discusses NVIDIA's strategic positioning as Moore's Law ends, emphasizing reasoning models and robotics expansion. The company's dominance extends beyond AI training to inference and emerging applications, suggesting continued market leadership.",
-          timestamp: "N/A"
-        },
-        {
-          summary: "Enterprise AI Agents Transforming Business Operations",
-          detail: "Companies like Decagon and Harvey are deploying AI agents to replace traditional human-intensive operations like call centers and legal work. This shift from AI tools to autonomous agents represents a fundamental change in how businesses structure operations and labor.",
-          timestamp: "N/A"
-        },
-        {
-          summary: "AI Infrastructure Driving Energy Grid Transformation",
-          detail: "Explosive AI energy demand is forcing fundamental changes to electrical grid architecture and energy production. Companies like Base Power are emerging to address this infrastructure gap, creating new investment opportunities in the AI-energy nexus.",
-          timestamp: "N/A"
-        }
-      ]
-    },
-        {
-          summary: "Military AI Applications Topic Indicated",
-          detail: "The episode title suggests discussion of AI's role in future warfare scenarios with a high-ranking defense official. This would likely cover topics such as autonomous weapons systems, AI-powered defense technologies, and the intersection of national security with commercial AI development.",
-          timestamp: "N/A"
-        },
-        {
-          summary: "Defense Sector Investment Implications Likely",
-          detail: "Given the guest's position as Under Secretary of War, the conversation would presumably touch on defense spending priorities, military procurement of AI technologies, and potential investment opportunities in defense tech companies.",
-          timestamp: "N/A"
-        },
-        {
-          summary: "No Extractable Technical Insights Available",
-          detail: "Without access to the transcript content, no specific insights about semiconductor developments, AI model performance, enterprise adoption trends, or detailed technology predictions can be provided.",
-          timestamp: "N/A"
-        }
-      ]
-    },
-    {
-      name: "BG2 Pod",
-      color: "from-blue-600 to-blue-500",
-      emoji: "💼",
-      episode: "AI Enterprise - Databricks & Glean | BG2 Guest Interview",
-      episodeNum: 0,
-      date: "Dec 23, 2025",
-      url: "https://app.podscribe.com/episode/147927460",
-      ideas: [
-        {
-          summary: "Transcript Content Not Available for Analysis",
-          detail: "The provided transcript excerpt indicates the content is not yet available and requires payment to generate. Without access to the actual discussion content, no insights about AI enterprise adoption, semiconductor developments, or investment implications can be extracted from this source.",
-          timestamp: "N/A"
-        }
-      ]
-    },
-    {
       name: "The a16z Podcast",
       color: "from-gray-700 to-gray-600",
       emoji: "🅰️",
       episode: "How Foundation Models Evolved: A PhD Journey Through AI's Breakthrough Era",
       episodeNum: 0,
-      date: "January 16, 2026",
+      date: "Jan 16, 2026",
       url: "https://podscripts.co/podcasts/a16z-podcast/how-foundation-models-evolved-a-phd-journey-through-ais-breakthrough-era",
       ideas: [
         {
@@ -241,19 +147,80 @@ export default function PodcastsPage() {
         }
       ]
     },
+    {
+      name: "No Priors",
+      color: "from-emerald-600 to-emerald-500",
+      emoji: "🧠",
+      episode: "No Priors: Artificial Intelligence | Technology | Startups",
+      episodeNum: 0,
+      date: "Jan 15, 2026",
+      url: "https://podscripts.co/podcasts/no-priors-artificial-intelligence-technology-startups/",
+      ideas: [
         {
-          summary: "Premium Content Access Model",
-          detail: "The podcast transcript is behind a paywall requiring $6.80 to generate, indicating a monetization strategy for premium AI and technology content. This suggests high-value insights that warrant paid access in the current media landscape.",
+          summary: "AI Adoption Accelerating in Conservative Industries",
+          detail: "Despite bubble concerns, traditionally slow-adopting sectors like medicine and law are embracing AI at unprecedented rates. This suggests AI's value proposition has crossed a critical threshold for risk-averse industries, indicating sustainable demand beyond hype cycles.",
           timestamp: "N/A"
         },
         {
-          summary: "High-Profile AI Discussion Format",
-          detail: "The 1 hour 21 minute podcast format covering AI timelines, US-China competition, and AI pricing indicates comprehensive coverage of critical technology topics. The length suggests in-depth analysis rather than surface-level commentary.",
+          summary: "NVIDIA Positioned Beyond Moore's Law Transition",
+          detail: "Jensen Huang discusses NVIDIA's strategic positioning as Moore's Law ends, emphasizing reasoning models and robotics expansion. The company's dominance extends beyond AI training to inference and emerging applications, suggesting continued market leadership.",
           timestamp: "N/A"
         },
         {
-          summary: "Unable to Extract Technical Insights",
-          detail: "No specific information about AI developments, semiconductor trends, NVIDIA/AMD/TSMC insights, or investment implications can be extracted from the provided material. The actual transcript content would be required to provide meaningful analysis of Andreessen's 2026 technology outlook.",
+          summary: "Enterprise AI Agents Transforming Business Operations",
+          detail: "Companies like Decagon and Harvey are deploying AI agents to replace traditional human-intensive operations like call centers and legal work. This shift from AI tools to autonomous agents represents a fundamental change in how businesses structure operations and labor.",
+          timestamp: "N/A"
+        },
+        {
+          summary: "AI Infrastructure Driving Energy Grid Transformation",
+          detail: "Explosive AI energy demand is forcing fundamental changes to electrical grid architecture and energy production. Companies like Base Power are emerging to address this infrastructure gap, creating new investment opportunities in the AI-energy nexus.",
+          timestamp: "N/A"
+        }
+      ]
+    },
+    {
+      name: "Dwarkesh Podcast",
+      color: "from-orange-500 to-orange-400",
+      emoji: "🎤",
+      episode: "Adam Marblestone – AI is missing something fundamental about the brain",
+      episodeNum: 0,
+      date: "Dec 30, 2025",
+      url: "https://podscripts.co/podcasts/dwarkesh-podcast/adam-marblestone-ai-is-missing-something-fundamental-about-the-brain",
+      ideas: [
+        {
+          summary: "AI Scaling Era Transitioning to Research Focus",
+          detail: "According to Ilya Sutskever's episode, the AI industry is moving from the age of scaling to the age of research, suggesting that simply increasing model size and compute may no longer be the primary path forward. This shift implies that breakthroughs will increasingly come from algorithmic improvements and novel research approaches rather than brute-force scaling.",
+          timestamp: "N/A"
+        },
+        {
+          summary: "Microsoft Reveals New Fairwater 2 Data Infrastructure",
+          detail: "Microsoft's Satya Nadella provided an exclusive first-look at their brand-new Fairwater 2 data center infrastructure as part of their AGI preparation strategy. This suggests Microsoft is making significant hardware investments to support advanced AI workloads and maintain competitive positioning in the AGI race.",
+          timestamp: "N/A"
+        },
+        {
+          summary: "Autonomous Robotics Breakthrough Timeline Accelerating",
+          detail: "Sergey Levine from Physical Intelligence believes fully autonomous robots are much closer than expected, potentially indicating a 'self-improvement flywheel' in robotics development. This suggests significant investment opportunities in robotics companies and supply chains as physical AI applications approach commercial viability.",
+          timestamp: "N/A"
+        },
+        {
+          summary: "AI Energy Demands Creating Massive Infrastructure Needs",
+          detail: "Casey Handmer's episode highlights the challenge of feeding hundreds of gigawatts of extra energy demand that AI will create over the coming decade. This massive energy requirement will likely drive significant investments in power generation, grid infrastructure, and energy-efficient computing solutions.",
+          timestamp: "N/A"
+        }
+      ]
+    },
+    {
+      name: "BG2 Pod",
+      color: "from-blue-600 to-blue-500",
+      emoji: "💼",
+      episode: "AI Enterprise - Databricks & Glean | BG2 Guest Interview",
+      episodeNum: 0,
+      date: "Dec 23, 2025",
+      url: "https://app.podscribe.com/episode/147927460",
+      ideas: [
+        {
+          summary: "Transcript Content Not Available for Analysis",
+          detail: "The provided transcript excerpt indicates the content is not yet available and requires payment to generate. Without access to the actual discussion content, no insights about AI enterprise adoption, semiconductor developments, or investment implications can be extracted from this source.",
           timestamp: "N/A"
         }
       ]
@@ -276,7 +243,7 @@ export default function PodcastsPage() {
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <span className="text-gray-400 text-xs">Updated daily at 05:00 HKT • Last: Jan 20, 2026 19:57 JST</span>
+          <span className="text-gray-400 text-xs">Updated daily at 05:00 HKT • Last: Jan 20, 2026 20:02 JST</span>
         </div>
       </header>
 

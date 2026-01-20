@@ -141,9 +141,11 @@ PODCAST_CONFIGS = {
     ),
     "No Priors": PodcastConfig(
         name="No Priors",
-        series_id="2265113",
+        series_id="",
         color="from-emerald-600 to-emerald-500",
         emoji="🧠",
+        url="https://podscripts.co/podcasts/no-priors-artificial-intelligence-technology-startups/",
+        source="podscripts",
         keywords=[
             "AI", "model", "scaling", "training", "inference", "GPU",
             "compute", "transformer", "LLM", "benchmark", "capability",
@@ -163,9 +165,11 @@ PODCAST_CONFIGS = {
     ),
     "a16z": PodcastConfig(
         name="The a16z Podcast",
-        series_id="188",
+        series_id="",
         color="from-gray-700 to-gray-600",
         emoji="🅰️",
+        url="https://podscripts.co/podcasts/a16z-podcast/",
+        source="podscripts",
         keywords=[
             "AI", "startup", "venture", "technology", "infrastructure",
             "compute", "chip", "semiconductor", "enterprise", "consumer",
