@@ -8,6 +8,37 @@ export default function PodcastsPage() {
   // Ordered chronologically (most recent first)
   const podcasts = [
     {
+      name: "All-In Podcast",
+      color: "from-yellow-500 to-yellow-400",
+      emoji: "🎯",
+      episode: "Microsoft CEO Satya Nadella on AI's Business Revolution: What Happens to SaaS, OpenAI, and Microsoft? | LIVE from Davos",
+      episodeNum: 0,
+      date: "Jan 21, 2026",
+      url: "https://app.podscribe.com/episode/148512142?transcriptVersionReqId=704c7fa2-f889-4a23-862c-f46c42bca3bf",
+      ideas: [
+        {
+          summary: "Enterprise AI Adoption Timeline Significantly Delayed",
+          detail: "The podcast title indicates that enterprise AI adoption is \"years off,\" suggesting a much slower implementation timeline than many investors expect. This contradicts the current market optimism and could signal overvaluation in enterprise AI companies that are banking on rapid corporate adoption.",
+          timestamp: "00:00:32"
+        },
+        {
+          summary: "AI Model Performance Plateau Creates Investment Risk",
+          detail: "The title mentions \"How Model Performance is Plateauing,\" indicating that AI model improvements are slowing down despite massive capital investments. This plateau could fundamentally alter the investment thesis for AI companies that depend on continuous performance gains to justify their valuations.",
+          timestamp: "00:00:32"
+        },
+        {
+          summary: "Shadow AI Creates Enterprise Security Crisis",
+          detail: "Companies face a massive blind spot as employees use public AI tools like ChatGPT and Gemini with sensitive data, creating compliance and security risks. This presents both a threat to existing enterprises and a significant market opportunity for AI governance and security solutions like Nexos AI.",
+          timestamp: "00:02:05"
+        },
+        {
+          summary: "Startup Growth Cycles Require Strategic Pivoting",
+          detail: "The founder describes a three-stage cycle: product-market fit, company-market fit, then back to product-market fit reinvention. At $190M ARR, Harvey demonstrates how successful companies must continuously oscillate between perfecting their current offering and reimagining their future direction to maintain growth momentum.",
+          timestamp: "00:10:13"
+        }
+      ]
+    },
+    {
       name: "20VC",
       color: "from-purple-600 to-purple-500",
       emoji: "🎙️",
@@ -35,37 +66,6 @@ export default function PodcastsPage() {
           summary: "Startup Scaling Requires Distinct Product-Market and Company-Market Fit",
           detail: "Successful AI companies must navigate two separate phases: achieving product-market fit, then developing company-market fit by creating organizational structures suited to their specific vertical. This dual-phase approach is particularly relevant for AI companies operating across global markets with complex regulatory environments.",
           timestamp: "10:13"
-        }
-      ]
-    },
-    {
-      name: "All-In Podcast",
-      color: "from-yellow-500 to-yellow-400",
-      emoji: "🎯",
-      episode: "Microsoft CEO Satya Nadella on AI's Business Revolution: What Happens to SaaS, OpenAI, and Microsoft? | LIVE from Davos",
-      episodeNum: 0,
-      date: "January 21, 2026",
-      url: "https://app.podscribe.com/episode/148512142?transcriptVersionReqId=704c7fa2-f889-4a23-862c-f46c42bca3bf",
-      ideas: [
-        {
-          summary: "Enterprise AI Adoption Timeline Significantly Delayed",
-          detail: "The podcast title indicates that enterprise AI adoption is \"years off,\" suggesting a much slower implementation timeline than many investors expect. This contradicts the current market optimism and could signal overvaluation in enterprise AI companies that are banking on rapid corporate adoption.",
-          timestamp: "00:00:32"
-        },
-        {
-          summary: "AI Model Performance Plateau Creates Investment Risk",
-          detail: "The title mentions \"How Model Performance is Plateauing,\" indicating that AI model improvements are slowing down despite massive capital investments. This plateau could fundamentally alter the investment thesis for AI companies that depend on continuous performance gains to justify their valuations.",
-          timestamp: "00:00:32"
-        },
-        {
-          summary: "Shadow AI Creates Enterprise Security Crisis",
-          detail: "Companies face a massive blind spot as employees use public AI tools like ChatGPT and Gemini with sensitive data, creating compliance and security risks. This presents both a threat to existing enterprises and a significant market opportunity for AI governance and security solutions like Nexos AI.",
-          timestamp: "00:02:05"
-        },
-        {
-          summary: "Startup Growth Cycles Require Strategic Pivoting",
-          detail: "The founder describes a three-stage cycle: product-market fit, company-market fit, then back to product-market fit reinvention. At $190M ARR, Harvey demonstrates how successful companies must continuously oscillate between perfecting their current offering and reimagining their future direction to maintain growth momentum.",
-          timestamp: "00:10:13"
         }
       ]
     },
