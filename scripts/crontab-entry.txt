@@ -1,0 +1,16 @@
+# Heatmap Update Cron Job
+# Runs daily at 8:00 AM HKT
+#
+# To install this cron job, run:
+#   crontab -e
+# Then add the line below (without the # comment prefix)
+#
+# Note: Ensure Chrome is running with Claude extension for browser automation to work
+# The script logs output to scripts/logs/heatmap-update-YYYYMMDD.log
+
+0 8 * * * /Users/olivercox/.claude-worktrees/kabuten-nextjs/sleepy-wu/scripts/update-heatmap.sh
+
+# Alternative: Run at a random minute between 8:00-8:59 AM to avoid rate limits
+# (uncomment below and comment out the line above)
+# RANDOM_MIN=$((RANDOM % 60))
+# $RANDOM_MIN 8 * * * /Users/olivercox/.claude-worktrees/kabuten-nextjs/sleepy-wu/scripts/update-heatmap.sh
