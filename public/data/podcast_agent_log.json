@@ -1,6 +1,51 @@
 {
-  "lastUpdated": "2026-01-20T19:57:24.746532",
+  "lastUpdated": "2026-01-22T12:53:01.114549",
   "runs": [
+    {
+      "timestamp": "2026-01-22T12:53:01.114526",
+      "podcast": "BG2 Pod",
+      "episode": "AI Enterprise - Databricks & Glean | BG2 Guest Interview",
+      "episodeNum": 0,
+      "ideasGenerated": 1,
+      "status": "success",
+      "duration": "28s"
+    },
+    {
+      "timestamp": "2026-01-22T12:52:32.956724",
+      "podcast": "No Priors",
+      "episode": "No Priors: Artificial Intelligence | Technology | Startups",
+      "episodeNum": 0,
+      "ideasGenerated": 4,
+      "status": "success",
+      "duration": "33s"
+    },
+    {
+      "timestamp": "2026-01-22T12:51:59.267391",
+      "podcast": "Hard Fork",
+      "episode": "Jonathan Haidt Strikes Again + What You Vibecoded + An Update on the Forkiverse",
+      "episodeNum": 0,
+      "ideasGenerated": 4,
+      "status": "success",
+      "duration": "33s"
+    },
+    {
+      "timestamp": "2026-01-22T12:50:22.440396",
+      "podcast": "All-In Podcast",
+      "episode": "Microsoft CEO Satya Nadella on AI's Business Revolution: What Happens to SaaS, OpenAI, and Microsoft? | LIVE from Davos",
+      "episodeNum": 0,
+      "ideasGenerated": 4,
+      "status": "success",
+      "duration": "34s"
+    },
+    {
+      "timestamp": "2026-01-22T12:49:48.378230",
+      "podcast": "20VC",
+      "episode": "The Twenty Minute VC (20VC): Venture Capital | Startup Funding | The Pitch",
+      "episodeNum": 0,
+      "ideasGenerated": 4,
+      "status": "success",
+      "duration": "41s"
+    },
     {
       "timestamp": "2026-01-20T19:57:24.746525",
       "podcast": "The a16z Podcast",
@@ -135,51 +180,6 @@
       "ideasGenerated": 4,
       "status": "success",
       "duration": "74s"
-    },
-    {
-      "timestamp": "2026-01-17T10:15:32+09:00",
-      "podcast": "20VC",
-      "episode": "How Model Performance is Plateauing | Harvey CEO Winston Weinberg",
-      "episodeNum": 158,
-      "ideasGenerated": 4,
-      "status": "success",
-      "duration": "45s"
-    },
-    {
-      "timestamp": "2026-01-17T10:14:12+09:00",
-      "podcast": "Hard Fork",
-      "episode": "AI Agents Are Here. Now What?",
-      "episodeNum": 158,
-      "ideasGenerated": 3,
-      "status": "success",
-      "duration": "38s"
-    },
-    {
-      "timestamp": "2026-01-15T10:22:45+09:00",
-      "podcast": "All-In Podcast",
-      "episode": "All-In's 2026 Predictions",
-      "episodeNum": 257,
-      "ideasGenerated": 3,
-      "status": "success",
-      "duration": "52s"
-    },
-    {
-      "timestamp": "2026-01-14T10:08:19+09:00",
-      "podcast": "No Priors",
-      "episode": "Ilya Sutskever on What Comes After LLMs",
-      "episodeNum": 102,
-      "ideasGenerated": 3,
-      "status": "success",
-      "duration": "41s"
-    },
-    {
-      "timestamp": "2026-01-12T10:33:55+09:00",
-      "podcast": "Dwarkesh Podcast",
-      "episode": "Former TSMC Exec on the Chip Wars",
-      "episodeNum": 78,
-      "ideasGenerated": 3,
-      "status": "success",
-      "duration": "67s"
     }
   ]
 }

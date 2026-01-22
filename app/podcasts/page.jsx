@@ -11,16 +11,33 @@ export default function PodcastsPage() {
       name: "20VC",
       color: "from-purple-600 to-purple-500",
       emoji: "🎙️",
-      episode: "20VC: How Model Performance is Plateauing | Two Key Rules for Effective Deal-Making | Company Building Lessons from Keith Rabois, Brian Halligan and Pat Grady | Why Enterprise AI Adoption is Years Off with Harvey CEO Winston Weinberg",
+      episode: "The Twenty Minute VC (20VC): Venture Capital | Startup Funding | The Pitch",
       episodeNum: 0,
       date: "Jan 19, 2026",
       url: "https://app.podscribe.com/episode/148512142?transcriptVersionReqId=704c7fa2-f889-4a23-862c-f46c42bca3bf",
       ideas: [
         {
-          summary: "Legal AI Market Experiencing Explosive Growth",
-          detail: "Harvey CEO discusses the rapid expansion of the legal AI space, with the company reaching $190M ARR. The CEO emphasizes that the entire AI market is exploding, not just legal AI, indicating massive opportunities across sectors.",
+          summary: "Enterprise AI Adoption Facing Security Compliance Blind Spots",
+          detail: "Companies are experiencing widespread 'shadow AI' adoption where employees unknowingly feed sensitive data into public AI tools like ChatGPT and Gemini, creating massive security risks. This highlights a critical gap between AI productivity benefits and enterprise security requirements that must be addressed for widespread corporate adoption.",
+          timestamp: "02:05"
+        },
+        {
+          summary: "Legal AI Market Experiencing Explosive Growth Phase",
+          detail: "Harvey CEO reveals the legal AI space is growing at unprecedented speed, with the broader AI market described as 'massive' and 'exploding.' The competitive landscape includes references to Anthropic potentially reaching $3 billion in revenue, indicating the scale of current AI market expansion.",
           timestamp: "10:49"
         },
+        {
+          summary: "AI-Powered Compliance Automation Becoming Strategic Investment Priority",
+          detail: "Enterprise security platforms like Vanta are leveraging AI automation to help companies achieve compliance faster and unlock major deals. This represents a shift toward AI-enabled infrastructure tools that address regulatory requirements while enabling innovation.",
+          timestamp: "04:35"
+        },
+        {
+          summary: "Startup Scaling Requires Distinct Product-Market and Company-Market Fit",
+          detail: "Successful AI companies must navigate two separate phases: achieving product-market fit, then developing company-market fit by creating organizational structures suited to their specific vertical. This dual-phase approach is particularly relevant for AI companies operating across global markets with complex regulatory environments.",
+          timestamp: "10:13"
+        }
+      ]
+    },
         {
           summary: "Shadow AI Creates Enterprise Security Risks",
           detail: "Companies face significant compliance and security blind spots as employees use public AI tools like ChatGPT and Gemini with sensitive company data. This creates a critical need for AI governance platforms that provide visibility and control over enterprise AI usage.",
@@ -58,16 +75,33 @@ export default function PodcastsPage() {
       name: "All-In Podcast",
       color: "from-yellow-500 to-yellow-400",
       emoji: "🎯",
-      episode: "Iran's Breaking Point, Trump's Greenland Acquisition, and Solving Energy Costs",
+      episode: "Microsoft CEO Satya Nadella on AI's Business Revolution: What Happens to SaaS, OpenAI, and Microsoft? | LIVE from Davos",
       episodeNum: 0,
-      date: "Jan 17, 2026",
-      url: "https://podscripts.co/podcasts/all-in-with-chamath-jason-sacks-friedberg",
+      date: "January 21, 2026",
+      url: "https://app.podscribe.com/episode/148512142?transcriptVersionReqId=704c7fa2-f889-4a23-862c-f46c42bca3bf",
       ideas: [
         {
-          summary: "Harvey AI Shows Legal AI Rapid Growth",
-          detail: "Harvey, a legal AI company, has emerged as a front-runner in the legal AI space with impressive growth trajectory, reaching $190M ARR. This demonstrates the significant market opportunity for vertical-specific AI applications in professional services sectors.",
-          timestamp: "00:32"
+          summary: "Enterprise AI Adoption Timeline Significantly Delayed",
+          detail: "The podcast title indicates that enterprise AI adoption is \"years off,\" suggesting a much slower implementation timeline than many investors expect. This contradicts the current market optimism and could signal overvaluation in enterprise AI companies that are banking on rapid corporate adoption.",
+          timestamp: "00:00:32"
         },
+        {
+          summary: "AI Model Performance Plateau Creates Investment Risk",
+          detail: "The title mentions \"How Model Performance is Plateauing,\" indicating that AI model improvements are slowing down despite massive capital investments. This plateau could fundamentally alter the investment thesis for AI companies that depend on continuous performance gains to justify their valuations.",
+          timestamp: "00:00:32"
+        },
+        {
+          summary: "Shadow AI Creates Enterprise Security Crisis",
+          detail: "Companies face a massive blind spot as employees use public AI tools like ChatGPT and Gemini with sensitive data, creating compliance and security risks. This presents both a threat to existing enterprises and a significant market opportunity for AI governance and security solutions like Nexos AI.",
+          timestamp: "00:02:05"
+        },
+        {
+          summary: "Startup Growth Cycles Require Strategic Pivoting",
+          detail: "The founder describes a three-stage cycle: product-market fit, company-market fit, then back to product-market fit reinvention. At $190M ARR, Harvey demonstrates how successful companies must continuously oscillate between perfecting their current offering and reimagining their future direction to maintain growth momentum.",
+          timestamp: "00:10:13"
+        }
+      ]
+    },
         {
           summary: "Shadow AI Creates Enterprise Security Risks",
           detail: "Employees are feeding sensitive company data into public AI tools like ChatGPT and Gemini, creating massive security and compliance blind spots. This presents both risks for enterprises and investment opportunities in AI governance solutions like Nexos AI.",
@@ -95,10 +129,27 @@ export default function PodcastsPage() {
       url: "https://app.podscribe.com/episode/148429306?transcriptVersionReqId=9aeea88b-c216-44be-b3eb-f2f64a4574f5",
       ideas: [
         {
-          summary: "Grok AI Restricts Image Generation for Free Users",
-          detail: "Grok has rolled back its image generation feature, now requiring paid subscriptions for AI-powered image creation capabilities. This represents a broader trend of AI companies monetizing advanced features and moving away from freemium models as compute costs remain high.",
+          summary: "Meta's Internal Research Reveals AI Harm Evidence",
+          detail: "Meta's own internal research, exposed through attorney general lawsuits and whistleblower reports, provides substantial evidence that social media platforms are causing documented harm to users, particularly teens. This creates significant regulatory and liability risks for major tech companies developing AI-powered social platforms.",
+          timestamp: "07:11"
+        },
+        {
+          summary: "AI-Powered Social Media Faces Global Regulatory Crackdown",
+          detail: "High-level government officials, including President Macron, are actively pursuing regulatory action against social media platforms based on mounting evidence of harm. This suggests incoming restrictions on AI recommendation algorithms and social features that could impact tech company valuations and operational models.",
+          timestamp: "16:18"
+        },
+        {
+          summary: "Grok Implements Paid Tier for AI Features",
+          detail: "Grok has rolled back its image generation feature for free users, requiring paid subscriptions for advanced AI capabilities. This indicates a broader industry trend toward monetizing AI features through premium tiers, potentially creating new revenue streams for AI companies.",
           timestamp: "02:58"
         },
+        {
+          summary: "Claude Code Experiments Show Enterprise AI Adoption",
+          detail: "User experiments with Claude's coding capabilities are generating significant interest and impressive results, suggesting strong enterprise demand for AI coding assistants. This indicates growing market opportunities for companies providing AI development tools and programming assistance.",
+          timestamp: "01:59"
+        }
+      ]
+    },
         {
           summary: "Meta's Internal Research Reveals Platform Harm Evidence",
           detail: "Leaked Meta internal studies through attorney general lawsuits show extensive evidence of social media platforms causing harm to users, particularly teens. This creates significant legal and regulatory risks for major tech platforms and could impact their valuations and operational costs.",
@@ -153,14 +204,31 @@ export default function PodcastsPage() {
       emoji: "🧠",
       episode: "No Priors: Artificial Intelligence | Technology | Startups",
       episodeNum: 0,
-      date: "Jan 15, 2026",
-      url: "https://podscripts.co/podcasts/no-priors-artificial-intelligence-technology-startups/",
+      date: "January 15, 2026",
+      url: "https://app.podscribe.com/episode/148429306?transcriptVersionReqId=9aeea88b-c216-44be-b3eb-f2f64a4574f5",
       ideas: [
         {
-          summary: "AI Adoption Accelerating in Conservative Industries",
-          detail: "Despite bubble concerns, traditionally slow-adopting sectors like medicine and law are embracing AI at unprecedented rates. This suggests AI's value proposition has crossed a critical threshold for risk-averse industries, indicating sustainable demand beyond hype cycles.",
-          timestamp: "N/A"
+          summary: "AI-Powered Consumer Products Emerging in Transportation",
+          detail: "New electric AI-powered mobility solutions like 'Brain on Wheels' tricycles are being introduced to the market. This represents the continued integration of AI capabilities into everyday consumer transportation products beyond traditional automotive applications.",
+          timestamp: "00:51"
         },
+        {
+          summary: "Premium AI Features Driving Monetization Models",
+          detail: "Companies are implementing tiered pricing for AI services, with advanced features like image generation being restricted to paid users only. This trend indicates how AI capabilities are becoming key differentiators in freemium business models.",
+          timestamp: "02:58"
+        },
+        {
+          summary: "Regulatory Framework Development for AI-Adjacent Technologies",
+          detail: "Government leaders are taking direct action on technology regulation, with examples of rapid policy implementation at the highest levels of government. This suggests an accelerating timeline for AI and social media regulation that could impact tech company valuations and operations.",
+          timestamp: "16:18"
+        },
+        {
+          summary: "Tech Workers Developing Solutions for Digital Wellness",
+          detail: "Even those building smartphone and social media technologies are creating sophisticated systems to limit their own usage and reclaim attention. This insider behavior suggests potential market opportunities for digital wellness solutions and validates concerns about technology's addictive design.",
+          timestamp: "17:34"
+        }
+      ]
+    },
         {
           summary: "NVIDIA Positioned Beyond Moore's Law Transition",
           detail: "Jensen Huang discusses NVIDIA's strategic positioning as Moore's Law ends, emphasizing reasoning models and robotics expansion. The company's dominance extends beyond AI training to inference and emerging applications, suggesting continued market leadership.",
@@ -215,12 +283,12 @@ export default function PodcastsPage() {
       emoji: "💼",
       episode: "AI Enterprise - Databricks & Glean | BG2 Guest Interview",
       episodeNum: 0,
-      date: "Dec 23, 2025",
+      date: "Dec 24, 2025",
       url: "https://app.podscribe.com/episode/147927460",
       ideas: [
         {
           summary: "Transcript Content Not Available for Analysis",
-          detail: "The provided transcript excerpt indicates the content is not yet available and requires payment to generate. Without access to the actual discussion content, no insights about AI enterprise adoption, semiconductor developments, or investment implications can be extracted from this source.",
+          detail: "The provided document only contains podcast metadata and a paywall notice. The actual transcript content discussing AI enterprise topics, Databricks, and Glean is not accessible for analysis.",
           timestamp: "N/A"
         }
       ]
@@ -243,7 +311,7 @@ export default function PodcastsPage() {
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <span className="text-gray-400 text-xs">Updated daily at 05:00 HKT • Last: Jan 20, 2026 20:02 JST</span>
+          <span className="text-gray-400 text-xs">Updated daily at 05:00 HKT • Last: Jan 22, 2026 12:53 JST</span>
         </div>
       </header>
 
