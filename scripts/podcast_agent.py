@@ -104,17 +104,6 @@ PODCAST_CONFIGS = {
             "tariff", "geopolitics", "Apple", "Google", "Meta"
         ]
     ),
-    "ChinaTalk": PodcastConfig(
-        name="ChinaTalk",
-        series_id="692695",
-        color="from-red-600 to-red-500",
-        emoji="🇨🇳",
-        keywords=[
-            "China", "semiconductor", "chip", "SMIC", "Huawei", "ASML",
-            "export control", "trade", "AI", "technology", "manufacturing",
-            "supply chain", "Taiwan", "TSMC", "geopolitics"
-        ]
-    ),
     "Dwarkesh": PodcastConfig(
         name="Dwarkesh Podcast",
         series_id="",
@@ -150,17 +139,6 @@ PODCAST_CONFIGS = {
             "AI", "model", "scaling", "training", "inference", "GPU",
             "compute", "transformer", "LLM", "benchmark", "capability",
             "alignment", "safety", "AGI", "frontier"
-        ]
-    ),
-    "BG2": PodcastConfig(
-        name="BG2 Pod",
-        series_id="2349338",
-        color="from-blue-600 to-blue-500",
-        emoji="💼",
-        keywords=[
-            "AI", "enterprise", "startup", "venture", "funding", "IPO",
-            "semiconductor", "chip", "NVIDIA", "cloud", "infrastructure",
-            "SaaS", "B2B", "market", "valuation"
         ]
     ),
     "a16z": PodcastConfig(

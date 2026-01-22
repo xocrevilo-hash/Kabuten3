@@ -38,39 +38,6 @@ export default function PodcastsPage() {
         }
       ]
     },
-        {
-          summary: "Shadow AI Creates Enterprise Security Risks",
-          detail: "Companies face significant compliance and security blind spots as employees use public AI tools like ChatGPT and Gemini with sensitive company data. This creates a critical need for AI governance platforms that provide visibility and control over enterprise AI usage.",
-          timestamp: "02:05"
-        },
-        {
-          summary: "Enterprise AI Adoption Still Years Away",
-          detail: "Despite rapid growth in AI capabilities, the podcast title suggests that widespread enterprise AI adoption remains years off. This indicates a significant gap between AI development and practical enterprise implementation.",
-          timestamp: "00:32"
-        },
-        {
-          summary: "AI Model Performance Showing Signs of Plateauing",
-          detail: "The podcast title highlights concerns about model performance plateauing, suggesting that the rapid improvements in AI capabilities may be slowing. This has major implications for AI investment strategies and expectations for future breakthroughs.",
-          timestamp: "00:00"
-        }
-      ]
-    },
-    {
-      name: "ChinaTalk",
-      color: "from-red-600 to-red-500",
-      emoji: "🇨🇳",
-      episode: "Party Time! Jon Czin on US-China in 2025 and 2026",
-      episodeNum: 0,
-      date: "Jan 19, 2026",
-      url: "https://app.podscribe.com/episode/148544099",
-      ideas: [
-        {
-          summary: "Transcript Content Not Available",
-          detail: "The podcast transcript for 'Party Time! Jon Czin on US-China in 2025 and 2026' is behind a paywall and requires payment to access. Without the actual transcript content, no specific insights about AI, semiconductors, technology, or investing can be extracted.",
-          timestamp: "00:00"
-        }
-      ]
-    },
     {
       name: "All-In Podcast",
       color: "from-yellow-500 to-yellow-400",
@@ -102,23 +69,6 @@ export default function PodcastsPage() {
         }
       ]
     },
-        {
-          summary: "Shadow AI Creates Enterprise Security Risks",
-          detail: "Employees are feeding sensitive company data into public AI tools like ChatGPT and Gemini, creating massive security and compliance blind spots. This presents both risks for enterprises and investment opportunities in AI governance solutions like Nexos AI.",
-          timestamp: "02:05"
-        },
-        {
-          summary: "AI Security Platforms Enable Safe Enterprise Adoption",
-          detail: "Companies need unified platforms that provide visibility and control over AI usage while implementing guardrails to protect sensitive data. This represents a growing market for AI governance and security solutions as enterprises seek to enable productivity without blocking innovation.",
-          timestamp: "02:05"
-        },
-        {
-          summary: "Product-Market Fit Cycles in AI Companies",
-          detail: "AI companies experience recurring cycles of product-market fit as they evolve from initial PMF to company-market fit and back to reinventing PMF. This suggests AI startups must continuously adapt their product strategy as the technology and market mature, creating ongoing investment evaluation challenges.",
-          timestamp: "10:13"
-        }
-      ]
-    },
     {
       name: "Hard Fork",
       color: "from-pink-600 to-pink-500",
@@ -147,23 +97,6 @@ export default function PodcastsPage() {
           summary: "Claude Code Experiments Show Enterprise AI Adoption",
           detail: "User experiments with Claude's coding capabilities are generating significant interest and impressive results, suggesting strong enterprise demand for AI coding assistants. This indicates growing market opportunities for companies providing AI development tools and programming assistance.",
           timestamp: "01:59"
-        }
-      ]
-    },
-        {
-          summary: "Meta's Internal Research Reveals Platform Harm Evidence",
-          detail: "Leaked Meta internal studies through attorney general lawsuits show extensive evidence of social media platforms causing harm to users, particularly teens. This creates significant legal and regulatory risks for major tech platforms and could impact their valuations and operational costs.",
-          timestamp: "07:11"
-        },
-        {
-          summary: "Government Action Against Big Tech Platforms Accelerating",
-          detail: "High-level government officials like French President Macron are taking direct action on tech regulation after reviewing platform harm data. This suggests increased regulatory pressure and potential policy changes that could significantly impact major tech companies' business models and growth prospects.",
-          timestamp: "16:18"
-        },
-        {
-          summary: "Legal Liability Wave Targeting Social Media Companies",
-          detail: "Plaintiff's lawyers are actively building cases against social media platforms using internal research and harm evidence. This creates substantial financial risk for tech giants through potential class-action settlements and damages, which could materially impact their market valuations.",
-          timestamp: "16:54"
         }
       ]
     },
@@ -229,23 +162,6 @@ export default function PodcastsPage() {
         }
       ]
     },
-        {
-          summary: "NVIDIA Positioned Beyond Moore's Law Transition",
-          detail: "Jensen Huang discusses NVIDIA's strategic positioning as Moore's Law ends, emphasizing reasoning models and robotics expansion. The company's dominance extends beyond AI training to inference and emerging applications, suggesting continued market leadership.",
-          timestamp: "N/A"
-        },
-        {
-          summary: "Enterprise AI Agents Transforming Business Operations",
-          detail: "Companies like Decagon and Harvey are deploying AI agents to replace traditional human-intensive operations like call centers and legal work. This shift from AI tools to autonomous agents represents a fundamental change in how businesses structure operations and labor.",
-          timestamp: "N/A"
-        },
-        {
-          summary: "AI Infrastructure Driving Energy Grid Transformation",
-          detail: "Explosive AI energy demand is forcing fundamental changes to electrical grid architecture and energy production. Companies like Base Power are emerging to address this infrastructure gap, creating new investment opportunities in the AI-energy nexus.",
-          timestamp: "N/A"
-        }
-      ]
-    },
     {
       name: "Dwarkesh Podcast",
       color: "from-orange-500 to-orange-400",
@@ -273,22 +189,6 @@ export default function PodcastsPage() {
         {
           summary: "AI Energy Demands Creating Massive Infrastructure Needs",
           detail: "Casey Handmer's episode highlights the challenge of feeding hundreds of gigawatts of extra energy demand that AI will create over the coming decade. This massive energy requirement will likely drive significant investments in power generation, grid infrastructure, and energy-efficient computing solutions.",
-          timestamp: "N/A"
-        }
-      ]
-    },
-    {
-      name: "BG2 Pod",
-      color: "from-blue-600 to-blue-500",
-      emoji: "💼",
-      episode: "AI Enterprise - Databricks & Glean | BG2 Guest Interview",
-      episodeNum: 0,
-      date: "Dec 24, 2025",
-      url: "https://app.podscribe.com/episode/147927460",
-      ideas: [
-        {
-          summary: "Transcript Content Not Available for Analysis",
-          detail: "The provided document only contains podcast metadata and a paywall notice. The actual transcript content discussing AI enterprise topics, Databricks, and Glean is not accessible for analysis.",
           timestamp: "N/A"
         }
       ]
@@ -387,7 +287,7 @@ export default function PodcastsPage() {
         <div className="mt-4 p-3 bg-gray-50 rounded-xl text-xs text-gray-500">
           <strong>Methodology:</strong> Transcripts sourced from Podscribe. Filtered for AI, semiconductor, chip, GPU, NVIDIA, TSMC, and related keywords. Updated daily.
           <br />
-          <strong>Podcasts:</strong> 20VC, All-In, Hard Fork, ChinaTalk, No Priors, BG2 Pod, a16z, Dwarkesh
+          <strong>Podcasts:</strong> 20VC, All-In, Hard Fork, No Priors, a16z, Dwarkesh
         </div>
 
       </div>

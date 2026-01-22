@@ -1,0 +1,144 @@
+2026-01-21 06:11:25,846 - INFO - ============================================================
+2026-01-21 06:11:25,846 - INFO - Podcast Intelligence Agent Starting
+2026-01-21 06:11:25,846 - INFO - ============================================================
+2026-01-21 06:11:26,756 - INFO - 
+--- Processing 20VC ---
+2026-01-21 06:11:26,756 - INFO - Fetching latest episode for 20VC from podscribe...
+2026-01-21 06:11:27,367 - ERROR - Failed to get latest episode: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://app.podscribe.com/series/1864?uid=b448f478-f041-70f1-aa51-f9dd28c4f86a
+Call log:
+  - navigating to "https://app.podscribe.com/series/1864?uid=b448f478-f041-70f1-aa51-f9dd28c4f86a", waiting until "networkidle"
+
+2026-01-21 06:11:27,367 - WARNING - Could not get latest episode for 20VC
+2026-01-21 06:11:27,367 - INFO - 
+--- Processing All-In ---
+2026-01-21 06:11:27,367 - INFO - Fetching latest episode for All-In Podcast from podscripts...
+2026-01-21 06:11:34,838 - ERROR - Failed to get latest episode: Page.goto: net::ERR_NETWORK_CHANGED at https://podscripts.co/podcasts/all-in-with-chamath-jason-sacks-friedberg
+Call log:
+  - navigating to "https://podscripts.co/podcasts/all-in-with-chamath-jason-sacks-friedberg", waiting until "networkidle"
+
+2026-01-21 06:11:34,838 - WARNING - Could not get latest episode for All-In
+2026-01-21 06:11:34,838 - INFO - 
+--- Processing ChinaTalk ---
+2026-01-21 06:11:34,838 - INFO - Fetching latest episode for ChinaTalk from podscribe...
+2026-01-21 06:28:55,826 - ERROR - Failed to get latest episode: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://app.podscribe.com/series/692695?uid=b448f478-f041-70f1-aa51-f9dd28c4f86a", waiting until "networkidle"
+
+2026-01-21 06:28:55,926 - WARNING - Could not get latest episode for ChinaTalk
+2026-01-21 06:28:55,933 - INFO - 
+--- Processing Dwarkesh ---
+2026-01-21 06:28:55,933 - INFO - Fetching latest episode for Dwarkesh Podcast from podscripts...
+2026-01-21 06:28:56,253 - ERROR - Failed to get latest episode: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://podscripts.co/podcasts/dwarkesh-podcast/
+Call log:
+  - navigating to "https://podscripts.co/podcasts/dwarkesh-podcast/", waiting until "networkidle"
+
+2026-01-21 06:28:56,253 - WARNING - Could not get latest episode for Dwarkesh
+2026-01-21 06:28:56,253 - INFO - 
+--- Processing Hard Fork ---
+2026-01-21 06:28:56,253 - INFO - Fetching latest episode for Hard Fork from podscribe...
+2026-01-21 06:28:56,339 - ERROR - Failed to get latest episode: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://app.podscribe.com/series/1217941?uid=b448f478-f041-70f1-aa51-f9dd28c4f86a
+Call log:
+  - navigating to "https://app.podscribe.com/series/1217941?uid=b448f478-f041-70f1-aa51-f9dd28c4f86a", waiting until "networkidle"
+
+2026-01-21 06:28:56,340 - WARNING - Could not get latest episode for Hard Fork
+2026-01-21 06:28:56,340 - INFO - 
+--- Processing No Priors ---
+2026-01-21 06:28:56,340 - INFO - Fetching latest episode for No Priors from podscripts...
+2026-01-21 06:28:56,350 - ERROR - Failed to get latest episode: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://podscripts.co/podcasts/no-priors-artificial-intelligence-technology-startups/
+Call log:
+  - navigating to "https://podscripts.co/podcasts/no-priors-artificial-intelligence-technology-startups/", waiting until "networkidle"
+
+2026-01-21 06:28:56,350 - WARNING - Could not get latest episode for No Priors
+2026-01-21 06:28:56,350 - INFO - 
+--- Processing BG2 ---
+2026-01-21 06:28:56,350 - INFO - Fetching latest episode for BG2 Pod from podscribe...
+2026-01-21 06:28:56,357 - ERROR - Failed to get latest episode: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://app.podscribe.com/series/2349338?uid=b448f478-f041-70f1-aa51-f9dd28c4f86a
+Call log:
+  - navigating to "https://app.podscribe.com/series/2349338?uid=b448f478-f041-70f1-aa51-f9dd28c4f86a", waiting until "networkidle"
+
+2026-01-21 06:28:56,357 - WARNING - Could not get latest episode for BG2
+2026-01-21 06:28:56,357 - INFO - 
+--- Processing a16z ---
+2026-01-21 06:28:56,357 - INFO - Fetching latest episode for The a16z Podcast from podscripts...
+2026-01-21 06:28:56,366 - ERROR - Failed to get latest episode: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://podscripts.co/podcasts/a16z-podcast/
+Call log:
+  - navigating to "https://podscripts.co/podcasts/a16z-podcast/", waiting until "networkidle"
+
+2026-01-21 06:28:56,366 - WARNING - Could not get latest episode for a16z
+2026-01-21 06:28:56,412 - INFO - 
+============================================================
+2026-01-21 06:28:56,412 - INFO - Agent workflow complete
+2026-01-21 06:28:56,412 - INFO - ============================================================
+2026-01-22 06:12:55,232 - INFO - ============================================================
+2026-01-22 06:12:55,232 - INFO - Podcast Intelligence Agent Starting
+2026-01-22 06:12:55,232 - INFO - ============================================================
+2026-01-22 06:12:55,956 - INFO - 
+--- Processing 20VC ---
+2026-01-22 06:12:55,956 - INFO - Fetching latest episode for 20VC from podscribe...
+2026-01-22 06:13:25,963 - ERROR - Failed to get latest episode: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://app.podscribe.com/series/1864?uid=b448f478-f041-70f1-aa51-f9dd28c4f86a", waiting until "networkidle"
+
+2026-01-22 06:13:25,964 - WARNING - Could not get latest episode for 20VC
+2026-01-22 06:13:25,964 - INFO - 
+--- Processing All-In ---
+2026-01-22 06:13:25,964 - INFO - Fetching latest episode for All-In Podcast from podscripts...
+2026-01-22 06:13:33,316 - INFO - Found episode: Iran's Breaking Point, Trump's Greenland Acquisition, and Solving Energy Costs
+2026-01-22 06:13:40,339 - INFO - Extracting transcript from https://podscripts.co/podcasts/all-in-with-chamath-jason-sacks-friedberg/irans-breaking-point-trumps-greenland-acquisition-and-solving-energy-costs...
+2026-01-22 06:31:38,607 - ERROR - Failed to extract transcript: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://podscripts.co/podcasts/all-in-with-chamath-jason-sacks-friedberg/irans-breaking-point-trumps-greenland-acquisition-and-solving-energy-costs", waiting until "networkidle"
+
+2026-01-22 06:31:38,607 - WARNING - Could not extract transcript for All-In
+2026-01-22 06:31:38,607 - INFO - 
+--- Processing ChinaTalk ---
+2026-01-22 06:31:38,607 - INFO - Fetching latest episode for ChinaTalk from podscribe...
+2026-01-22 06:43:52,709 - ERROR - Failed to get latest episode: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://app.podscribe.com/series/692695?uid=b448f478-f041-70f1-aa51-f9dd28c4f86a", waiting until "networkidle"
+
+2026-01-22 06:43:52,831 - WARNING - Could not get latest episode for ChinaTalk
+2026-01-22 06:43:52,832 - INFO - 
+--- Processing Dwarkesh ---
+2026-01-22 06:43:52,832 - INFO - Fetching latest episode for Dwarkesh Podcast from podscripts...
+2026-01-22 06:44:22,841 - ERROR - Failed to get latest episode: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://podscripts.co/podcasts/dwarkesh-podcast/", waiting until "networkidle"
+
+2026-01-22 06:44:22,842 - WARNING - Could not get latest episode for Dwarkesh
+2026-01-22 06:44:22,842 - INFO - 
+--- Processing Hard Fork ---
+2026-01-22 06:44:22,842 - INFO - Fetching latest episode for Hard Fork from podscribe...
+2026-01-22 06:44:22,858 - ERROR - Failed to get latest episode: Page.goto: net::ERR_INTERNET_DISCONNECTED at https://app.podscribe.com/series/1217941?uid=b448f478-f041-70f1-aa51-f9dd28c4f86a
+Call log:
+  - navigating to "https://app.podscribe.com/series/1217941?uid=b448f478-f041-70f1-aa51-f9dd28c4f86a", waiting until "networkidle"
+
+2026-01-22 06:44:22,858 - WARNING - Could not get latest episode for Hard Fork
+2026-01-22 06:44:22,858 - INFO - 
+--- Processing No Priors ---
+2026-01-22 06:44:22,858 - INFO - Fetching latest episode for No Priors from podscripts...
+2026-01-22 06:44:22,914 - ERROR - Failed to get latest episode: Page.goto: net::ERR_INTERNET_DISCONNECTED at https://podscripts.co/podcasts/no-priors-artificial-intelligence-technology-startups/
+Call log:
+  - navigating to "https://podscripts.co/podcasts/no-priors-artificial-intelligence-technology-startups/", waiting until "networkidle"
+
+2026-01-22 06:44:22,914 - WARNING - Could not get latest episode for No Priors
+2026-01-22 06:44:22,914 - INFO - 
+--- Processing BG2 ---
+2026-01-22 06:44:22,914 - INFO - Fetching latest episode for BG2 Pod from podscribe...
+2026-01-22 06:44:22,918 - ERROR - Failed to get latest episode: Page.goto: net::ERR_INTERNET_DISCONNECTED at https://app.podscribe.com/series/2349338?uid=b448f478-f041-70f1-aa51-f9dd28c4f86a
+Call log:
+  - navigating to "https://app.podscribe.com/series/2349338?uid=b448f478-f041-70f1-aa51-f9dd28c4f86a", waiting until "networkidle"
+
+2026-01-22 06:44:22,918 - WARNING - Could not get latest episode for BG2
+2026-01-22 06:44:22,918 - INFO - 
+--- Processing a16z ---
+2026-01-22 06:44:22,918 - INFO - Fetching latest episode for The a16z Podcast from podscripts...
+2026-01-22 06:44:22,922 - ERROR - Failed to get latest episode: Page.goto: net::ERR_INTERNET_DISCONNECTED at https://podscripts.co/podcasts/a16z-podcast/
+Call log:
+  - navigating to "https://podscripts.co/podcasts/a16z-podcast/", waiting until "networkidle"
+
+2026-01-22 06:44:22,922 - WARNING - Could not get latest episode for a16z
+2026-01-22 06:44:22,956 - INFO - 
+============================================================
+2026-01-22 06:44:22,956 - INFO - Agent workflow complete
+2026-01-22 06:44:22,957 - INFO - ============================================================
