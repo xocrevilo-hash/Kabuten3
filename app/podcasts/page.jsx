@@ -4,57 +4,130 @@ import React from 'react';
 import Link from 'next/link';
 
 export default function PodcastsPage() {
-  // Podcast data - will be updated by scraper
+  // Podcast data - updated by podcast_agent.py
+  // Ordered chronologically (most recent first)
   const podcasts = [
-    {
-      name: "Hard Fork",
-      color: "from-pink-600 to-pink-500",
-      emoji: "🍴",
-      episode: "AI Agents Are Here. Now What?",
-      episodeNum: 158,
-      date: "Jan 16, 2026",
-      url: "https://podscripts.co/podcasts/hard-fork",
-      ideas: [
-        {
-          summary: "AI agent infrastructure demands",
-          detail: "Kevin Roose argued that AI agents performing tasks autonomously will require \"10x more inference compute than chatbots\" because agents make multiple API calls per task. This is bullish for inference-optimized chips and edge AI hardware.",
-          timestamp: "18:40"
-        },
-        {
-          summary: "Microsoft Copilot agent rollout",
-          detail: "Microsoft is deploying Copilot agents across enterprise customers, with early data showing 40% of compute now going to agent workloads vs 60% for chat. Casey Newton noted this shift could reshape datacenter GPU allocation.",
-          timestamp: "25:15"
-        },
-        {
-          summary: "Anthropic's computer use capability",
-          detail: "Discussion of how Claude's computer use feature enables agent behaviors that were previously impossible. The hosts debated whether this creates a moat for Anthropic or if OpenAI and Google will quickly match the capability.",
-          timestamp: "42:30"
-        }
-      ]
-    },
     {
       name: "All-In Podcast",
       color: "from-yellow-500 to-yellow-400",
       emoji: "🎯",
-      episode: "All-In's 2026 Predictions",
-      episodeNum: 257,
-      date: "Jan 10, 2026",
-      url: "https://podscripts.co/podcasts/all-in-with-chamath-jason-sacks-friedberg",
+      episode: "(0:00) Jason and Sacks welcome Sarah B. Rogers! (2:22) Free speech, EU censorship, OSA/DSA overreach? (13:44) Censorship on mass migration policies, m...",
+      episodeNum: 0,
+      date: "January 22, 2026",
+      url: "https://app.podscribe.com/episode/148622308?transcriptVersionReqId=695fabbe-136c-49b9-89ef-13472edef476",
       ideas: [
         {
-          summary: "NVIDIA margin compression prediction",
-          detail: "Jason Calacanis predicted NVIDIA's gross margins will compress from 75% to 55% by end of 2026 as AMD and custom silicon (Google TPU, Amazon Trainium) gain meaningful share in inference workloads. Chamath disagreed, citing CUDA moat.",
-          timestamp: "31:18"
+          summary: "Public Market Multiples Challenge Venture Capital Model",
+          detail: "Public markets are creating a sifting mechanism where low-growth companies receive drastically lower multiples while high-growth companies like Palantir (at 70x forward sales) command premium valuations. This dynamic reinforces that venture success depends on being in rapidly growing sectors rather than broadly diversified portfolios.",
+          timestamp: "04:46"
         },
         {
-          summary: "Cerebras IPO and inference silicon renaissance",
-          detail: "Friedberg highlighted the OpenAI-Cerebras partnership as validation that \"decode silicon\" optimized for inference is becoming critical. Predicted 3-4 inference chip companies will go public in 2026.",
-          timestamp: "38:45"
+          summary: "AI Enterprise Implementation Gap Despite Model Quality",
+          detail: "While AI models are incredibly powerful, enterprise adoption faces significant challenges due to fragmented data, legacy systems, and manual workarounds - described as 'a Ferrari engine in a shopping cart.' Companies like Invisible are addressing this by training top AI models and adapting them to messy business realities.",
+          timestamp: "03:10"
         },
         {
-          summary: "China semiconductor self-sufficiency timeline",
-          detail: "Sacks argued China will achieve 28nm self-sufficiency by 2027 and 7nm by 2030 despite export controls. \"The restrictions accelerated their timeline, not delayed it.\" Cited SMIC's progress with DUV multi-patterning.",
-          timestamp: "52:20"
+          summary: "AI Success Stories Emerging in Sports Analytics",
+          detail: "Real-world AI implementation is showing tangible results, with examples like the Charlotte Hornets using AI to process years of game tape and analog scouting data to improve draft decisions in weeks rather than seasons. This demonstrates AI's potential when properly integrated with cleaned enterprise data.",
+          timestamp: "03:10"
+        },
+        {
+          summary: "High-Growth Tech Companies Still Command Premium Valuations",
+          detail: "Despite overall market pressures on slower-growing tech stocks like Figma and DataDog, companies demonstrating exceptional growth rates continue to receive massive valuations from both public and private markets. This creates opportunities for venture investors who can identify and invest in these high-velocity companies early.",
+          timestamp: "05:50"
+        }
+      ]
+    },
+    {
+      name: "20VC",
+      color: "from-purple-600 to-purple-500",
+      emoji: "🎙️",
+      episode: "The Twenty Minute VC (20VC): Venture Capital | Startup Funding | The Pitch",
+      episodeNum: 0,
+      date: "Jan 22, 2026",
+      url: "https://app.podscribe.com/episode/148622308?transcriptVersionReqId=695fabbe-136c-49b9-89ef-13472edef476",
+      ideas: [
+        {
+          summary: "AI Implementation Gap in Enterprise",
+          detail: "Despite AI models being \"insanely good,\" implementation remains the biggest challenge for enterprises. Companies struggle with legacy tech and manual workarounds, described as \"a Ferrari engine in a shopping cart,\" requiring proper data organization before AI can deliver P&L impact.",
+          timestamp: "03:10"
+        },
+        {
+          summary: "Public Market Bifurcation Favors Venture",
+          detail: "Markets are heavily polarizing between low-growth companies getting discarded at low valuations and high-growth trendy companies receiving absurdly high multiples like Palantir at 70x forward sales. This trend-driven dynamic actually benefits venture capital as a \"trend business.\"",
+          timestamp: "05:29"
+        },
+        {
+          summary: "Growth Multiple Compression Risk Warning",
+          detail: "When paying premium valuations for high-growth companies, even slight growth deceleration can trigger severe multiple compression and prolonged underperformance. This creates significant risk for investors anchored to peak valuations during liquidity-rich periods.",
+          timestamp: "07:00"
+        },
+        {
+          summary: "Venture's Historical Winners-Take-All Thesis",
+          detail: "Despite individual company failures in tech waves, the venture model works because massive winners like Microsoft justify the entire ecosystem at $4 trillion valuations. The key is identifying big trends early and accepting that most individual bets will fail while the winner compensates massively.",
+          timestamp: "08:23"
+        }
+      ]
+    },
+    {
+      name: "Hard Fork",
+      color: "from-pink-600 to-pink-500",
+      emoji: "🍴",
+      episode: "Jonathan Haidt Strikes Again + What You Vibecoded + An Update on the Forkiverse",
+      episodeNum: 0,
+      date: "Jan 16, 2026",
+      url: "https://app.podscribe.com/episode/148429306?transcriptVersionReqId=9aeea88b-c216-44be-b3eb-f2f64a4574f5",
+      ideas: [
+        {
+          summary: "Meta's Internal Research Reveals Platform Harm",
+          detail: "Whistleblower documents and Meta's own internal studies provide compelling evidence that social media platforms are causing measurable harm to users, particularly teens. This creates significant regulatory and legal risks for major tech companies as lawsuits mount and governments consider stricter oversight.",
+          timestamp: "07:11"
+        },
+        {
+          summary: "European Regulatory Action Accelerating Under Macron",
+          detail: "French President Macron committed to pushing EU-wide social media regulations after reviewing evidence of platform harm, with France prepared to act unilaterally if needed. This signals a more aggressive regulatory environment that could impact tech company operations and valuations globally.",
+          timestamp: "16:18"
+        },
+        {
+          summary: "Grok Restricts AI Image Generation Features",
+          detail: "X's Grok AI has rolled back image generation capabilities for free users, requiring paid subscriptions for access to these features. This reflects the broader trend of AI companies monetizing advanced capabilities while managing safety and liability concerns around AI-generated content.",
+          timestamp: "02:58"
+        },
+        {
+          summary: "Claude Code Experiments Show Advanced Capabilities",
+          detail: "User experiments with Claude's coding abilities have produced impressive results that exceeded expectations, suggesting rapid advancement in AI programming assistance. This indicates growing enterprise adoption potential and competitive pressure on other AI coding tools like GitHub Copilot.",
+          timestamp: "01:59"
+        }
+      ]
+    },
+    {
+      name: "The a16z Podcast",
+      color: "from-gray-700 to-gray-600",
+      emoji: "🅰️",
+      episode: "Inferact: Building the Infrastructure That Runs Modern AI",
+      episodeNum: 0,
+      date: "January 22, 2026",
+      url: "https://app.podscribe.com/episode/148429306?transcriptVersionReqId=9aeea88b-c216-44be-b3eb-f2f64a4574f5",
+      ideas: [
+        {
+          summary: "Social Media as Harmful Consumer Product",
+          detail: "Jonathan Haidt argues that social media should be regulated like other consumer products that cause harm, comparing it to unsafe toys or food ingredients. He claims 99.9% confidence that social media is harming millions of kids, even if causality for the 2012 mental health increase can't be definitively proven.",
+          timestamp: "12:04"
+        },
+        {
+          summary: "Global Policy Push for Phone-Free Schools",
+          detail: "Haidt is dedicating his remaining productive years to advocating for phone-free schools and raising minimum age requirements globally. His direct meeting with President Macron resulted in France pushing EU-wide social media restrictions, demonstrating how tech policy is becoming a top-level government priority.",
+          timestamp: "16:18"
+        },
+        {
+          summary: "Legal Liability Model for Tech Companies",
+          detail: "Plaintiff lawyers are increasingly targeting social media companies with liability lawsuits similar to other harmful consumer products. This represents a significant shift toward holding tech platforms legally accountable for user harm, potentially creating new investment risks for social media companies.",
+          timestamp: "17:38"
+        },
+        {
+          summary: "Consumer Demand for Digital Wellness Solutions",
+          detail: "Users are actively seeking to change their relationship with phones and implementing various behavioral modification techniques. This indicates a growing market opportunity for products and services that help manage digital consumption and screen time.",
+          timestamp: "N/A"
         }
       ]
     },
@@ -62,46 +135,30 @@ export default function PodcastsPage() {
       name: "No Priors",
       color: "from-emerald-600 to-emerald-500",
       emoji: "🧠",
-      episode: "Ilya Sutskever on What Comes After LLMs",
-      episodeNum: 102,
-      date: "Jan 9, 2026",
-      url: "https://podscripts.co/podcasts/no-priors",
+      episode: "No Priors: Artificial Intelligence | Technology | Startups",
+      episodeNum: 0,
+      date: "January 22, 2026",
+      url: "https://app.podscribe.com/episode/148429306?transcriptVersionReqId=9aeea88b-c216-44be-b3eb-f2f64a4574f5",
       ideas: [
         {
-          summary: "Scaling laws plateau confirmed",
-          detail: "Ilya Sutskever confirmed that pure parameter scaling is hitting diminishing returns. \"The next 10x in capability won't come from 10x more compute. It will come from architectural innovations and synthetic data.\"",
-          timestamp: "15:22"
+          summary: "Grok AI Restricts Free Tier Image Generation",
+          detail: "Grok has rolled back its image generation feature for free users, now requiring paid subscriptions to access AI image creation capabilities. This represents a broader trend of AI companies monetizing premium features as they seek to recoup massive infrastructure investments and differentiate paid tiers.",
+          timestamp: "02:58"
         },
         {
-          summary: "HBM4 as the new bottleneck",
-          detail: "Discussion revealed HBM4 supply constraints are now the primary limiter for frontier AI training, not GPU availability. SK Hynix is \"essentially sold out through 2027\" with TSMC's CoWoS packaging also at capacity.",
-          timestamp: "28:45"
+          summary: "Electric AI-Powered Transportation Device Launch",
+          detail: "A new electric AI-powered 'Brain on Wheels' tricycle has been announced, representing the integration of AI capabilities into personal mobility devices. This suggests AI is expanding beyond software into physical products, potentially creating new investment opportunities in AI-hardware convergence.",
+          timestamp: "00:51"
         },
         {
-          summary: "Test-time compute as the new scaling law",
-          detail: "Sarah Guo and Sutskever discussed how test-time compute (thinking longer at inference) is becoming the new scaling frontier. This favors different chip architectures than training - more memory bandwidth, less raw FLOPS.",
-          timestamp: "45:10"
-        }
-      ]
-    },
-    {
-      name: "Big Technology Podcast",
-      color: "from-blue-600 to-blue-500",
-      emoji: "📱",
-      episode: "Inside Microsoft's $80B AI Bet",
-      episodeNum: 192,
-      date: "Jan 7, 2026",
-      url: "https://podscripts.co/podcasts/big-technology-podcast",
-      ideas: [
-        {
-          summary: "Microsoft AI infrastructure spend breakdown",
-          detail: "Alex Kantrowitz revealed Microsoft is spending $80B annually on AI infrastructure in 2026, up from $50B in 2025. Breakdown: 55% NVIDIA GPUs, 25% AMD MI300X, 20% internal Maia chips. \"The Maia percentage will double by 2027.\"",
-          timestamp: "12:30"
+          summary: "Tech Workers Seeking Phone Relationship Changes",
+          detail: "Even technology workers building smartphone applications are implementing sophisticated systems to limit their own phone usage, including leaving devices in other rooms before bed. This internal recognition of addictive design among creators suggests potential regulatory and investment risks for social media and mobile engagement companies.",
+          timestamp: "Not specified"
         },
         {
-          summary: "OpenAI custom chip ambitions",
-          detail: "Sources told Kantrowitz that OpenAI is in advanced talks with TSMC for dedicated 3nm capacity, potentially spending $8-10B on custom AI chips by 2027. \"They want to reduce NVIDIA dependency below 50%.\"",
-          timestamp: "24:15"
+          summary: "Australia's Bold Age Verification Technology Requirement",
+          detail: "Australia is implementing requirements for companies to verify users are 16+ before allowing account creation and data collection. This regulatory approach puts compliance burden on tech companies and could drive investment in age verification technologies and identity management solutions.",
+          timestamp: "Not specified"
         }
       ]
     },
@@ -109,28 +166,33 @@ export default function PodcastsPage() {
       name: "Dwarkesh Podcast",
       color: "from-orange-500 to-orange-400",
       emoji: "🎤",
-      episode: "Former TSMC Exec on the Chip Wars",
-      episodeNum: 78,
-      date: "Jan 3, 2026",
-      url: "https://podscripts.co/podcasts/dwarkesh-podcast",
+      episode: "Episode Date: December 30, 2025",
+      episodeNum: 0,
+      date: "December 30, 2025",
+      url: "https://app.podscribe.com/episode/148622308?transcriptVersionReqId=695fabbe-136c-49b9-89ef-13472edef476",
       ideas: [
         {
-          summary: "TSMC Arizona reality check",
-          detail: "Former TSMC VP explained why the Arizona fab will never match Taiwan efficiency: \"The ecosystem density in Hsinchu took 40 years to build. When a tool breaks at 2am, there are 50 vendors within 30 minutes. In Arizona, you wait for a flight from Taiwan.\"",
-          timestamp: "34:22"
+          summary: "AI Implementation Gap in Enterprise",
+          detail: "Despite AI models being \"insanely good,\" big companies struggle with real AI success stories due to implementation challenges. The core issue is legacy tech and manual workarounds creating a \"Ferrari engine in a shopping cart\" scenario, where powerful AI capabilities can't integrate effectively with existing systems.",
+          timestamp: "03:10"
         },
         {
-          summary: "ASML's true competitive moat",
-          detail: "Fascinating detail that ASML's moat isn't the machines themselves but the 5,000+ field engineers who install and maintain them. \"You can't just buy an EUV machine. You need an ASML team living at your fab for years.\"",
-          timestamp: "51:45"
+          summary: "Venture Capital Model Under Pressure",
+          detail: "Public market multiples compression is questioning venture capital's ability to generate returns, with companies like Figma trading down to pre-IPO levels and DataDog down 20%. The model depends on being in \"hot stuff\" trends, as trailing sectors become unviable for venture-scale returns.",
+          timestamp: "04:06"
         },
         {
-          summary: "China's 7nm ceiling explained",
-          detail: "Deep technical dive into why SMIC is stuck at 7nm without EUV: \"They can do it with DUV multi-patterning, but yields are 30% vs TSMC's 90%, and costs are 3x. It's a strategic capability, not commercial viability.\"",
-          timestamp: "1:08:30"
+          summary: "AI Integration Critical for Legacy Companies",
+          detail: "Existing companies without AI integration face existential threats and must \"figure out AI tailwinds right now.\" Companies that successfully attach to AI trends can transform from decade-long 10-20% growth to potentially doubling revenue in a single year after adding AI capabilities.",
+          timestamp: "12:51"
+        },
+        {
+          summary: "AgTech Commerce with AI Agents",
+          detail: "Checkout.com is pioneering AgTech Commerce where AI agents make purchases on behalf of customers in real-time, partnering with major players like Visa, MasterCard, Google, Microsoft, and OpenAI. This represents a significant shift toward autonomous AI-driven commerce infrastructure with $300 billion in e-commerce volume.",
+          timestamp: "02:08"
         }
       ]
-    }
+    },
   ];
 
   const totalIdeas = podcasts.reduce((sum, p) => sum + p.ideas.length, 0);
@@ -149,22 +211,22 @@ export default function PodcastsPage() {
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <span className="text-gray-400 text-xs">Updated every 2 days • Last: Jan 18, 2026 10:00 JST</span>
+          <span className="text-gray-400 text-xs">Updated daily at 05:00 HKT • Last: Jan 23, 2026 13:21 JST</span>
         </div>
       </header>
 
       <div className="max-w-3xl mx-auto p-4">
-        
+
         {/* Summary Stats */}
         <div className="bg-white border border-gray-300 rounded-xl p-4 mb-4">
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-lg font-semibold">🎙️ AI & Semiconductor Podcast Intelligence</h1>
-              <p className="text-gray-500 text-xs mt-1">Key insights extracted from 5 tech podcasts • Transcripts via PodScripts.co</p>
+              <p className="text-gray-500 text-xs mt-1">Key insights extracted from {podcasts.length} tech podcasts • Transcripts via Podscribe</p>
             </div>
             <div className="flex gap-6 text-center">
               <div>
-                <div className="text-2xl font-bold text-gray-800">5</div>
+                <div className="text-2xl font-bold text-gray-800">{podcasts.length}</div>
                 <div className="text-xs text-gray-400">Podcasts</div>
               </div>
               <div>
@@ -185,24 +247,24 @@ export default function PodcastsPage() {
                   <span className="text-2xl">{podcast.emoji}</span>
                   <div>
                     <span className="text-white font-semibold">{podcast.name}</span>
-                    <span className="text-white/70 text-xs ml-2">E{podcast.episodeNum} • {podcast.date}</span>
+                    <span className="text-white/70 text-xs ml-2">{podcast.date}</span>
                   </div>
                 </div>
-                <a 
-                  href={podcast.url} 
-                  target="_blank" 
+                <a
+                  href={podcast.url}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-white text-xs bg-white/20 px-2 py-1 rounded hover:bg-white/30"
                 >
                   View Transcript →
                 </a>
               </div>
-              
+
               {/* Episode Title */}
               <div className="px-4 py-3 border-b border-gray-100 bg-gray-50">
                 <span className="text-gray-700 font-medium">"{podcast.episode}"</span>
               </div>
-              
+
               {/* Ideas */}
               <div className="p-4 space-y-4">
                 {podcast.ideas.map((idea, index) => (
@@ -223,11 +285,11 @@ export default function PodcastsPage() {
 
         {/* Methodology Footer */}
         <div className="mt-4 p-3 bg-gray-50 rounded-xl text-xs text-gray-500">
-          <strong>Methodology:</strong> Transcripts sourced from PodScripts.co. Filtered for AI, semiconductor, chip, GPU, NVIDIA, TSMC, and related keywords. Updated every 2 days.
+          <strong>Methodology:</strong> Transcripts sourced from Podscribe. Filtered for AI, semiconductor, chip, GPU, NVIDIA, TSMC, and related keywords. Updated daily.
           <br />
-          <strong>Podcasts:</strong> All-In, Big Technology, No Priors, Dwarkesh Podcast, Hard Fork
+          <strong>Podcasts:</strong> 20VC, All-In, Hard Fork, No Priors, a16z, Dwarkesh
         </div>
-        
+
       </div>
     </div>
   );
