@@ -142,3 +142,62 @@ Call log:
 ============================================================
 2026-01-22 06:44:22,956 - INFO - Agent workflow complete
 2026-01-22 06:44:22,957 - INFO - ============================================================
+2026-01-23 10:00:19,592 - INFO - ============================================================
+2026-01-23 10:00:19,592 - INFO - Podcast Intelligence Agent Starting
+2026-01-23 10:00:19,592 - INFO - ============================================================
+2026-01-23 10:00:20,593 - INFO - 
+--- Processing 20VC ---
+2026-01-23 10:00:20,593 - INFO - Fetching latest episode for 20VC from podscribe...
+2026-01-23 10:00:38,906 - INFO - Attempt 1: Found 50 episode links
+2026-01-23 10:00:41,977 - INFO - Navigated to episode: https://app.podscribe.com/episode/148622308?transcriptVersionReqId=695fabbe-136c-49b9-89ef-13472edef476
+2026-01-23 10:00:42,261 - INFO - Found episode: The Twenty Minute VC (20VC): Venture Capital | Startup Funding | The Pitch
+2026-01-23 10:00:42,261 - INFO - Extracting transcript from https://app.podscribe.com/episode/148622308?transcriptVersionReqId=695fabbe-136c-49b9-89ef-13472edef476...
+2026-01-23 10:00:47,402 - INFO - Extracted transcript: 95160 characters
+2026-01-23 11:13:41,404 - INFO - Retrying request to /v1/messages in 0.420421 seconds
+2026-01-23 11:41:12,732 - INFO - Retrying request to /v1/messages in 0.992913 seconds
+2026-01-23 12:08:18,233 - ERROR - AI summarization failed: Connection error.
+2026-01-23 12:08:18,234 - WARNING - No ideas generated for 20VC
+2026-01-23 12:08:18,234 - INFO - 
+--- Processing All-In ---
+2026-01-23 12:08:18,234 - INFO - Fetching latest episode for All-In Podcast from podscripts...
+2026-01-23 12:08:19,118 - ERROR - Failed to get latest episode: Page.goto: net::ERR_EMPTY_RESPONSE at https://podscripts.co/podcasts/all-in-with-chamath-jason-sacks-friedberg
+Call log:
+  - navigating to "https://podscripts.co/podcasts/all-in-with-chamath-jason-sacks-friedberg", waiting until "networkidle"
+
+2026-01-23 12:08:19,118 - WARNING - Could not get latest episode for All-In
+2026-01-23 12:08:19,119 - INFO - 
+--- Processing Dwarkesh ---
+2026-01-23 12:08:19,119 - INFO - Fetching latest episode for Dwarkesh Podcast from podscripts...
+2026-01-23 12:08:19,982 - ERROR - Failed to get latest episode: Page.goto: net::ERR_EMPTY_RESPONSE at https://podscripts.co/podcasts/dwarkesh-podcast/
+Call log:
+  - navigating to "https://podscripts.co/podcasts/dwarkesh-podcast/", waiting until "networkidle"
+
+2026-01-23 12:08:19,983 - WARNING - Could not get latest episode for Dwarkesh
+2026-01-23 12:08:19,983 - INFO - 
+--- Processing Hard Fork ---
+2026-01-23 12:08:19,983 - INFO - Fetching latest episode for Hard Fork from podscribe...
+2026-01-23 12:09:18,719 - ERROR - Failed to get latest episode: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://app.podscribe.com/series/1217941?uid=b448f478-f041-70f1-aa51-f9dd28c4f86a", waiting until "networkidle"
+
+2026-01-23 12:09:18,719 - WARNING - Could not get latest episode for Hard Fork
+2026-01-23 12:09:18,719 - INFO - 
+--- Processing No Priors ---
+2026-01-23 12:09:18,719 - INFO - Fetching latest episode for No Priors from podscripts...
+2026-01-23 12:09:19,970 - ERROR - Failed to get latest episode: Page.goto: net::ERR_EMPTY_RESPONSE at https://podscripts.co/podcasts/no-priors-artificial-intelligence-technology-startups/
+Call log:
+  - navigating to "https://podscripts.co/podcasts/no-priors-artificial-intelligence-technology-startups/", waiting until "networkidle"
+
+2026-01-23 12:09:19,970 - WARNING - Could not get latest episode for No Priors
+2026-01-23 12:09:19,970 - INFO - 
+--- Processing a16z ---
+2026-01-23 12:09:19,970 - INFO - Fetching latest episode for The a16z Podcast from podscripts...
+2026-01-23 12:09:20,993 - ERROR - Failed to get latest episode: Page.goto: net::ERR_EMPTY_RESPONSE at https://podscripts.co/podcasts/a16z-podcast/
+Call log:
+  - navigating to "https://podscripts.co/podcasts/a16z-podcast/", waiting until "networkidle"
+
+2026-01-23 12:09:20,994 - WARNING - Could not get latest episode for a16z
+2026-01-23 12:09:21,055 - INFO - 
+============================================================
+2026-01-23 12:09:21,055 - INFO - Agent workflow complete
+2026-01-23 12:09:21,055 - INFO - ============================================================

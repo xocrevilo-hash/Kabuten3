@@ -38,23 +38,6 @@ export default function PodcastsPage() {
         }
       ]
     },
-        {
-          summary: "AI Model Performance Plateau Creates Investment Risk",
-          detail: "The title mentions \"How Model Performance is Plateauing,\" indicating that AI model improvements are slowing down despite massive capital investments. This plateau could fundamentally alter the investment thesis for AI companies that depend on continuous performance gains to justify their valuations.",
-          timestamp: "00:00:32"
-        },
-        {
-          summary: "Shadow AI Creates Enterprise Security Crisis",
-          detail: "Companies face a massive blind spot as employees use public AI tools like ChatGPT and Gemini with sensitive data, creating compliance and security risks. This presents both a threat to existing enterprises and a significant market opportunity for AI governance and security solutions like Nexos AI.",
-          timestamp: "00:02:05"
-        },
-        {
-          summary: "Startup Growth Cycles Require Strategic Pivoting",
-          detail: "The founder describes a three-stage cycle: product-market fit, company-market fit, then back to product-market fit reinvention. At $190M ARR, Harvey demonstrates how successful companies must continuously oscillate between perfecting their current offering and reimagining their future direction to maintain growth momentum.",
-          timestamp: "00:10:13"
-        }
-      ]
-    },
     {
       name: "20VC",
       color: "from-purple-600 to-purple-500",
@@ -86,23 +69,6 @@ export default function PodcastsPage() {
         }
       ]
     },
-        {
-          summary: "Legal AI Market Experiencing Explosive Growth Phase",
-          detail: "Harvey CEO reveals the legal AI space is growing at unprecedented speed, with the broader AI market described as 'massive' and 'exploding.' The competitive landscape includes references to Anthropic potentially reaching $3 billion in revenue, indicating the scale of current AI market expansion.",
-          timestamp: "10:49"
-        },
-        {
-          summary: "AI-Powered Compliance Automation Becoming Strategic Investment Priority",
-          detail: "Enterprise security platforms like Vanta are leveraging AI automation to help companies achieve compliance faster and unlock major deals. This represents a shift toward AI-enabled infrastructure tools that address regulatory requirements while enabling innovation.",
-          timestamp: "04:35"
-        },
-        {
-          summary: "Startup Scaling Requires Distinct Product-Market and Company-Market Fit",
-          detail: "Successful AI companies must navigate two separate phases: achieving product-market fit, then developing company-market fit by creating organizational structures suited to their specific vertical. This dual-phase approach is particularly relevant for AI companies operating across global markets with complex regulatory environments.",
-          timestamp: "10:13"
-        }
-      ]
-    },
     {
       name: "Hard Fork",
       color: "from-pink-600 to-pink-500",
@@ -130,23 +96,6 @@ export default function PodcastsPage() {
         {
           summary: "Claude Code Experiments Show Advanced Capabilities",
           detail: "User experiments with Claude's coding abilities have produced impressive results that exceeded expectations, suggesting rapid advancement in AI programming assistance. This indicates growing enterprise adoption potential and competitive pressure on other AI coding tools like GitHub Copilot.",
-          timestamp: "01:59"
-        }
-      ]
-    },
-        {
-          summary: "AI-Powered Social Media Faces Global Regulatory Crackdown",
-          detail: "High-level government officials, including President Macron, are actively pursuing regulatory action against social media platforms based on mounting evidence of harm. This suggests incoming restrictions on AI recommendation algorithms and social features that could impact tech company valuations and operational models.",
-          timestamp: "16:18"
-        },
-        {
-          summary: "Grok Implements Paid Tier for AI Features",
-          detail: "Grok has rolled back its image generation feature for free users, requiring paid subscriptions for advanced AI capabilities. This indicates a broader industry trend toward monetizing AI features through premium tiers, potentially creating new revenue streams for AI companies.",
-          timestamp: "02:58"
-        },
-        {
-          summary: "Claude Code Experiments Show Enterprise AI Adoption",
-          detail: "User experiments with Claude's coding capabilities are generating significant interest and impressive results, suggesting strong enterprise demand for AI coding assistants. This indicates growing market opportunities for companies providing AI development tools and programming assistance.",
           timestamp: "01:59"
         }
       ]
@@ -182,23 +131,6 @@ export default function PodcastsPage() {
         }
       ]
     },
-        {
-          summary: "Need for New AI Programming Abstraction Layer",
-          detail: "Natural language is too ambiguous and code too rigid for AI systems, requiring a new abstraction layer similar to the jump from assembly to C programming. This represents a critical infrastructure need that could determine whether AI becomes a programmable tool or remains an unpredictable oracle.",
-          timestamp: "02:15"
-        },
-        {
-          summary: "Intelligence as Foundation Technology Like Semiconductors",
-          detail: "AI intelligence is compared to chip manufacturing improvements and increasing transistor counts - it's a foundational capability that enables applications rather than replacing software development. This suggests continued investment opportunities in AI infrastructure and tooling rather than viewing AI as a replacement for human programming.",
-          timestamp: "14:07"
-        },
-        {
-          summary: "Artificial Programmable Intelligence Over AGI",
-          detail: "The focus should shift from pursuing Artificial General Intelligence (AGI) to developing Artificial Programmable Intelligence (API) that can reliably execute specific tasks as directed. This represents a more practical and commercially viable approach to AI development with clearer investment and product development pathways.",
-          timestamp: "09:34"
-        }
-      ]
-    },
     {
       name: "No Priors",
       color: "from-emerald-600 to-emerald-500",
@@ -230,23 +162,6 @@ export default function PodcastsPage() {
         }
       ]
     },
-        {
-          summary: "Premium AI Features Driving Monetization Models",
-          detail: "Companies are implementing tiered pricing for AI services, with advanced features like image generation being restricted to paid users only. This trend indicates how AI capabilities are becoming key differentiators in freemium business models.",
-          timestamp: "02:58"
-        },
-        {
-          summary: "Regulatory Framework Development for AI-Adjacent Technologies",
-          detail: "Government leaders are taking direct action on technology regulation, with examples of rapid policy implementation at the highest levels of government. This suggests an accelerating timeline for AI and social media regulation that could impact tech company valuations and operations.",
-          timestamp: "16:18"
-        },
-        {
-          summary: "Tech Workers Developing Solutions for Digital Wellness",
-          detail: "Even those building smartphone and social media technologies are creating sophisticated systems to limit their own usage and reclaim attention. This insider behavior suggests potential market opportunities for digital wellness solutions and validates concerns about technology's addictive design.",
-          timestamp: "17:34"
-        }
-      ]
-    },
     {
       name: "Dwarkesh Podcast",
       color: "from-orange-500 to-orange-400",
@@ -275,23 +190,6 @@ export default function PodcastsPage() {
           summary: "AgTech Commerce with AI Agents",
           detail: "Checkout.com is pioneering AgTech Commerce where AI agents make purchases on behalf of customers in real-time, partnering with major players like Visa, MasterCard, Google, Microsoft, and OpenAI. This represents a significant shift toward autonomous AI-driven commerce infrastructure with $300 billion in e-commerce volume.",
           timestamp: "02:08"
-        }
-      ]
-    },
-        {
-          summary: "Microsoft Reveals New Fairwater 2 Data Infrastructure",
-          detail: "Microsoft's Satya Nadella provided an exclusive first-look at their brand-new Fairwater 2 data center infrastructure as part of their AGI preparation strategy. This suggests Microsoft is making significant hardware investments to support advanced AI workloads and maintain competitive positioning in the AGI race.",
-          timestamp: "N/A"
-        },
-        {
-          summary: "Autonomous Robotics Breakthrough Timeline Accelerating",
-          detail: "Sergey Levine from Physical Intelligence believes fully autonomous robots are much closer than expected, potentially indicating a 'self-improvement flywheel' in robotics development. This suggests significant investment opportunities in robotics companies and supply chains as physical AI applications approach commercial viability.",
-          timestamp: "N/A"
-        },
-        {
-          summary: "AI Energy Demands Creating Massive Infrastructure Needs",
-          detail: "Casey Handmer's episode highlights the challenge of feeding hundreds of gigawatts of extra energy demand that AI will create over the coming decade. This massive energy requirement will likely drive significant investments in power generation, grid infrastructure, and energy-efficient computing solutions.",
-          timestamp: "N/A"
         }
       ]
     },
