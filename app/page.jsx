@@ -51,6 +51,15 @@ export default function KabutenHomepage() {
     },
   ]);
 
+  // Podcast Agent Log
+  const podcastAgentLog = [
+    { name: 'The a16z Podcast', date: 'Jan 23', episode: 'Interact: Building the Infrastructure That Runs Modern AI', ideas: 4, duration: '28s' },
+    { name: 'No Priors', date: 'Jan 23', episode: 'No Priors: Artificial Intelligence | Technology | Startups', ideas: 4, duration: '30s' },
+    { name: 'Hard Fork', date: 'Jan 23', episode: 'Jonathan Haidt Strikes Again + What You Vibecoded + ...', ideas: 4, duration: '30s' },
+    { name: 'Dwarkesh Podcast', date: 'Jan 23', episode: 'Episode Date: December 30, 2025', ideas: 4, duration: '27s' },
+    { name: 'All-In Podcast', date: 'Jan 23', episode: '(0:00) Jason and Sacks welcome Sarah B. Rogers! (2:2...', ideas: 4, duration: '31s' },
+  ];
+
   // Initialize update log
   useEffect(() => {
     setUpdateLog([
@@ -533,15 +542,38 @@ export default function KabutenHomepage() {
 
       {/* Admin Dashboard Section */}
       <div className="max-w-7xl mx-auto px-4 pb-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
 
-          {/* Left Column - Update Status */}
-          <div className="lg:col-span-2 space-y-6">
+          {/* Left Column - Company Page Update Status (half width) */}
+          <div className="space-y-6">
 
             {/* Update Status Cards */}
             <div className="bg-white rounded-xl border border-gray-300 p-5">
+              {/* Bulk Actions at top */}
+              <div className="flex gap-3 mb-4 pb-4 border-b border-gray-200">
+                <button
+                  onClick={() => {
+                    runUpdate('stockPrices', 'Stock Prices');
+                    runUpdate('keyMetrics', 'Key Metrics');
+                  }}
+                  className="px-4 py-2 bg-emerald-600 text-white rounded-lg text-sm font-medium hover:bg-emerald-700"
+                >
+                  🔄 Run Daily Updates
+                </button>
+                <button
+                  onClick={() => {
+                    ['stockPrices', 'keyMetrics', 'sentiment', 'epsRevisions', 'analystRatings'].forEach(key => {
+                      runUpdate(key, key);
+                    });
+                  }}
+                  className="px-4 py-2 bg-gray-800 text-white rounded-lg text-sm font-medium hover:bg-gray-900"
+                >
+                  ⚡ Run All Updates
+                </button>
+              </div>
+
               <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
-                📊 Update Status by Type
+                📊 Company Page: Update Status
               </h2>
               <div className="grid grid-cols-2 gap-3">
                 {[
@@ -583,29 +615,6 @@ export default function KabutenHomepage() {
                     </div>
                   </div>
                 ))}
-              </div>
-
-              {/* Bulk Actions */}
-              <div className="flex gap-3 mt-4 pt-4 border-t border-gray-200">
-                <button
-                  onClick={() => {
-                    runUpdate('stockPrices', 'Stock Prices');
-                    runUpdate('keyMetrics', 'Key Metrics');
-                  }}
-                  className="px-4 py-2 bg-emerald-600 text-white rounded-lg text-sm font-medium hover:bg-emerald-700"
-                >
-                  🔄 Run Daily Updates
-                </button>
-                <button
-                  onClick={() => {
-                    ['stockPrices', 'keyMetrics', 'sentiment', 'epsRevisions', 'analystRatings'].forEach(key => {
-                      runUpdate(key, key);
-                    });
-                  }}
-                  className="px-4 py-2 bg-gray-800 text-white rounded-lg text-sm font-medium hover:bg-gray-900"
-                >
-                  ⚡ Run All Updates
-                </button>
               </div>
             </div>
 
@@ -670,22 +679,38 @@ export default function KabutenHomepage() {
             </div>
           </div>
 
-          {/* Right Column - Update Log & Stats */}
+          {/* Right Column - Podcast Agent Log & Stats */}
           <div className="space-y-6">
+            {/* Podcast Agent Log */}
             <div className="bg-white rounded-xl border border-gray-300 p-5">
               <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
-                📜 Recent Update Log
+                🎙️ Podcast Agent Log
+                <span className="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded-full">Last 5 runs</span>
               </h2>
-              <div className="space-y-2 max-h-[600px] overflow-y-auto">
-                {updateLog.map((entry, index) => (
-                  <div key={index} className="flex items-start gap-2 text-sm py-2 border-b border-gray-100 last:border-0">
-                    <span className="text-base">{getLogIcon(entry.type)}</span>
+              <div className="space-y-3">
+                {podcastAgentLog.map((podcast, index) => (
+                  <div key={index} className="flex items-start gap-3 py-2 border-b border-gray-100 last:border-0">
+                    <span className="text-green-500 mt-1">●</span>
                     <div className="flex-1 min-w-0">
-                      <span className="text-gray-400 text-xs">{entry.time}</span>
-                      <p className="text-gray-700 text-xs mt-0.5 break-words">{entry.message}</p>
+                      <div className="flex items-center justify-between">
+                        <span className="font-medium text-sm text-gray-800">{podcast.name}</span>
+                        <span className="text-xs text-gray-400">{podcast.date}</span>
+                      </div>
+                      <p className="text-xs text-gray-500 mt-0.5 truncate">{podcast.episode}</p>
+                      <div className="flex items-center gap-2 mt-1 text-xs text-gray-400">
+                        <span>E0</span>
+                        <span>•</span>
+                        <span>{podcast.ideas} ideas</span>
+                        <span>•</span>
+                        <span>{podcast.duration}</span>
+                      </div>
                     </div>
                   </div>
                 ))}
+              </div>
+              <div className="flex items-center justify-between mt-4 pt-3 border-t border-gray-200">
+                <span className="text-xs text-gray-500">8 podcasts tracked • Daily at 10:00 JST</span>
+                <a href="/podcasts" className="text-xs text-blue-600 hover:underline">View Ideas →</a>
               </div>
             </div>
 
