@@ -1,6 +1,60 @@
 {
-  "lastUpdated": "2026-01-22T12:53:01.114549",
+  "lastUpdated": "2026-01-23T13:21:45.522147",
   "runs": [
+    {
+      "timestamp": "2026-01-23T13:21:45.522125",
+      "podcast": "The a16z Podcast",
+      "episode": "Inferact: Building the Infrastructure That Runs Modern AI",
+      "episodeNum": 0,
+      "ideasGenerated": 4,
+      "status": "success",
+      "duration": "28s"
+    },
+    {
+      "timestamp": "2026-01-23T13:21:17.456783",
+      "podcast": "No Priors",
+      "episode": "No Priors: Artificial Intelligence | Technology | Startups",
+      "episodeNum": 0,
+      "ideasGenerated": 4,
+      "status": "success",
+      "duration": "30s"
+    },
+    {
+      "timestamp": "2026-01-23T13:20:47.429830",
+      "podcast": "Hard Fork",
+      "episode": "Jonathan Haidt Strikes Again + What You Vibecoded + An Update on the Forkiverse",
+      "episodeNum": 0,
+      "ideasGenerated": 4,
+      "status": "success",
+      "duration": "30s"
+    },
+    {
+      "timestamp": "2026-01-23T13:20:16.864088",
+      "podcast": "Dwarkesh Podcast",
+      "episode": "Episode Date: December 30, 2025",
+      "episodeNum": 0,
+      "ideasGenerated": 4,
+      "status": "success",
+      "duration": "27s"
+    },
+    {
+      "timestamp": "2026-01-23T13:19:48.987550",
+      "podcast": "All-In Podcast",
+      "episode": "(0:00) Jason and Sacks welcome Sarah B. Rogers! (2:22) Free speech, EU censorship, OSA/DSA overreach? (13:44) Censorship on mass migration policies, m...",
+      "episodeNum": 0,
+      "ideasGenerated": 4,
+      "status": "success",
+      "duration": "31s"
+    },
+    {
+      "timestamp": "2026-01-23T13:19:17.510033",
+      "podcast": "20VC",
+      "episode": "The Twenty Minute VC (20VC): Venture Capital | Startup Funding | The Pitch",
+      "episodeNum": 0,
+      "ideasGenerated": 4,
+      "status": "success",
+      "duration": "39s"
+    },
     {
       "timestamp": "2026-01-22T12:53:01.114526",
       "podcast": "BG2 Pod",
@@ -126,60 +180,6 @@
       "ideasGenerated": 4,
       "status": "success",
       "duration": "34s"
-    },
-    {
-      "timestamp": "2026-01-20T19:18:23.066095",
-      "podcast": "20VC",
-      "episode": "The Twenty Minute VC (20VC): Venture Capital | Startup Funding | The Pitch",
-      "episodeNum": 0,
-      "ideasGenerated": 4,
-      "status": "success",
-      "duration": "39s"
-    },
-    {
-      "timestamp": "2026-01-20T19:14:35.372920",
-      "podcast": "All-In Podcast",
-      "episode": "Iran's Breaking Point, Trump's Greenland Acquisition, and Solving Energy Costs",
-      "episodeNum": 0,
-      "ideasGenerated": 4,
-      "status": "success",
-      "duration": "34s"
-    },
-    {
-      "timestamp": "2026-01-20T19:14:00.434432",
-      "podcast": "20VC",
-      "episode": "20VC: How Model Performance is Plateauing | Two Key Rules for Effective Deal-Making | Company Building Lessons from Keith Rabois, Brian Halligan and Pat Grady | Why Enterprise AI Adoption is Years Off with Harvey CEO Winston Weinberg",
-      "episodeNum": 0,
-      "ideasGenerated": 4,
-      "status": "success",
-      "duration": "45s"
-    },
-    {
-      "timestamp": "2026-01-20T19:05:22.069433",
-      "podcast": "20VC",
-      "episode": "20VC: How Model Performance is Plateauing | Two Key Rules for Effective Deal-Making | Company Building Lessons from Keith Rabois, Brian Halligan and Pat Grady | Why Enterprise AI Adoption is Years Off with Harvey CEO Winston Weinberg",
-      "episodeNum": 0,
-      "ideasGenerated": 4,
-      "status": "success",
-      "duration": "43s"
-    },
-    {
-      "timestamp": "2026-01-20T19:00:20.544864",
-      "podcast": "20VC",
-      "episode": "The Twenty Minute VC (20VC): Venture Capital | Startup Funding | The Pitch",
-      "episodeNum": 0,
-      "ideasGenerated": 1,
-      "status": "success",
-      "duration": "74s"
-    },
-    {
-      "timestamp": "2026-01-20T18:58:40.621536",
-      "podcast": "20VC",
-      "episode": "The Twenty Minute VC (20VC): Venture Capital | Startup Funding | The Pitch",
-      "episodeNum": 0,
-      "ideasGenerated": 4,
-      "status": "success",
-      "duration": "74s"
     }
   ]
 }

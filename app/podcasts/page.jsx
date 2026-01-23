@@ -11,16 +11,33 @@ export default function PodcastsPage() {
       name: "All-In Podcast",
       color: "from-yellow-500 to-yellow-400",
       emoji: "🎯",
-      episode: "Microsoft CEO Satya Nadella on AI's Business Revolution: What Happens to SaaS, OpenAI, and Microsoft? | LIVE from Davos",
+      episode: "(0:00) Jason and Sacks welcome Sarah B. Rogers! (2:22) Free speech, EU censorship, OSA/DSA overreach? (13:44) Censorship on mass migration policies, m...",
       episodeNum: 0,
-      date: "Jan 21, 2026",
-      url: "https://app.podscribe.com/episode/148512142?transcriptVersionReqId=704c7fa2-f889-4a23-862c-f46c42bca3bf",
+      date: "January 22, 2026",
+      url: "https://app.podscribe.com/episode/148622308?transcriptVersionReqId=695fabbe-136c-49b9-89ef-13472edef476",
       ideas: [
         {
-          summary: "Enterprise AI Adoption Timeline Significantly Delayed",
-          detail: "The podcast title indicates that enterprise AI adoption is \"years off,\" suggesting a much slower implementation timeline than many investors expect. This contradicts the current market optimism and could signal overvaluation in enterprise AI companies that are banking on rapid corporate adoption.",
-          timestamp: "00:00:32"
+          summary: "Public Market Multiples Challenge Venture Capital Model",
+          detail: "Public markets are creating a sifting mechanism where low-growth companies receive drastically lower multiples while high-growth companies like Palantir (at 70x forward sales) command premium valuations. This dynamic reinforces that venture success depends on being in rapidly growing sectors rather than broadly diversified portfolios.",
+          timestamp: "04:46"
         },
+        {
+          summary: "AI Enterprise Implementation Gap Despite Model Quality",
+          detail: "While AI models are incredibly powerful, enterprise adoption faces significant challenges due to fragmented data, legacy systems, and manual workarounds - described as 'a Ferrari engine in a shopping cart.' Companies like Invisible are addressing this by training top AI models and adapting them to messy business realities.",
+          timestamp: "03:10"
+        },
+        {
+          summary: "AI Success Stories Emerging in Sports Analytics",
+          detail: "Real-world AI implementation is showing tangible results, with examples like the Charlotte Hornets using AI to process years of game tape and analog scouting data to improve draft decisions in weeks rather than seasons. This demonstrates AI's potential when properly integrated with cleaned enterprise data.",
+          timestamp: "03:10"
+        },
+        {
+          summary: "High-Growth Tech Companies Still Command Premium Valuations",
+          detail: "Despite overall market pressures on slower-growing tech stocks like Figma and DataDog, companies demonstrating exceptional growth rates continue to receive massive valuations from both public and private markets. This creates opportunities for venture investors who can identify and invest in these high-velocity companies early.",
+          timestamp: "05:50"
+        }
+      ]
+    },
         {
           summary: "AI Model Performance Plateau Creates Investment Risk",
           detail: "The title mentions \"How Model Performance is Plateauing,\" indicating that AI model improvements are slowing down despite massive capital investments. This plateau could fundamentally alter the investment thesis for AI companies that depend on continuous performance gains to justify their valuations.",
@@ -44,14 +61,31 @@ export default function PodcastsPage() {
       emoji: "🎙️",
       episode: "The Twenty Minute VC (20VC): Venture Capital | Startup Funding | The Pitch",
       episodeNum: 0,
-      date: "Jan 19, 2026",
-      url: "https://app.podscribe.com/episode/148512142?transcriptVersionReqId=704c7fa2-f889-4a23-862c-f46c42bca3bf",
+      date: "Jan 22, 2026",
+      url: "https://app.podscribe.com/episode/148622308?transcriptVersionReqId=695fabbe-136c-49b9-89ef-13472edef476",
       ideas: [
         {
-          summary: "Enterprise AI Adoption Facing Security Compliance Blind Spots",
-          detail: "Companies are experiencing widespread 'shadow AI' adoption where employees unknowingly feed sensitive data into public AI tools like ChatGPT and Gemini, creating massive security risks. This highlights a critical gap between AI productivity benefits and enterprise security requirements that must be addressed for widespread corporate adoption.",
-          timestamp: "02:05"
+          summary: "AI Implementation Gap in Enterprise",
+          detail: "Despite AI models being \"insanely good,\" implementation remains the biggest challenge for enterprises. Companies struggle with legacy tech and manual workarounds, described as \"a Ferrari engine in a shopping cart,\" requiring proper data organization before AI can deliver P&L impact.",
+          timestamp: "03:10"
         },
+        {
+          summary: "Public Market Bifurcation Favors Venture",
+          detail: "Markets are heavily polarizing between low-growth companies getting discarded at low valuations and high-growth trendy companies receiving absurdly high multiples like Palantir at 70x forward sales. This trend-driven dynamic actually benefits venture capital as a \"trend business.\"",
+          timestamp: "05:29"
+        },
+        {
+          summary: "Growth Multiple Compression Risk Warning",
+          detail: "When paying premium valuations for high-growth companies, even slight growth deceleration can trigger severe multiple compression and prolonged underperformance. This creates significant risk for investors anchored to peak valuations during liquidity-rich periods.",
+          timestamp: "07:00"
+        },
+        {
+          summary: "Venture's Historical Winners-Take-All Thesis",
+          detail: "Despite individual company failures in tech waves, the venture model works because massive winners like Microsoft justify the entire ecosystem at $4 trillion valuations. The key is identifying big trends early and accepting that most individual bets will fail while the winner compensates massively.",
+          timestamp: "08:23"
+        }
+      ]
+    },
         {
           summary: "Legal AI Market Experiencing Explosive Growth Phase",
           detail: "Harvey CEO reveals the legal AI space is growing at unprecedented speed, with the broader AI market described as 'massive' and 'exploding.' The competitive landscape includes references to Anthropic potentially reaching $3 billion in revenue, indicating the scale of current AI market expansion.",
@@ -79,10 +113,27 @@ export default function PodcastsPage() {
       url: "https://app.podscribe.com/episode/148429306?transcriptVersionReqId=9aeea88b-c216-44be-b3eb-f2f64a4574f5",
       ideas: [
         {
-          summary: "Meta's Internal Research Reveals AI Harm Evidence",
-          detail: "Meta's own internal research, exposed through attorney general lawsuits and whistleblower reports, provides substantial evidence that social media platforms are causing documented harm to users, particularly teens. This creates significant regulatory and liability risks for major tech companies developing AI-powered social platforms.",
+          summary: "Meta's Internal Research Reveals Platform Harm",
+          detail: "Whistleblower documents and Meta's own internal studies provide compelling evidence that social media platforms are causing measurable harm to users, particularly teens. This creates significant regulatory and legal risks for major tech companies as lawsuits mount and governments consider stricter oversight.",
           timestamp: "07:11"
         },
+        {
+          summary: "European Regulatory Action Accelerating Under Macron",
+          detail: "French President Macron committed to pushing EU-wide social media regulations after reviewing evidence of platform harm, with France prepared to act unilaterally if needed. This signals a more aggressive regulatory environment that could impact tech company operations and valuations globally.",
+          timestamp: "16:18"
+        },
+        {
+          summary: "Grok Restricts AI Image Generation Features",
+          detail: "X's Grok AI has rolled back image generation capabilities for free users, requiring paid subscriptions for access to these features. This reflects the broader trend of AI companies monetizing advanced capabilities while managing safety and liability concerns around AI-generated content.",
+          timestamp: "02:58"
+        },
+        {
+          summary: "Claude Code Experiments Show Advanced Capabilities",
+          detail: "User experiments with Claude's coding abilities have produced impressive results that exceeded expectations, suggesting rapid advancement in AI programming assistance. This indicates growing enterprise adoption potential and competitive pressure on other AI coding tools like GitHub Copilot.",
+          timestamp: "01:59"
+        }
+      ]
+    },
         {
           summary: "AI-Powered Social Media Faces Global Regulatory Crackdown",
           detail: "High-level government officials, including President Macron, are actively pursuing regulatory action against social media platforms based on mounting evidence of harm. This suggests incoming restrictions on AI recommendation algorithms and social features that could impact tech company valuations and operational models.",
@@ -104,16 +155,33 @@ export default function PodcastsPage() {
       name: "The a16z Podcast",
       color: "from-gray-700 to-gray-600",
       emoji: "🅰️",
-      episode: "How Foundation Models Evolved: A PhD Journey Through AI's Breakthrough Era",
+      episode: "Inferact: Building the Infrastructure That Runs Modern AI",
       episodeNum: 0,
-      date: "Jan 16, 2026",
-      url: "https://podscripts.co/podcasts/a16z-podcast/how-foundation-models-evolved-a-phd-journey-through-ais-breakthrough-era",
+      date: "January 22, 2026",
+      url: "https://app.podscribe.com/episode/148429306?transcriptVersionReqId=9aeea88b-c216-44be-b3eb-f2f64a4574f5",
       ideas: [
         {
-          summary: "AI Scaling Paradigm Shift to Systems Approach",
-          detail: "The industry has moved away from the belief that simply scaling model parameters and pre-training data is sufficient for AI advancement. Instead, there's a focus on carefully constructed post-training pipelines, retrieval systems, and tool integration, indicating a more engineering-focused approach to AI development.",
-          timestamp: "00:51"
+          summary: "Social Media as Harmful Consumer Product",
+          detail: "Jonathan Haidt argues that social media should be regulated like other consumer products that cause harm, comparing it to unsafe toys or food ingredients. He claims 99.9% confidence that social media is harming millions of kids, even if causality for the 2012 mental health increase can't be definitively proven.",
+          timestamp: "12:04"
         },
+        {
+          summary: "Global Policy Push for Phone-Free Schools",
+          detail: "Haidt is dedicating his remaining productive years to advocating for phone-free schools and raising minimum age requirements globally. His direct meeting with President Macron resulted in France pushing EU-wide social media restrictions, demonstrating how tech policy is becoming a top-level government priority.",
+          timestamp: "16:18"
+        },
+        {
+          summary: "Legal Liability Model for Tech Companies",
+          detail: "Plaintiff lawyers are increasingly targeting social media companies with liability lawsuits similar to other harmful consumer products. This represents a significant shift toward holding tech platforms legally accountable for user harm, potentially creating new investment risks for social media companies.",
+          timestamp: "17:38"
+        },
+        {
+          summary: "Consumer Demand for Digital Wellness Solutions",
+          detail: "Users are actively seeking to change their relationship with phones and implementing various behavioral modification techniques. This indicates a growing market opportunity for products and services that help manage digital consumption and screen time.",
+          timestamp: "N/A"
+        }
+      ]
+    },
         {
           summary: "Need for New AI Programming Abstraction Layer",
           detail: "Natural language is too ambiguous and code too rigid for AI systems, requiring a new abstraction layer similar to the jump from assembly to C programming. This represents a critical infrastructure need that could determine whether AI becomes a programmable tool or remains an unpredictable oracle.",
@@ -137,14 +205,31 @@ export default function PodcastsPage() {
       emoji: "🧠",
       episode: "No Priors: Artificial Intelligence | Technology | Startups",
       episodeNum: 0,
-      date: "January 15, 2026",
+      date: "January 22, 2026",
       url: "https://app.podscribe.com/episode/148429306?transcriptVersionReqId=9aeea88b-c216-44be-b3eb-f2f64a4574f5",
       ideas: [
         {
-          summary: "AI-Powered Consumer Products Emerging in Transportation",
-          detail: "New electric AI-powered mobility solutions like 'Brain on Wheels' tricycles are being introduced to the market. This represents the continued integration of AI capabilities into everyday consumer transportation products beyond traditional automotive applications.",
+          summary: "Grok AI Restricts Free Tier Image Generation",
+          detail: "Grok has rolled back its image generation feature for free users, now requiring paid subscriptions to access AI image creation capabilities. This represents a broader trend of AI companies monetizing premium features as they seek to recoup massive infrastructure investments and differentiate paid tiers.",
+          timestamp: "02:58"
+        },
+        {
+          summary: "Electric AI-Powered Transportation Device Launch",
+          detail: "A new electric AI-powered 'Brain on Wheels' tricycle has been announced, representing the integration of AI capabilities into personal mobility devices. This suggests AI is expanding beyond software into physical products, potentially creating new investment opportunities in AI-hardware convergence.",
           timestamp: "00:51"
         },
+        {
+          summary: "Tech Workers Seeking Phone Relationship Changes",
+          detail: "Even technology workers building smartphone applications are implementing sophisticated systems to limit their own phone usage, including leaving devices in other rooms before bed. This internal recognition of addictive design among creators suggests potential regulatory and investment risks for social media and mobile engagement companies.",
+          timestamp: "Not specified"
+        },
+        {
+          summary: "Australia's Bold Age Verification Technology Requirement",
+          detail: "Australia is implementing requirements for companies to verify users are 16+ before allowing account creation and data collection. This regulatory approach puts compliance burden on tech companies and could drive investment in age verification technologies and identity management solutions.",
+          timestamp: "Not specified"
+        }
+      ]
+    },
         {
           summary: "Premium AI Features Driving Monetization Models",
           detail: "Companies are implementing tiered pricing for AI services, with advanced features like image generation being restricted to paid users only. This trend indicates how AI capabilities are becoming key differentiators in freemium business models.",
@@ -166,16 +251,33 @@ export default function PodcastsPage() {
       name: "Dwarkesh Podcast",
       color: "from-orange-500 to-orange-400",
       emoji: "🎤",
-      episode: "Adam Marblestone – AI is missing something fundamental about the brain",
+      episode: "Episode Date: December 30, 2025",
       episodeNum: 0,
-      date: "Dec 30, 2025",
-      url: "https://podscripts.co/podcasts/dwarkesh-podcast/adam-marblestone-ai-is-missing-something-fundamental-about-the-brain",
+      date: "December 30, 2025",
+      url: "https://app.podscribe.com/episode/148622308?transcriptVersionReqId=695fabbe-136c-49b9-89ef-13472edef476",
       ideas: [
         {
-          summary: "AI Scaling Era Transitioning to Research Focus",
-          detail: "According to Ilya Sutskever's episode, the AI industry is moving from the age of scaling to the age of research, suggesting that simply increasing model size and compute may no longer be the primary path forward. This shift implies that breakthroughs will increasingly come from algorithmic improvements and novel research approaches rather than brute-force scaling.",
-          timestamp: "N/A"
+          summary: "AI Implementation Gap in Enterprise",
+          detail: "Despite AI models being \"insanely good,\" big companies struggle with real AI success stories due to implementation challenges. The core issue is legacy tech and manual workarounds creating a \"Ferrari engine in a shopping cart\" scenario, where powerful AI capabilities can't integrate effectively with existing systems.",
+          timestamp: "03:10"
         },
+        {
+          summary: "Venture Capital Model Under Pressure",
+          detail: "Public market multiples compression is questioning venture capital's ability to generate returns, with companies like Figma trading down to pre-IPO levels and DataDog down 20%. The model depends on being in \"hot stuff\" trends, as trailing sectors become unviable for venture-scale returns.",
+          timestamp: "04:06"
+        },
+        {
+          summary: "AI Integration Critical for Legacy Companies",
+          detail: "Existing companies without AI integration face existential threats and must \"figure out AI tailwinds right now.\" Companies that successfully attach to AI trends can transform from decade-long 10-20% growth to potentially doubling revenue in a single year after adding AI capabilities.",
+          timestamp: "12:51"
+        },
+        {
+          summary: "AgTech Commerce with AI Agents",
+          detail: "Checkout.com is pioneering AgTech Commerce where AI agents make purchases on behalf of customers in real-time, partnering with major players like Visa, MasterCard, Google, Microsoft, and OpenAI. This represents a significant shift toward autonomous AI-driven commerce infrastructure with $300 billion in e-commerce volume.",
+          timestamp: "02:08"
+        }
+      ]
+    },
         {
           summary: "Microsoft Reveals New Fairwater 2 Data Infrastructure",
           detail: "Microsoft's Satya Nadella provided an exclusive first-look at their brand-new Fairwater 2 data center infrastructure as part of their AGI preparation strategy. This suggests Microsoft is making significant hardware investments to support advanced AI workloads and maintain competitive positioning in the AGI race.",
@@ -211,7 +313,7 @@ export default function PodcastsPage() {
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <span className="text-gray-400 text-xs">Updated daily at 05:00 HKT • Last: Jan 22, 2026 12:53 JST</span>
+          <span className="text-gray-400 text-xs">Updated daily at 05:00 HKT • Last: Jan 23, 2026 13:21 JST</span>
         </div>
       </header>
 
