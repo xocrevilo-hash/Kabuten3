@@ -418,6 +418,7 @@ export default function KabutenHomepage() {
       <header className="bg-white border-b border-gray-300 px-4 py-2 flex justify-between items-center">
         <div className="text-lg font-semibold">Kabuten 株典</div>
         <div className="flex items-center gap-4">
+          <a href="/analyst-sector" className="text-xs text-gray-500 hover:text-gray-800">Analyst Sector</a>
           <a href="/themes" className="text-xs text-gray-500 hover:text-gray-800">Themes</a>
           <a href="/heatmap" className="text-xs text-gray-500 hover:text-gray-800">Heatmap</a>
           <a href="/podcasts" className="text-xs text-gray-500 hover:text-gray-800">Podcasts</a>
