@@ -23,19 +23,19 @@ export default function AnalystSectorPage() {
   ];
 
   const actionLog = [
-    { time: 'Jan 23', action: 'Upgraded', company: 'Tokyo Electron', detail: 'PT ¥28,000 → ¥32,000', type: 'upgrade' },
-    { time: 'Jan 22', action: 'Initiated', company: 'Lasertec', detail: 'Buy rating, PT ¥35,000', type: 'initiate' },
-    { time: 'Jan 20', action: 'Downgraded', company: 'Screen Holdings', detail: 'Hold → Sell', type: 'downgrade' },
-    { time: 'Jan 18', action: 'Note Published', company: 'Advantest', detail: 'HBM demand outlook', type: 'note' },
-    { time: 'Jan 15', action: 'Meeting', company: 'Disco Corp', detail: 'IR meeting notes added', type: 'meeting' },
+    { time: 'Jan 21', action: 'Upgraded', company: 'Advantest', detail: 'JP Morgan: OW, PT ¥26,000 - raised GPU test estimates 80% YoY', type: 'upgrade' },
+    { time: 'Jan 21', action: 'Upgraded', company: 'Screen Holdings', detail: 'JP Morgan: OW, PT ¥20,000 (from ¥15,000)', type: 'upgrade' },
+    { time: 'Jan 10', action: 'Upgraded', company: 'Tokyo Electron', detail: 'JP Morgan: PT ¥45,000 (from ¥38,000), P/E 34x', type: 'upgrade' },
+    { time: 'Jan 8', action: 'Note Published', company: 'SPE Sector', detail: 'Jefferies: "Expecting healthy fundamentals again in 2026"', type: 'note' },
+    { time: 'Jan 5', action: 'Upgraded', company: 'Tokyo Electron', detail: 'Bernstein: Outperform, PT ¥44,200 at 30x P/E', type: 'upgrade' },
   ];
 
   const newsflow = [
-    { date: 'Jan 23', headline: 'TSMC raises capex guidance, positive for SPE names', source: 'Reuters', sentiment: 'positive' },
-    { date: 'Jan 22', headline: 'China export controls may tighten further in Q2', source: 'Nikkei', sentiment: 'negative' },
-    { date: 'Jan 21', headline: 'Intel delays Ohio fab, equipment orders pushed back', source: 'Bloomberg', sentiment: 'negative' },
-    { date: 'Jan 20', headline: 'Samsung HBM4 development ahead of schedule', source: 'Korea Times', sentiment: 'positive' },
-    { date: 'Jan 19', headline: 'ASML bookings beat expectations in Q4', source: 'Company Filing', sentiment: 'positive' },
+    { date: 'Jan 23', headline: 'Berenberg: WFE spending to rise 17% in 2026, TSMC accelerating A14 node roadmap', source: 'Analyst Note', sentiment: 'positive' },
+    { date: 'Jan 22', headline: 'Memory "supercycle" underway - DRAM bit growth expected to reach 26% (Huatai)', source: 'Analyst Note', sentiment: 'positive' },
+    { date: 'Jan 21', headline: 'JP Morgan sharply raises Advantest estimates - GPU test time growth now 80% YoY', source: 'Analyst Note', sentiment: 'positive' },
+    { date: 'Jan 14', headline: 'SEMICON Japan: Positive outlook for memory and advanced packaging', source: 'Huatai Research', sentiment: 'positive' },
+    { date: 'Jan 8', headline: 'Jefferies: SPE sector to see healthy fundamentals again in 2026', source: 'Analyst Note', sentiment: 'positive' },
   ];
 
   const earnings = [
@@ -47,11 +47,11 @@ export default function AnalystSectorPage() {
   ];
 
   const valuations = [
-    { company: 'Tokyo Electron', pe: '22.5x', pbv: '4.2x', evEbitda: '14.8x', divYield: '2.1%' },
-    { company: 'Advantest', pe: '28.3x', pbv: '5.8x', evEbitda: '18.2x', divYield: '1.2%' },
-    { company: 'Lasertec', pe: '35.1x', pbv: '8.9x', evEbitda: '25.4x', divYield: '0.8%' },
-    { company: 'Screen Holdings', pe: '18.2x', pbv: '2.9x', evEbitda: '11.5x', divYield: '2.8%' },
-    { company: 'Disco Corp', pe: '31.2x', pbv: '6.1x', evEbitda: '20.3x', divYield: '1.5%' },
+    { company: 'Tokyo Electron', pe: '34x', targetPe: '30-34x', consensusTp: '¥41,000-45,000', rating: 'OW' },
+    { company: 'Advantest', pe: '43x', targetPe: '43x', consensusTp: '¥25,000-26,000', rating: 'OW' },
+    { company: 'Lasertec', pe: '37x', targetPe: '27-41x', consensusTp: '¥30,000-39,800', rating: 'Mixed' },
+    { company: 'Screen Holdings', pe: '18x', targetPe: '15-18x', consensusTp: '¥15,000-20,000', rating: 'OW' },
+    { company: 'Disco Corp', pe: '45x', targetPe: '37-45x', consensusTp: '¥55,000-69,000', rating: 'Buy' },
   ];
 
   const getActionColor = (type) => {
@@ -133,10 +133,13 @@ export default function AnalystSectorPage() {
             </div>
             <div className="space-y-3 text-sm text-gray-700">
               <p>
-                <strong className="text-emerald-700">Bullish outlook for SPE sector.</strong> We maintain our positive stance driven by structural tailwinds from AI infrastructure buildout and advanced packaging demand.
+                <strong className="text-emerald-700">Consensus bullish on SPE sector for 2026.</strong> Berenberg forecasts WFE spending to rise 17% in 2026 and 16% in 2027, driven by TSMC's accelerated leading-edge roadmap (A14 node, CFET).
               </p>
               <p>
-                TSMC's raised capex guidance and Samsung's accelerated HBM4 timeline validate our thesis. Japanese SPE names remain best-positioned to capture incremental wafer fab equipment spend through 2026-2027.
+                Huatai Research highlights a memory "supercycle" with DRAM bit growth expected to reach 26%. Industry entering 2nm era in 2026, driving rebound in lithography investment. AI-driven demand for CoWoS/HBM remains key tailwind.
+              </p>
+              <p className="text-xs text-gray-500 italic">
+                Sources: JP Morgan, Jefferies, Bernstein, Berenberg, CLSA, Citi, Huatai Research (Jan 2026)
               </p>
               <div className="pt-3 border-t border-emerald-200">
                 <div className="flex justify-between text-xs">
@@ -144,8 +147,12 @@ export default function AnalystSectorPage() {
                   <span className="font-semibold text-emerald-700">Tokyo Electron (8035)</span>
                 </div>
                 <div className="flex justify-between text-xs mt-1">
-                  <span className="text-gray-500">Target Upside:</span>
-                  <span className="font-semibold text-emerald-700">+18% to ¥28,000</span>
+                  <span className="text-gray-500">Consensus TP:</span>
+                  <span className="font-semibold text-emerald-700">¥41,000 - ¥45,000</span>
+                </div>
+                <div className="flex justify-between text-xs mt-1">
+                  <span className="text-gray-500">JP Morgan TP:</span>
+                  <span className="font-semibold text-emerald-700">¥45,000 (OW, 34x P/E)</span>
                 </div>
                 <div className="flex justify-between text-xs mt-1">
                   <span className="text-gray-500">Last Updated:</span>
@@ -259,17 +266,17 @@ export default function AnalystSectorPage() {
           {/* Valuations Box - Full Width */}
           <div className="bg-white rounded-xl border border-gray-300 p-5 lg:col-span-2">
             <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
-              💰 Valuations
+              💰 Analyst Valuations & Targets
             </h2>
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
                   <tr className="text-xs text-gray-500 font-medium border-b border-gray-200">
                     <th className="text-left py-2">Company</th>
-                    <th className="text-right py-2">P/E</th>
-                    <th className="text-right py-2">P/BV</th>
-                    <th className="text-right py-2">EV/EBITDA</th>
-                    <th className="text-right py-2">Div Yield</th>
+                    <th className="text-right py-2">Current P/E</th>
+                    <th className="text-right py-2">Target P/E Range</th>
+                    <th className="text-right py-2">Consensus TP</th>
+                    <th className="text-right py-2">Rating</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -277,13 +284,24 @@ export default function AnalystSectorPage() {
                     <tr key={index} className="text-sm border-b border-gray-100 last:border-0">
                       <td className="py-3 font-medium text-gray-800">{item.company}</td>
                       <td className="py-3 text-right text-gray-700">{item.pe}</td>
-                      <td className="py-3 text-right text-gray-700">{item.pbv}</td>
-                      <td className="py-3 text-right text-gray-700">{item.evEbitda}</td>
-                      <td className="py-3 text-right text-gray-700">{item.divYield}</td>
+                      <td className="py-3 text-right text-gray-500">{item.targetPe}</td>
+                      <td className="py-3 text-right text-emerald-600 font-medium">{item.consensusTp}</td>
+                      <td className="py-3 text-right">
+                        <span className={`px-2 py-1 text-xs rounded font-medium ${
+                          item.rating === 'OW' ? 'bg-emerald-100 text-emerald-700' :
+                          item.rating === 'Buy' ? 'bg-blue-100 text-blue-700' :
+                          'bg-gray-100 text-gray-600'
+                        }`}>
+                          {item.rating}
+                        </span>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
+            </div>
+            <div className="mt-3 pt-3 border-t border-gray-200 text-xs text-gray-500">
+              Sources: JP Morgan, Jefferies, Bernstein, Berenberg, CLSA, Citi (Jan 2026) • OW = Overweight
             </div>
           </div>
 
