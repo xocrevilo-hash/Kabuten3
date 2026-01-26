@@ -115,23 +115,20 @@ export default function AnalystSectorPage() {
         </div>
       </div>
 
-      {/* Top Section: Title area + Investment Recommendation */}
+      {/* Investment Recommendation - Full Width */}
       <div className="max-w-7xl mx-auto px-4 pb-6">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Left side - empty or can be used for other content */}
-          <div className="lg:col-span-2"></div>
-
-          {/* Investment Recommendation Box - Top Right */}
-          <div className="bg-emerald-50 rounded-xl border border-emerald-200 p-5">
-            <div className="flex items-center justify-between mb-3">
-              <h2 className="text-lg font-semibold text-emerald-800 flex items-center gap-2">
-                📈 Investment Recommendation
-              </h2>
-              <span className="px-3 py-1 bg-emerald-600 text-white text-sm font-bold rounded-full">
-                OVERWEIGHT
-              </span>
-            </div>
-            <div className="space-y-3 text-sm text-gray-700">
+        <div className="bg-emerald-50 rounded-xl border border-emerald-200 p-6">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-xl font-semibold text-emerald-800 flex items-center gap-2">
+              📈 Investment Recommendation
+            </h2>
+            <span className="px-4 py-1.5 bg-emerald-600 text-white text-sm font-bold rounded-full">
+              OVERWEIGHT
+            </span>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* Main Analysis */}
+            <div className="lg:col-span-2 space-y-3 text-sm text-gray-700">
               <p>
                 <strong className="text-emerald-700">Consensus bullish on SPE sector for 2026.</strong> Berenberg forecasts WFE spending to rise 17% in 2026 and 16% in 2027, driven by TSMC's accelerated leading-edge roadmap (A14 node, CFET).
               </p>
@@ -141,22 +138,27 @@ export default function AnalystSectorPage() {
               <p className="text-xs text-gray-500 italic">
                 Sources: JP Morgan, Jefferies, Bernstein, Berenberg, CLSA, Citi, Huatai Research (Jan 2026)
               </p>
-              <div className="pt-3 border-t border-emerald-200">
-                <div className="flex justify-between text-xs">
+            </div>
+            {/* Key Metrics */}
+            <div className="bg-white/50 rounded-lg p-4 border border-emerald-200">
+              <div className="space-y-3">
+                <div className="flex justify-between text-sm">
                   <span className="text-gray-500">Top Pick:</span>
                   <span className="font-semibold text-emerald-700">Tokyo Electron (8035)</span>
                 </div>
-                <div className="flex justify-between text-xs mt-1">
+                <div className="flex justify-between text-sm">
                   <span className="text-gray-500">Consensus TP:</span>
                   <span className="font-semibold text-emerald-700">¥41,000 - ¥45,000</span>
                 </div>
-                <div className="flex justify-between text-xs mt-1">
+                <div className="flex justify-between text-sm">
                   <span className="text-gray-500">JP Morgan TP:</span>
                   <span className="font-semibold text-emerald-700">¥45,000 (OW, 34x P/E)</span>
                 </div>
-                <div className="flex justify-between text-xs mt-1">
-                  <span className="text-gray-500">Last Updated:</span>
-                  <span className="text-gray-600">Jan 23, 2026</span>
+                <div className="pt-2 border-t border-emerald-200">
+                  <div className="flex justify-between text-xs">
+                    <span className="text-gray-500">Last Updated:</span>
+                    <span className="text-gray-600">Jan 23, 2026</span>
+                  </div>
                 </div>
               </div>
             </div>
