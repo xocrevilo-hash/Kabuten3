@@ -38,23 +38,6 @@ export default function PodcastsPage() {
         }
       ]
     },
-        {
-          summary: "AI Enterprise Implementation Gap Despite Model Quality",
-          detail: "While AI models are incredibly powerful, enterprise adoption faces significant challenges due to fragmented data, legacy systems, and manual workarounds - described as 'a Ferrari engine in a shopping cart.' Companies like Invisible are addressing this by training top AI models and adapting them to messy business realities.",
-          timestamp: "03:10"
-        },
-        {
-          summary: "AI Success Stories Emerging in Sports Analytics",
-          detail: "Real-world AI implementation is showing tangible results, with examples like the Charlotte Hornets using AI to process years of game tape and analog scouting data to improve draft decisions in weeks rather than seasons. This demonstrates AI's potential when properly integrated with cleaned enterprise data.",
-          timestamp: "03:10"
-        },
-        {
-          summary: "High-Growth Tech Companies Still Command Premium Valuations",
-          detail: "Despite overall market pressures on slower-growing tech stocks like Figma and DataDog, companies demonstrating exceptional growth rates continue to receive massive valuations from both public and private markets. This creates opportunities for venture investors who can identify and invest in these high-velocity companies early.",
-          timestamp: "05:50"
-        }
-      ]
-    },
     {
       name: "20VC",
       color: "from-purple-600 to-purple-500",
@@ -83,23 +66,6 @@ export default function PodcastsPage() {
           summary: "Systematic Billionaire Network Building Through Strategic Referrals",
           detail: "Building relationships with 107+ billionaires requires a systematic approach using commitment psychology - when people provide three referral names, they become committed to making introductions. This referral multiplication strategy, combined with name-dropping established relationships like CNN, creates exponential network growth for accessing high-net-worth investors.",
           timestamp: "06:38"
-        }
-      ]
-    },
-        {
-          summary: "Public Market Bifurcation Favors Venture",
-          detail: "Markets are heavily polarizing between low-growth companies getting discarded at low valuations and high-growth trendy companies receiving absurdly high multiples like Palantir at 70x forward sales. This trend-driven dynamic actually benefits venture capital as a \"trend business.\"",
-          timestamp: "05:29"
-        },
-        {
-          summary: "Growth Multiple Compression Risk Warning",
-          detail: "When paying premium valuations for high-growth companies, even slight growth deceleration can trigger severe multiple compression and prolonged underperformance. This creates significant risk for investors anchored to peak valuations during liquidity-rich periods.",
-          timestamp: "07:00"
-        },
-        {
-          summary: "Venture's Historical Winners-Take-All Thesis",
-          detail: "Despite individual company failures in tech waves, the venture model works because massive winners like Microsoft justify the entire ecosystem at $4 trillion valuations. The key is identifying big trends early and accepting that most individual bets will fail while the winner compensates massively.",
-          timestamp: "08:23"
         }
       ]
     },
@@ -134,23 +100,6 @@ export default function PodcastsPage() {
         }
       ]
     },
-        {
-          summary: "European Regulatory Action Accelerating Under Macron",
-          detail: "French President Macron committed to pushing EU-wide social media regulations after reviewing evidence of platform harm, with France prepared to act unilaterally if needed. This signals a more aggressive regulatory environment that could impact tech company operations and valuations globally.",
-          timestamp: "16:18"
-        },
-        {
-          summary: "Grok Restricts AI Image Generation Features",
-          detail: "X's Grok AI has rolled back image generation capabilities for free users, requiring paid subscriptions for access to these features. This reflects the broader trend of AI companies monetizing advanced capabilities while managing safety and liability concerns around AI-generated content.",
-          timestamp: "02:58"
-        },
-        {
-          summary: "Claude Code Experiments Show Advanced Capabilities",
-          detail: "User experiments with Claude's coding abilities have produced impressive results that exceeded expectations, suggesting rapid advancement in AI programming assistance. This indicates growing enterprise adoption potential and competitive pressure on other AI coding tools like GitHub Copilot.",
-          timestamp: "01:59"
-        }
-      ]
-    },
     {
       name: "The a16z Podcast",
       color: "from-gray-700 to-gray-600",
@@ -179,23 +128,6 @@ export default function PodcastsPage() {
           summary: "Conversational AI Advertising Creates New User Interaction",
           detail: "OpenAI's ad implementation includes interactive conversational elements that allow users to engage with advertisements through natural language, representing a novel advertising format beyond traditional display ads. This innovation could reshape digital advertising by making promotional content more integrated and contextually relevant to user queries.",
           timestamp: "07:16"
-        }
-      ]
-    },
-        {
-          summary: "Global Policy Push for Phone-Free Schools",
-          detail: "Haidt is dedicating his remaining productive years to advocating for phone-free schools and raising minimum age requirements globally. His direct meeting with President Macron resulted in France pushing EU-wide social media restrictions, demonstrating how tech policy is becoming a top-level government priority.",
-          timestamp: "16:18"
-        },
-        {
-          summary: "Legal Liability Model for Tech Companies",
-          detail: "Plaintiff lawyers are increasingly targeting social media companies with liability lawsuits similar to other harmful consumer products. This represents a significant shift toward holding tech platforms legally accountable for user harm, potentially creating new investment risks for social media companies.",
-          timestamp: "17:38"
-        },
-        {
-          summary: "Consumer Demand for Digital Wellness Solutions",
-          detail: "Users are actively seeking to change their relationship with phones and implementing various behavioral modification techniques. This indicates a growing market opportunity for products and services that help manage digital consumption and screen time.",
-          timestamp: "N/A"
         }
       ]
     },
@@ -230,23 +162,6 @@ export default function PodcastsPage() {
         }
       ]
     },
-        {
-          summary: "Electric AI-Powered Transportation Device Launch",
-          detail: "A new electric AI-powered 'Brain on Wheels' tricycle has been announced, representing the integration of AI capabilities into personal mobility devices. This suggests AI is expanding beyond software into physical products, potentially creating new investment opportunities in AI-hardware convergence.",
-          timestamp: "00:51"
-        },
-        {
-          summary: "Tech Workers Seeking Phone Relationship Changes",
-          detail: "Even technology workers building smartphone applications are implementing sophisticated systems to limit their own phone usage, including leaving devices in other rooms before bed. This internal recognition of addictive design among creators suggests potential regulatory and investment risks for social media and mobile engagement companies.",
-          timestamp: "Not specified"
-        },
-        {
-          summary: "Australia's Bold Age Verification Technology Requirement",
-          detail: "Australia is implementing requirements for companies to verify users are 16+ before allowing account creation and data collection. This regulatory approach puts compliance burden on tech companies and could drive investment in age verification technologies and identity management solutions.",
-          timestamp: "Not specified"
-        }
-      ]
-    },
     {
       name: "Dwarkesh Podcast",
       color: "from-orange-500 to-orange-400",
@@ -275,23 +190,6 @@ export default function PodcastsPage() {
           summary: "Cold Outreach Mastery for Tech Leaders",
           detail: "Successful engagement with 107 billionaires and tech leaders like Marc Benioff (through 53 cold emails) demonstrates the power of personalized, persistent outreach in the technology sector. This approach of leveraging competitor dynamics and personal details creates significant networking advantages for investment and business development.",
           timestamp: "06:19"
-        }
-      ]
-    },
-        {
-          summary: "Venture Capital Model Under Pressure",
-          detail: "Public market multiples compression is questioning venture capital's ability to generate returns, with companies like Figma trading down to pre-IPO levels and DataDog down 20%. The model depends on being in \"hot stuff\" trends, as trailing sectors become unviable for venture-scale returns.",
-          timestamp: "04:06"
-        },
-        {
-          summary: "AI Integration Critical for Legacy Companies",
-          detail: "Existing companies without AI integration face existential threats and must \"figure out AI tailwinds right now.\" Companies that successfully attach to AI trends can transform from decade-long 10-20% growth to potentially doubling revenue in a single year after adding AI capabilities.",
-          timestamp: "12:51"
-        },
-        {
-          summary: "AgTech Commerce with AI Agents",
-          detail: "Checkout.com is pioneering AgTech Commerce where AI agents make purchases on behalf of customers in real-time, partnering with major players like Visa, MasterCard, Google, Microsoft, and OpenAI. This represents a significant shift toward autonomous AI-driven commerce infrastructure with $300 billion in e-commerce volume.",
-          timestamp: "02:08"
         }
       ]
     },
