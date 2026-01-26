@@ -11,16 +11,33 @@ export default function PodcastsPage() {
       name: "All-In Podcast",
       color: "from-yellow-500 to-yellow-400",
       emoji: "🎯",
-      episode: "(0:00) Jason and Sacks welcome Sarah B. Rogers! (2:22) Free speech, EU censorship, OSA/DSA overreach? (13:44) Censorship on mass migration policies, m...",
+      episode: "Healthcare Needs Builders, Not Bureaucrats: Dr. Mehmet Oz Live from Davos",
       episodeNum: 0,
-      date: "January 22, 2026",
-      url: "https://app.podscribe.com/episode/148622308?transcriptVersionReqId=695fabbe-136c-49b9-89ef-13472edef476",
+      date: "January 24, 2026",
+      url: "https://app.podscribe.com/episode/148710218?transcriptVersionReqId=732cb4d8-563f-4fb1-b42d-31e5d6cafe9d",
       ideas: [
         {
-          summary: "Public Market Multiples Challenge Venture Capital Model",
-          detail: "Public markets are creating a sifting mechanism where low-growth companies receive drastically lower multiples while high-growth companies like Palantir (at 70x forward sales) command premium valuations. This dynamic reinforces that venture success depends on being in rapidly growing sectors rather than broadly diversified portfolios.",
-          timestamp: "04:46"
+          summary: "AI Automation Addressing $1.7 Trillion Shadow Work Problem",
+          detail: "Shadow work costs companies over $1.7 trillion annually as employees waste time on manual, time-consuming tasks instead of their core responsibilities. AI tools like Perks AI are being purpose-built to automate this shadow work, allowing teams to focus on high-impact activities with measurable business value.",
+          timestamp: "01:00"
         },
+        {
+          summary: "Cold Outreach Success Through Persistent Personalization Strategy",
+          detail: "The host successfully secured high-profile guests like Marc Benioff through 53 cold emails by following key principles: keeping emails short and concise, having clear asks, and adding personal touches like mentioning favorite whiskeys. This systematic approach to relationship building resulted in interviews with 107 billionaires and major technology leaders.",
+          timestamp: "06:19"
+        },
+        {
+          summary: "Strategic Name-Dropping Creates Investment and Partnership Momentum",
+          detail: "Leveraging existing relationships and brand associations dramatically improves business development success rates. The example shows how mentioning CNN partnerships opened doors that were previously closed, and getting people to commit to three referral names creates psychological commitment to making those introductions.",
+          timestamp: "06:38"
+        },
+        {
+          summary: "Global Financial Infrastructure Scaling Challenges for Tech Companies",
+          detail: "Fast-growing venture-backed companies face significant operational drag from fragmented banking and payment systems when scaling internationally. Modern financial operating systems like Airwallex are becoming critical infrastructure for global businesses, replacing traditional banking with intelligent, automated solutions that eliminate manual reconciliation and reporting across entities.",
+          timestamp: "03:06"
+        }
+      ]
+    },
         {
           summary: "AI Enterprise Implementation Gap Despite Model Quality",
           detail: "While AI models are incredibly powerful, enterprise adoption faces significant challenges due to fragmented data, legacy systems, and manual workarounds - described as 'a Ferrari engine in a shopping cart.' Companies like Invisible are addressing this by training top AI models and adapting them to messy business realities.",
@@ -44,14 +61,31 @@ export default function PodcastsPage() {
       emoji: "🎙️",
       episode: "The Twenty Minute VC (20VC): Venture Capital | Startup Funding | The Pitch",
       episodeNum: 0,
-      date: "Jan 22, 2026",
-      url: "https://app.podscribe.com/episode/148622308?transcriptVersionReqId=695fabbe-136c-49b9-89ef-13472edef476",
+      date: "Jan 24, 2026",
+      url: "https://app.podscribe.com/episode/148710218?transcriptVersionReqId=732cb4d8-563f-4fb1-b42d-31e5d6cafe9d",
       ideas: [
         {
-          summary: "AI Implementation Gap in Enterprise",
-          detail: "Despite AI models being \"insanely good,\" implementation remains the biggest challenge for enterprises. Companies struggle with legacy tech and manual workarounds, described as \"a Ferrari engine in a shopping cart,\" requiring proper data organization before AI can deliver P&L impact.",
-          timestamp: "03:10"
+          summary: "AI Automation Tackling $1.7 Trillion Shadow Work Problem",
+          detail: "Shadow work is costing companies over $1.7 trillion annually as employees waste time on manual tasks instead of their core responsibilities. AI solutions like Perk's purpose-built automation are emerging to eliminate this inefficiency and redirect human capital toward high-impact work.",
+          timestamp: "01:00"
         },
+        {
+          summary: "Cold Email Mastery Critical for Tech Fundraising",
+          detail: "Effective cold outreach requires short, concise messages with clear asks and personal touches - demonstrated by securing Marc Benioff through 53 cold emails. This approach of targeting 25 major tech CEOs with personalized details like favorite whiskey preferences shows how attention to detail dramatically increases response rates in venture fundraising.",
+          timestamp: "04:24"
+        },
+        {
+          summary: "Global Fintech Infrastructure Becoming Essential for Scaling",
+          detail: "Companies scaling globally face operational drag from fragmented banking and payments systems, costing millions in efficiency losses. Intelligent financial operating systems that automate banking, treasury, and payments across continents are becoming critical infrastructure for venture-backed companies expanding internationally.",
+          timestamp: "03:06"
+        },
+        {
+          summary: "Systematic Billionaire Network Building Through Strategic Referrals",
+          detail: "Building relationships with 107+ billionaires requires a systematic approach using commitment psychology - when people provide three referral names, they become committed to making introductions. This referral multiplication strategy, combined with name-dropping established relationships like CNN, creates exponential network growth for accessing high-net-worth investors.",
+          timestamp: "06:38"
+        }
+      ]
+    },
         {
           summary: "Public Market Bifurcation Favors Venture",
           detail: "Markets are heavily polarizing between low-growth companies getting discarded at low valuations and high-growth trendy companies receiving absurdly high multiples like Palantir at 70x forward sales. This trend-driven dynamic actually benefits venture capital as a \"trend business.\"",
@@ -73,16 +107,33 @@ export default function PodcastsPage() {
       name: "Hard Fork",
       color: "from-pink-600 to-pink-500",
       emoji: "🍴",
-      episode: "Jonathan Haidt Strikes Again + What You Vibecoded + An Update on the Forkiverse",
+      episode: "Will ChatGPT Ads Change OpenAI? + Amanda Askell Explains Claude's New Constitution",
       episodeNum: 0,
-      date: "Jan 16, 2026",
-      url: "https://app.podscribe.com/episode/148429306?transcriptVersionReqId=9aeea88b-c216-44be-b3eb-f2f64a4574f5",
+      date: "Jan 23, 2026",
+      url: "https://app.podscribe.com/episode/148673321?transcriptVersionReqId=76fe601b-53cc-46aa-8c62-36620d55b7a2",
       ideas: [
         {
-          summary: "Meta's Internal Research Reveals Platform Harm",
-          detail: "Whistleblower documents and Meta's own internal studies provide compelling evidence that social media platforms are causing measurable harm to users, particularly teens. This creates significant regulatory and legal risks for major tech companies as lawsuits mount and governments consider stricter oversight.",
-          timestamp: "07:11"
+          summary: "OpenAI Introduces Ads Despite Previous Opposition",
+          detail: "OpenAI announced ads in ChatGPT for free and low-cost users, marking a significant reversal from Sam Altman's previous statements calling ads a 'last resort.' This signals potential financial pressure despite OpenAI's market leadership position.",
+          timestamp: "02:58"
         },
+        {
+          summary: "Massive Infrastructure Investment Drives Revenue Pressure",
+          detail: "OpenAI needs substantial revenue to fund what they describe as 'the most ambitious infrastructure investment project in human history' for AI data centers. Subscription revenue alone cannot support their massive computational infrastructure requirements.",
+          timestamp: "04:21"
+        },
+        {
+          summary: "AI Ad Models Create New Interactive Experiences",
+          detail: "OpenAI is introducing two types of ads: traditional display ads and new conversational ad formats that users can interact with directly. This represents a novel monetization approach that could reshape how AI companies generate revenue from their platforms.",
+          timestamp: "07:16"
+        },
+        {
+          summary: "Ad Platform Evolution Threatens User Experience",
+          detail: "The hosts warn that ad platforms historically become more intrusive over time, citing Google's evolution from clearly marked ads to increasingly disguised promotional content. This suggests OpenAI's current ad principles may erode as revenue pressures increase.",
+          timestamp: "10:26"
+        }
+      ]
+    },
         {
           summary: "European Regulatory Action Accelerating Under Macron",
           detail: "French President Macron committed to pushing EU-wide social media regulations after reviewing evidence of platform harm, with France prepared to act unilaterally if needed. This signals a more aggressive regulatory environment that could impact tech company operations and valuations globally.",
@@ -106,14 +157,31 @@ export default function PodcastsPage() {
       emoji: "🅰️",
       episode: "Inferact: Building the Infrastructure That Runs Modern AI",
       episodeNum: 0,
-      date: "January 22, 2026",
-      url: "https://app.podscribe.com/episode/148429306?transcriptVersionReqId=9aeea88b-c216-44be-b3eb-f2f64a4574f5",
+      date: "January 23, 2026",
+      url: "https://app.podscribe.com/episode/148673321?transcriptVersionReqId=76fe601b-53cc-46aa-8c62-36620d55b7a2",
       ideas: [
         {
-          summary: "Social Media as Harmful Consumer Product",
-          detail: "Jonathan Haidt argues that social media should be regulated like other consumer products that cause harm, comparing it to unsafe toys or food ingredients. He claims 99.9% confidence that social media is harming millions of kids, even if causality for the 2012 mental health increase can't be definitively proven.",
-          timestamp: "12:04"
+          summary: "OpenAI Introduces Ads as Infrastructure Funding Strategy",
+          detail: "OpenAI has started testing ads in ChatGPT for free and low-cost tiers, marking a significant shift from Sam Altman's previous stance that ads would be a 'last resort.' This move reflects the enormous capital requirements for AI infrastructure investments, suggesting subscription revenue alone cannot fund their ambitious data center expansion plans.",
+          timestamp: "02:58"
         },
+        {
+          summary: "AI Revenue Models Mirror Traditional Media Platforms",
+          detail: "The podcast characterizes OpenAI as fundamentally a media business requiring both subscription and advertising revenue pillars to sustain operations. This represents the maturation of AI companies into traditional digital platform business models, indicating the industry is moving beyond pure technology plays toward sustainable monetization strategies.",
+          timestamp: "10:38"
+        },
+        {
+          summary: "Product Quality Concerns with Ad-Driven Development",
+          detail: "The hosts express skepticism about whether OpenAI's product and research decisions will shift toward engagement maximization rather than utility optimization once ads become a primary revenue source. This mirrors concerns seen with social media platforms where advertising incentives can compromise user experience and product quality over time.",
+          timestamp: "10:26"
+        },
+        {
+          summary: "Conversational AI Advertising Creates New User Interaction",
+          detail: "OpenAI's ad implementation includes interactive conversational elements that allow users to engage with advertisements through natural language, representing a novel advertising format beyond traditional display ads. This innovation could reshape digital advertising by making promotional content more integrated and contextually relevant to user queries.",
+          timestamp: "07:16"
+        }
+      ]
+    },
         {
           summary: "Global Policy Push for Phone-Free Schools",
           detail: "Haidt is dedicating his remaining productive years to advocating for phone-free schools and raising minimum age requirements globally. His direct meeting with President Macron resulted in France pushing EU-wide social media restrictions, demonstrating how tech policy is becoming a top-level government priority.",
@@ -138,13 +206,30 @@ export default function PodcastsPage() {
       episode: "No Priors: Artificial Intelligence | Technology | Startups",
       episodeNum: 0,
       date: "January 22, 2026",
-      url: "https://app.podscribe.com/episode/148429306?transcriptVersionReqId=9aeea88b-c216-44be-b3eb-f2f64a4574f5",
+      url: "https://app.podscribe.com/episode/148673321?transcriptVersionReqId=76fe601b-53cc-46aa-8c62-36620d55b7a2",
       ideas: [
         {
-          summary: "Grok AI Restricts Free Tier Image Generation",
-          detail: "Grok has rolled back its image generation feature for free users, now requiring paid subscriptions to access AI image creation capabilities. This represents a broader trend of AI companies monetizing premium features as they seek to recoup massive infrastructure investments and differentiate paid tiers.",
-          timestamp: "02:58"
+          summary: "OpenAI Introduces Ads Despite Previous Resistance",
+          detail: "OpenAI has begun testing ads in ChatGPT for free and low-cost tier users, marking a significant shift from CEO Sam Altman's previous stance that ads would be a 'last resort.' This move signals the immense capital pressure facing AI companies to fund massive infrastructure investments, suggesting subscription revenue alone is insufficient for their ambitious scaling plans.",
+          timestamp: "04:21"
         },
+        {
+          summary: "AI Infrastructure Demands Unprecedented Capital Investment",
+          detail: "OpenAI is described as having 'the most ambitious infrastructure investment project in human history' with nowhere close to the money needed to build it. This highlights the enormous semiconductor and data center requirements for frontier AI development, creating massive investment opportunities in chips, cloud infrastructure, and energy sectors.",
+          timestamp: "04:48"
+        },
+        {
+          summary: "New Interactive Ad Format Emerges for AI",
+          detail: "OpenAI showcased conversational ads that allow users to interact directly with advertisements through chat interfaces, representing a fundamentally new advertising paradigm. This innovation could create new revenue streams for AI companies and reshape digital advertising beyond traditional search and social media formats.",
+          timestamp: "07:16"
+        },
+        {
+          summary: "AI Product Development May Shift Toward Engagement",
+          detail: "The introduction of ads raises concerns that AI development could pivot toward engagement maximization rather than pure utility, similar to social media platforms. This shift could influence fundamental AI research decisions and product features, potentially affecting the trajectory of AI capability development across the industry.",
+          timestamp: "12:57"
+        }
+      ]
+    },
         {
           summary: "Electric AI-Powered Transportation Device Launch",
           detail: "A new electric AI-powered 'Brain on Wheels' tricycle has been announced, representing the integration of AI capabilities into personal mobility devices. This suggests AI is expanding beyond software into physical products, potentially creating new investment opportunities in AI-hardware convergence.",
@@ -169,13 +254,30 @@ export default function PodcastsPage() {
       episode: "Episode Date: December 30, 2025",
       episodeNum: 0,
       date: "December 30, 2025",
-      url: "https://app.podscribe.com/episode/148622308?transcriptVersionReqId=695fabbe-136c-49b9-89ef-13472edef476",
+      url: "https://app.podscribe.com/episode/148710218?transcriptVersionReqId=732cb4d8-563f-4fb1-b42d-31e5d6cafe9d",
       ideas: [
         {
-          summary: "AI Implementation Gap in Enterprise",
-          detail: "Despite AI models being \"insanely good,\" big companies struggle with real AI success stories due to implementation challenges. The core issue is legacy tech and manual workarounds creating a \"Ferrari engine in a shopping cart\" scenario, where powerful AI capabilities can't integrate effectively with existing systems.",
-          timestamp: "03:10"
+          summary: "AI Automation Eliminating $1.7 Trillion Shadow Work",
+          detail: "Shadow work costs companies over $1.7 trillion annually as employees waste hours on manual, time-consuming tasks instead of their core responsibilities. AI solutions like Perks AI are being purpose-built to automate this shadow work, allowing teams to focus on high-impact activities that drive real business value.",
+          timestamp: "01:00"
         },
+        {
+          summary: "Venture Capital Scaling Through Strategic Fundraising",
+          detail: "20VC successfully raised a $400 million fund, demonstrating how podcast media platforms can evolve into significant investment vehicles. This represents a trend where content creators are leveraging their audience and network effects to build substantial venture capital operations.",
+          timestamp: "00:43"
+        },
+        {
+          summary: "Agent Finance Investment Trend in Fintech",
+          detail: "Air Wallets is heavily investing in 'agent finance' technology to create intelligent financial operating systems for global businesses. This signals a major shift toward AI-powered financial automation that can manage banking, treasury, and payments across multiple entities and jurisdictions.",
+          timestamp: "04:00"
+        },
+        {
+          summary: "Cold Outreach Mastery for Tech Leaders",
+          detail: "Successful engagement with 107 billionaires and tech leaders like Marc Benioff (through 53 cold emails) demonstrates the power of personalized, persistent outreach in the technology sector. This approach of leveraging competitor dynamics and personal details creates significant networking advantages for investment and business development.",
+          timestamp: "06:19"
+        }
+      ]
+    },
         {
           summary: "Venture Capital Model Under Pressure",
           detail: "Public market multiples compression is questioning venture capital's ability to generate returns, with companies like Figma trading down to pre-IPO levels and DataDog down 20%. The model depends on being in \"hot stuff\" trends, as trailing sectors become unviable for venture-scale returns.",
@@ -211,7 +313,7 @@ export default function PodcastsPage() {
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <span className="text-gray-400 text-xs">Updated daily at 05:00 HKT • Last: Jan 23, 2026 13:21 JST</span>
+          <span className="text-gray-400 text-xs">Updated daily at 05:00 HKT • Last: Jan 26, 2026 11:42 JST</span>
         </div>
       </header>
 
