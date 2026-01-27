@@ -4,24 +4,24 @@ import React from 'react';
 import Link from 'next/link';
 
 export default function HeatmapPage() {
-  // Updated data - Jan 19, 2026
+  // Updated data - Jan 27, 2026
   // Ranked by total views from top 5 posts
   const keywords = [
-    { term: "Rubin", totalViews: 15200000, trend: "hot", description: "NVIDIA's next-gen AI platform (CES 2026)" },
-    { term: "HBM4", totalViews: 8750000, trend: "hot", description: "Next-gen memory war: SK Hynix vs Samsung" },
-    { term: "AI chips", totalViews: 6820000, trend: "hot", description: "NVIDIA, AMD, Intel CES announcements" },
-    { term: "memory shortage", totalViews: 2450000, trend: "hot", description: "DRAM prices +50%, HBM sold out through 2026" },
-    { term: "TSMC", totalViews: 1850000, trend: "hot", description: "Record Q4, $56B capex for 2026" },
-    { term: "CoWoS", totalViews: 980000, trend: "hot", description: "Google cut TPU production due to packaging limits" },
-    { term: "data center", totalViews: 720000, trend: "warm", description: "AI infrastructure supercycle continues" },
-    { term: "2nm", totalViews: 485000, trend: "warm", description: "Intel 18A, TSMC N2 ramping in 2026" },
-    { term: "HBM3E", totalViews: 420000, trend: "warm", description: "Samsung & SK Hynix +20% price hike" },
-    { term: "EUV", totalViews: 380000, trend: "warm", description: "ASML High-NA deliveries to Samsung" },
-    { term: "Blackwell", totalViews: 290000, trend: "neutral", description: "Still shipping, overshadowed by Rubin" },
-    { term: "ASIC", totalViews: 185000, trend: "warm", description: "Google TPU, Amazon Trainium demand" },
-    { term: "export controls", totalViews: 165000, trend: "neutral", description: "NAURA added to Entity List" },
-    { term: "foundry", totalViews: 125000, trend: "neutral", description: "Samsung, Intel fighting for orders" },
-    { term: "NAND", totalViews: 68000, trend: "cold", description: "Overshadowed by HBM focus" },
+    { term: "Rubin", totalViews: 16800000, trend: "hot", description: "GTC 2026 registration open, 6-chip AI supercomputer" },
+    { term: "HBM4", totalViews: 9200000, trend: "hot", description: "Samsung ships to Nvidia Feb, ahead of SK Hynix" },
+    { term: "DeepSeek", totalViews: 7500000, trend: "hot", description: "Janus-Series models, winning global south market" },
+    { term: "AI chips", totalViews: 7000000, trend: "hot", description: "NVIDIA, AMD battle for data center dominance" },
+    { term: "TSMC", totalViews: 3400000, trend: "hot", description: "Ming-Chi Kuo: $52-56B capex, Nvidia demand key" },
+    { term: "NAND", totalViews: 2800000, trend: "hot", description: "Samsung +100% Q1 prices, AI data center demand" },
+    { term: "memory shortage", totalViews: 2100000, trend: "warm", description: "HBM sold out, DRAM supply tightening" },
+    { term: "CoWoS", totalViews: 1200000, trend: "warm", description: "Advanced packaging bottleneck continues" },
+    { term: "data center", totalViews: 980000, trend: "warm", description: "AI infrastructure spending accelerating" },
+    { term: "2nm", totalViews: 650000, trend: "warm", description: "Intel 18A, TSMC N2 production updates" },
+    { term: "HBM3E", totalViews: 480000, trend: "neutral", description: "Transitioning focus to HBM4" },
+    { term: "EUV", totalViews: 420000, trend: "neutral", description: "High-NA EUV ramping at fabs" },
+    { term: "Blackwell", totalViews: 380000, trend: "neutral", description: "Shipping steadily, Rubin taking spotlight" },
+    { term: "ASIC", totalViews: 220000, trend: "warm", description: "Custom AI chip demand from hyperscalers" },
+    { term: "export controls", totalViews: 180000, trend: "neutral", description: "US-China chip restrictions ongoing" },
   ];
 
   const getTrendStyle = (trend) => {
@@ -60,7 +60,7 @@ export default function HeatmapPage() {
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <span className="text-gray-400 text-xs">Updated: Jan 19, 2026 • 5:00 HKT</span>
+          <span className="text-gray-400 text-xs">Updated: Jan 27, 2026 • 5:00 HKT</span>
         </div>
       </header>
 
@@ -111,19 +111,19 @@ export default function HeatmapPage() {
           <div className="space-y-2 text-sm">
             <div className="flex items-center gap-2">
               <span className="text-red-500">●</span>
-              <span><strong>Rubin</strong> dominates post-CES: NVIDIA's 6-chip platform in full production, 5x Blackwell inference</span>
+              <span><strong>HBM4</strong> Samsung beats SK Hynix—shipping to Nvidia starting February, mass production next month</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-red-500">●</span>
-              <span><strong>HBM4</strong> "Memory War" at CES—SK Hynix demos 16-layer 48GB stack, Samsung counters</span>
+              <span><strong>DeepSeek</strong> surges: Janus-Series multimodal models, winning AI market share in global south</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-red-500">●</span>
-              <span><strong>Memory shortage</strong> intensifies: Samsung warns prices up 50%+ in 2026, HBM sold out</span>
+              <span><strong>NAND prices</strong> explode: Samsung doubles flash memory prices (+100% Q1), AI data center demand</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-orange-500">●</span>
-              <span><strong>TSMC</strong> Q4 profit +35%, capex guidance $52-56B as AI demand "through the roof"</span>
+              <span><strong>TSMC</strong> capex $52-56B confirmed by Ming-Chi Kuo, strong Nvidia demand as key driver</span>
             </div>
           </div>
         </div>
