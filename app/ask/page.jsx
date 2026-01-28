@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { VoiceAssistant } from '../components/VoiceAssistant';
 
 export default function AskKabutenChat() {
   const [messages, setMessages] = useState([]);
@@ -30,7 +31,7 @@ export default function AskKabutenChat() {
       });
 
       const data = await response.json();
-      
+
       if (data.error) {
         throw new Error(data.error);
       }
@@ -53,6 +54,24 @@ export default function AskKabutenChat() {
 
   const handleSuggestedQuestion = (question) => {
     setInputValue(question);
+  };
+
+  // Handle voice transcript (what user said)
+  const handleVoiceTranscript = (text) => {
+    setMessages(prev => [...prev, {
+      role: 'user',
+      content: text,
+      isVoice: true
+    }]);
+  };
+
+  // Handle voice response (what AI said)
+  const handleVoiceResponse = (text) => {
+    setMessages(prev => [...prev, {
+      role: 'assistant',
+      content: text,
+      isVoice: true
+    }]);
   };
 
   const suggestedQuestions = [
@@ -90,7 +109,7 @@ export default function AskKabutenChat() {
               <p className="text-gray-500 mb-6 text-sm">
                 Get AI-powered insights about Japanese stocks and markets
               </p>
-              
+
               <div className="text-left max-w-md mx-auto">
                 <p className="text-xs text-gray-400 uppercase font-medium mb-3 px-1">Try these questions:</p>
                 <div className="space-y-2">
@@ -118,12 +137,21 @@ export default function AskKabutenChat() {
                     message.role === 'user'
                       ? 'bg-blue-600 text-white rounded-br-md'
                       : 'bg-white border border-gray-200 rounded-bl-md shadow-sm'
-                  }`}
+                  } ${message.isVoice ? 'ring-2 ring-blue-300' : ''}`}
                 >
                   {message.role === 'assistant' && (
                     <div className="flex items-center gap-2 mb-2">
                       <span className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center text-xs">🤖</span>
                       <span className="text-xs font-medium text-gray-500">Kabuten</span>
+                      {message.isVoice && (
+                        <span className="text-xs text-blue-500">🎤 Voice</span>
+                      )}
+                    </div>
+                  )}
+                  {message.role === 'user' && message.isVoice && (
+                    <div className="flex items-center gap-1 mb-1 text-blue-200 text-xs">
+                      <span>🎤</span>
+                      <span>Voice</span>
                     </div>
                   )}
                   <div className="whitespace-pre-wrap text-sm leading-relaxed">
@@ -133,7 +161,7 @@ export default function AskKabutenChat() {
               </div>
             ))
           )}
-          
+
           {/* Loading indicator */}
           {isLoading && (
             <div className="flex justify-start">
@@ -152,8 +180,24 @@ export default function AskKabutenChat() {
           )}
         </div>
 
-        {/* Input Area - Lighter */}
+        {/* Input Area with Voice */}
         <div className="bg-white border border-gray-200 rounded-2xl p-3 shadow-sm">
+          {/* Voice Assistant */}
+          <div className="border-b border-gray-100 pb-3 mb-3">
+            <VoiceAssistant
+              onTranscript={handleVoiceTranscript}
+              onResponse={handleVoiceResponse}
+              className="py-2"
+            />
+          </div>
+
+          {/* Text input with divider */}
+          <div className="flex items-center gap-2 text-xs text-gray-400 mb-3">
+            <div className="flex-1 h-px bg-gray-200" />
+            <span>or type your question</span>
+            <div className="flex-1 h-px bg-gray-200" />
+          </div>
+
           <div className="flex gap-2">
             <input
               type="text"
